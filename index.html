@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="الزبير إبراهيم — مستقل محترف متخصص في الترجمة التحريرية وتقييم الذكاء الاصطناعي." />
-  <title>الزبير إبراهيم | مستقل محترف</title>
+  <title>Azzubair | مستقل محترف</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
@@ -14,7 +14,8 @@
   <!-- شريط التنقل -->
   <nav id="navbar">
     <div class="container">
-      <a href="#hero" class="logo">الزبير.</a>
+      <!-- الشعار بالخط اليدوي -->
+      <a href="#hero" class="logo">Azzubair</a>
       
       <ul class="nav-links" id="navLinks">
         <li><a href="#hero" class="active">الرئيسية</a></li>
@@ -60,11 +61,10 @@
       </div>
 
       <div class="services-grid">
-        <!-- بنية البطاقة الصارمة لمنع الانهيار (Strict Box Model) -->
         <div class="service-card reveal">
           <div class="service-icon"><i class="fas fa-language"></i></div>
           <div class="service-content">
-            <h3>الترجمة التحريرية والتعريب المتقدم</h3>
+            <h3>الترجمة التحريرية والتعريب</h3>
             <p>ترجمة دقيقة تراعي السياق اللغوي والأبعاد الثقافية بين العربية والإنجليزية.</p>
           </div>
         </div>
@@ -80,7 +80,7 @@
         <div class="service-card reveal">
           <div class="service-icon"><i class="fas fa-certificate"></i></div>
           <div class="service-content">
-            <h3>التصميم الاحترافي للشهادات</h3>
+            <h3>تصميم الشهادات والمستندات</h3>
             <p>التصميم الاحترافي للشهادات والمستندات الرسمية للأفراد والمؤسسات.</p>
           </div>
         </div>
@@ -258,8 +258,12 @@
     </div>
   </footer>
 
-  <!-- السكربت (خفيف ولا يسبب تقطيع) -->
+  <!-- السكربت الآمن -->
   <script>
+    // حل مشكلة الشاشة البيضاء: 
+    // نقوم بوضع كلاس hidden عبر الجافاسكربت أولاً لكي لا يختفي الموقع إذا كان المتصفح يمنع السكربتات
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
+
     // Theme Toggle
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
@@ -273,4 +277,52 @@
 
     // Mobile Menu
     const hamburger = document.getElementById('hamburger');
-    const navLinks
+    const navLinks = document.getElementById('navLinks');
+    const hamburgerIcon = hamburger.querySelector('i');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburgerIcon.className = 'fas fa-bars';
+      });
+    });
+
+    // Active link on scroll
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === `#${current}`) {
+          a.classList.add('active');
+        }
+      });
+    });
+
+    // Scroll Reveal
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('hidden');
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>
