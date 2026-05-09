@@ -1,15 +1,16 @@
-/* إعدادات عامة وتمرير سلس */
+/* إعدادات عامة وتثبيت الهيكل */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
+html, body {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* لمنع أي اهتزاز أو تمرير أفقي */
 }
 
-/* ألوان الوضع النهاري (الأساسي والوحيد) */
+/* ألوان الوضع النهاري */
 :root {
     --bg-main: #f8fafc;        
     --bg-card: #ffffff;        
@@ -19,9 +20,8 @@ html {
     --text-main: #0f172a;     
     --text-muted: #475569;     
     --nav-bg: rgba(255, 255, 255, 0.95);
-    --card-shadow: rgba(0, 0, 0, 0.08);
+    --card-shadow: rgba(0, 0, 0, 0.05);
     --contact-bg: linear-gradient(145deg, #ffffff, #f1f5f9);
-    --glow-opacity: 0.05;
 }
 
 body {
@@ -30,7 +30,6 @@ body {
     background-color: var(--bg-main);
     color: var(--text-main);
     line-height: 1.8;
-    overflow-x: hidden;
 }
 
 /* شريط التنقل */
@@ -82,7 +81,7 @@ nav ul li a:hover {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--text-main);
     margin-bottom: 1rem;
     position: relative;
@@ -102,48 +101,58 @@ nav ul li a:hover {
 
 .section-desc {
     color: var(--text-muted);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 3rem;
 }
 
-/* قسم البداية (Hero Section) */
+/* الواجهة الرئيسية مع الصورة الشخصية */
 #home {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    position: relative;
-    padding-top: 8rem;
+    padding-top: 6rem;
 }
 
-.glow-orb {
-    position: absolute;
-    top: 20%;
-    right: 15%;
-    width: 400px;
-    height: 400px;
-    background: var(--primary);
-    filter: blur(180px);
-    opacity: var(--glow-opacity);
-    z-index: -1;
-    border-radius: 50%;
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
 }
 
 .hero-content {
-    max-width: 800px;
+    flex: 1;
 }
 
 .hero-content h1 {
-    font-size: 4.5rem;
-    line-height: 1.1;
+    font-size: 4rem;
+    line-height: 1.2;
     margin-bottom: 1.5rem;
     color: var(--text-main);
 }
 
 .hero-content p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--text-muted);
     margin-bottom: 1rem;
     font-weight: normal;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* تصميم دائري احترافي للصورة */
+.profile-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid var(--bg-card);
+    box-shadow: 0 15px 35px var(--card-shadow);
 }
 
 .buttons-group {
@@ -187,11 +196,12 @@ nav ul li a:hover {
     border-color: var(--text-main);
 }
 
-/* شبكة الخدمات */
+/* شبكة الخدمات (مستقرة وموحدة الأطوال) */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.5rem;
+    align-items: stretch; /* يجبر جميع البطاقات على أن تكون بنفس الطول */
 }
 
 .service-card {
@@ -201,12 +211,14 @@ nav ul li a:hover {
     border-radius: 16px;
     transition: all 0.3s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary);
-    box-shadow: 0 10px 30px var(--card-shadow);
+    box-shadow: 0 10px 25px var(--card-shadow);
 }
 
 .service-icon {
@@ -219,40 +231,38 @@ nav ul li a:hover {
     justify-content: center;
     font-size: 1.8rem;
     border-radius: 14px;
-    margin-bottom: 1.5rem;
-    transition: all 0.3s;
+    margin-bottom: 1.2rem;
 }
 
 .service-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     line-height: 1.5;
 }
 
 /* طرائق الدفع */
 .payments-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
-    align-items: stretch;
 }
 
 .payment-card {
     background: var(--bg-card); 
     border-radius: 16px;
-    padding: 1.5rem 2rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    width: 220px;
     border: 1px solid var(--border);
     transition: all 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    height: 100%;
 }
 
 .payment-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
     border-color: var(--primary);
     box-shadow: 0 10px 25px rgba(2, 132, 199, 0.15);
 }
@@ -287,14 +297,17 @@ nav ul li a:hover {
 }
 
 .contact-box h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
 }
 
 .contact-box p {
     color: var(--text-muted);
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-links {
@@ -311,7 +324,8 @@ nav ul li a:hover {
     border-radius: 50px;
     color: var(--text-main);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -323,6 +337,7 @@ nav ul li a:hover {
     background: rgba(2, 132, 199, 0.05);
     border-color: var(--primary);
     color: var(--primary);
+    transform: translateY(-2px);
 }
 
 /* تذييل الصفحة */
@@ -334,12 +349,19 @@ footer {
     background: var(--bg-main);
 }
 
-/* دعم شاشات الهواتف */
-@media (max-width: 768px) {
-    nav ul { display: none; } 
-    .hero-content h1 { font-size: 3rem; }
-    .hero-content p { font-size: 1.2rem; }
-    .buttons-group { flex-direction: column; }
-    .btn-primary, .btn-secondary { text-align: center; }
-    .payments-grid { justify-content: center; }
+/* التوافق مع شاشات الهواتف */
+@media (max-width: 900px) {
+    .hero-wrapper {
+        flex-direction: column-reverse; /* يجعل الصورة تظهر فوق النص في الجوال */
+        text-align: center;
+        gap: 2rem;
+    }
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
+    .hero-content h1 { font-size: 2.8rem; }
+    .hero-content p { font-size: 1.1rem; }
+    .buttons-group { justify-content: center; }
+    nav ul { display: none; }
 }
