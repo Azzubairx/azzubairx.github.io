@@ -9,23 +9,8 @@ html {
     scroll-behavior: smooth;
 }
 
-/* متغيرات الوضع الليلي (الافتراضي) */
+/* ألوان الوضع النهاري (الأساسي والوحيد) */
 :root {
-    --bg-main: #0a0e17;        
-    --bg-card: #151b2b;        
-    --border: #222b40;         
-    --primary: #38bdf8;        
-    --primary-hover: #0ea5e9;
-    --text-main: #f8fafc;     
-    --text-muted: #94a3b8;     
-    --nav-bg: rgba(10, 14, 23, 0.85);
-    --card-shadow: rgba(0, 0, 0, 0.5);
-    --contact-bg: linear-gradient(145deg, #151b2b, #0a0e17);
-    --glow-opacity: 0.15;
-}
-
-/* متغيرات الوضع النهاري (عند التفعيل) */
-[data-theme="light"] {
     --bg-main: #f8fafc;        
     --bg-card: #ffffff;        
     --border: #e2e8f0;         
@@ -33,7 +18,7 @@ html {
     --primary-hover: #0369a1;
     --text-main: #0f172a;     
     --text-muted: #475569;     
-    --nav-bg: rgba(255, 255, 255, 0.9);
+    --nav-bg: rgba(255, 255, 255, 0.95);
     --card-shadow: rgba(0, 0, 0, 0.08);
     --contact-bg: linear-gradient(145deg, #ffffff, #f1f5f9);
     --glow-opacity: 0.05;
@@ -46,10 +31,9 @@ body {
     color: var(--text-main);
     line-height: 1.8;
     overflow-x: hidden;
-    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* شريط التنقل الزجاجي */
+/* شريط التنقل */
 nav {
     position: fixed;
     top: 0;
@@ -63,7 +47,6 @@ nav {
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     z-index: 1000;
-    transition: background 0.4s ease, border-color 0.4s ease;
 }
 
 nav .logo {
@@ -71,20 +54,6 @@ nav .logo {
     font-weight: bold;
     color: var(--text-main);
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-nav .logo span {
-    color: var(--primary);
-}
-
-/* أزرار القائمة وزر تبديل الوضع */
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
 }
 
 nav ul {
@@ -102,20 +71,6 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--primary);
-}
-
-.theme-toggle {
-    background: transparent;
-    border: none;
-    color: var(--text-main);
-    font-size: 1.3rem;
-    cursor: pointer;
-    transition: color 0.3s;
-    padding: 5px;
-}
-
-.theme-toggle:hover {
     color: var(--primary);
 }
 
@@ -171,46 +126,36 @@ nav ul li a:hover {
     opacity: var(--glow-opacity);
     z-index: -1;
     border-radius: 50%;
-    transition: opacity 0.4s ease;
 }
 
 .hero-content {
-    max-width: 700px;
-}
-
-.hello-badge {
-    display: inline-block;
-    padding: 0.5rem 1.2rem;
-    background: rgba(56, 189, 248, 0.1);
-    color: var(--primary);
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    border-radius: 50px;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
+    max-width: 800px;
 }
 
 .hero-content h1 {
     font-size: 4.5rem;
     line-height: 1.1;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
 }
 
-.hero-content h2 {
-    font-size: 1.8rem;
+.hero-content p {
+    font-size: 1.4rem;
     color: var(--text-muted);
+    margin-bottom: 1rem;
     font-weight: normal;
-    margin-bottom: 2rem;
 }
 
 .buttons-group {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
 .btn-primary {
     background: var(--primary);
-    color: #fff;
+    color: #ffffff;
     padding: 1rem 2.5rem;
     border-radius: 12px;
     text-decoration: none;
@@ -228,7 +173,7 @@ nav ul li a:hover {
 .btn-secondary {
     background: transparent;
     color: var(--text-main);
-    border: 1px solid var(--border);
+    border: 1px solid var(--text-muted);
     padding: 1rem 2.5rem;
     border-radius: 12px;
     text-decoration: none;
@@ -238,8 +183,8 @@ nav ul li a:hover {
 }
 
 .btn-secondary:hover {
-    background: var(--bg-card);
-    border-color: var(--text-muted);
+    background: var(--bg-main);
+    border-color: var(--text-main);
 }
 
 /* شبكة الخدمات */
@@ -255,6 +200,7 @@ nav ul li a:hover {
     padding: 2rem;
     border-radius: 16px;
     transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
 .service-card:hover {
@@ -282,7 +228,7 @@ nav ul li a:hover {
     line-height: 1.5;
 }
 
-/* طرق الدفع */
+/* طرائق الدفع */
 .payments-grid {
     display: flex;
     flex-wrap: wrap;
@@ -291,7 +237,7 @@ nav ul li a:hover {
 }
 
 .payment-card {
-    background: #ffffff; 
+    background: var(--bg-card); 
     border-radius: 16px;
     padding: 1.5rem 2rem;
     display: flex;
@@ -300,18 +246,17 @@ nav ul li a:hover {
     justify-content: center;
     gap: 1rem;
     width: 220px;
-    border: 2px solid transparent;
+    border: 1px solid var(--border);
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
 
 .payment-card:hover {
     transform: scale(1.05);
     border-color: var(--primary);
-    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.15);
 }
 
-/* إصلاح أبعاد الشعارات ومنع تمططها */
 .payment-card img {
     height: auto;
     max-height: 55px;
@@ -320,7 +265,7 @@ nav ul li a:hover {
 }
 
 .payment-card span {
-    color: #1e293b; /* دائماً داكن ليتناسب مع الخلفية البيضاء للبطاقة */
+    color: var(--text-main);
     font-weight: bold;
     font-size: 1.1rem;
     text-align: center;
@@ -338,7 +283,7 @@ nav ul li a:hover {
     border-radius: 24px;
     padding: 4rem 2rem;
     text-align: center;
-    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px var(--card-shadow);
 }
 
 .contact-box h2 {
@@ -360,7 +305,7 @@ nav ul li a:hover {
 }
 
 .contact-item {
-    background: transparent;
+    background: var(--bg-card);
     border: 1px solid var(--border);
     padding: 1rem 2rem;
     border-radius: 50px;
@@ -371,6 +316,7 @@ nav ul li a:hover {
     align-items: center;
     gap: 10px;
     transition: all 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
 .contact-item:hover {
@@ -385,13 +331,14 @@ footer {
     padding: 2rem;
     border-top: 1px solid var(--border);
     color: var(--text-muted);
+    background: var(--bg-main);
 }
 
 /* دعم شاشات الهواتف */
 @media (max-width: 768px) {
     nav ul { display: none; } 
     .hero-content h1 { font-size: 3rem; }
-    .hero-content h2 { font-size: 1.4rem; }
+    .hero-content p { font-size: 1.2rem; }
     .buttons-group { flex-direction: column; }
     .btn-primary, .btn-secondary { text-align: center; }
     .payments-grid { justify-content: center; }
