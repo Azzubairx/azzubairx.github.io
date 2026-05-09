@@ -254,6 +254,56 @@ section { padding: 6rem 0; }
 }
 .cash-icon { font-size: 3rem; color: #10B981; }
 
+/* ── TERMS OF SERVICE ── */
+.terms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.term-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-glass);
+  transition: var(--transition);
+}
+
+.term-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.term-icon {
+  font-size: 2rem;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.term-content h3 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.term-content p {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .terms-grid { grid-template-columns: 1fr; }
+  .term-card { flex-direction: column; align-items: center; text-align: center; }
+  .term-icon { margin-top: 0; margin-bottom: 1rem; }
+}
+
 /* ── 6. CONTACT ── */
 .contact-box {
   background: var(--bg-glass); backdrop-filter: blur(20px);
