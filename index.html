@@ -6,7 +6,6 @@
   <meta name="description" content="الزبير إبراهيم — مستقل محترف متخصص في الترجمة التحريرية، وتقييم نماذج الذكاء الاصطناعي، وتنسيق الأعمال الأكاديمية والتقنية." />
   <title>الزبير إبراهيم | مستقل محترف</title>
   
-  <!-- مكتبة الأيقونات فقط (بدون خطوط جوجل للحفاظ على Calibri حصراً) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -14,177 +13,181 @@
 
   <!-- شريط التنقل -->
   <nav id="navbar">
-    <a href="#hero" class="logo">الزبير.</a>
-    
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#hero">الرئيسية</a></li>
-      <li><a href="#services">الخدمات</a></li>
-      <li><a href="#payment">طرائق الدفع</a></li>
-      <li><a href="#contact">التواصل</a></li>
-    </ul>
-
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
-        <i class="fas fa-sun"></i>
-      </button>
-      <button class="hamburger" id="hamburger">
-        <i class="fas fa-bars"></i>
-      </button>
+    <div class="container">
+      <a href="#hero" class="logo">الزبير.</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="active">الرئيسية</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#payment">طرائق الدفع</a></li>
+        <li><a href="#contact">التواصل</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
+          <i class="fas fa-sun"></i>
+        </button>
+        <button class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- الواجهة الرئيسية -->
   <section id="hero">
-    <div class="hero-glow"></div>
     <div class="container hero-wrapper">
-      
-      <div class="hero-text">
-        <span class="hero-tag"><i class="fas fa-map-marker-alt"></i> طبرق، ليبيا</span>
+      <div class="hero-text reveal">
         <h1>الزبير إبراهيم</h1>
         <p>مستقل محترف متخصص في الترجمة التحريرية، وتقييم نماذج الذكاء الاصطناعي، وتنسيق الأعمال الأكاديمية والتقنية. أُقدِّم حلولًا لغوية وتقنية عالية الجودة لعملاء الأفراد والمؤسسات، بالتزام تام بمعايير الدقة والسرية المهنية.</p>
-        <div class="hero-buttons">
+        <div class="btn-group">
           <a href="#services" class="btn btn-primary"><i class="fas fa-layer-group"></i> استعرض خدماتي</a>
           <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> تواصل معي</a>
         </div>
       </div>
-
-      <div class="hero-image">
-        <!-- الصورة الشخصية مع Fallback إذا لم تكن موجودة -->
-        <img src="profile.jpg" alt="الزبير إبراهيم" class="profile-img" onerror="this.src='https://placehold.co/400x400/1E293B/3B82F6?text=Z'">
+      <div class="hero-image reveal">
+        <!-- تأكد أن الصورة الخاصة بك موجودة باسم profile.jpg -->
+        <img src="profile.jpg" alt="الزبير إبراهيم" onerror="this.src='https://placehold.co/400x400/2563eb/ffffff?text=Z'">
       </div>
-
     </div>
   </section>
 
   <!-- قسم الخدمات -->
   <section id="services">
     <div class="container">
-      <div class="section-header">
+      <div class="section-title reveal">
         <h2>الخدمات التي أقدّمها</h2>
         <p>مجموعة متكاملة من الخدمات اللغوية والتقنية، تُنفَّذ وفق أعلى معايير الجودة والاحترافية.</p>
       </div>
 
       <div class="services-grid">
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-language"></i></div>
-          <h3>الترجمة التحريرية والتعريب المتقدم</h3>
+        <!-- جميع البطاقات مزودة بكلاس reveal لتظهر بتأثير حركي -->
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-language"></i></div>
+          <h3>الترجمة التحريرية والتعريب</h3>
           <p>ترجمة دقيقة تراعي السياق اللغوي والأبعاد الثقافية بين العربية والإنجليزية.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-robot"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-robot"></i></div>
           <h3>تقييم نماذج الذكاء الاصطناعي</h3>
           <p>ضبط جودة مخرجات نماذج الذكاء الاصطناعي الكبيرة وتحسين دقتها اللغوية.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-certificate"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-certificate"></i></div>
           <h3>تصميم الشهادات والمستندات</h3>
           <p>التصميم الاحترافي للشهادات والمستندات الرسمية للأفراد والمؤسسات.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
           <h3>التنسيق الأكاديمي للبحوث</h3>
           <p>هيكلة وتنسيق البحوث العلمية بدقة وفق المعايير الدولية المعتمدة.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-file-pdf"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-file-pdf"></i></div>
           <h3>البحث المتقدم للكتب الرقمية</h3>
-          <p>استخراج المحتوى الأكاديمي والمصادر الرقمية (PDF) بكفاءة عالية.</p>
-        </article>
+          <p>استخراج المحتوى الأكاديمي والمصادر الرقمية بكفاءة عالية.</p>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-id-card"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-id-card"></i></div>
           <h3>إعداد السير الذاتية (ATS)</h3>
           <p>صياغة وتصميم احترافي يضمن تجاوز السير الذاتية لفلاتر الفرز الآلي للتوظيف.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-spell-check"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-spell-check"></i></div>
           <h3>التدقيق اللغوي والمراجعة</h3>
           <p>مراجعة نحوية وأسلوبية شاملة لضمان خلو النصوص من الأخطاء.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-database"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-database"></i></div>
           <h3>إدخال البيانات والأرشفة</h3>
           <p>إدخال البيانات الدقيق وإدارة السجلات وتصميم قواعد البيانات.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-table"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-table"></i></div>
           <h3>بناء جداول احترافية (Excel)</h3>
           <p>تصميم الجداول التحليلية والمعادلات المتقدمة لتسهيل إدارة الأعمال.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-microphone-alt"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
           <h3>النسخ النصي (Transcription)</h3>
           <p>التفريغ النصي الدقيق للمحتوى الصوتي والمرئي بوضوح وسرعة.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-laptop-code"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
           <h3>الدعم الفني وتشخيص الأعطال</h3>
           <p>حل مشكلات أنظمة التشغيل (Android, Windows, Linux).</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-closed-captioning"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-closed-captioning"></i></div>
           <h3>الترجمة المرئية (Subtitling)</h3>
           <p>إنتاج ترجمات نصية دقيقة متزامنة مع الفيديوهات والأعمال المرئية.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-headphones"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-headphones"></i></div>
           <h3>التدريب في علم الصوتيات</h3>
           <p>تدريب متخصص في نطق وصوتيات اللغة الإنجليزية (Phonetics).</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fab fa-microsoft"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fab fa-microsoft"></i></div>
           <h3>الحلول المكتبية المتكاملة</h3>
           <p>إدارة العمليات عبر حزم Microsoft Office و Google Workspace.</p>
-        </article>
+        </div>
 
-        <article class="service-card">
-          <div class="svc-icon"><i class="fas fa-pen-nib"></i></div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
           <h3>تحرير المحتوى الأكاديمي</h3>
           <p>كتابة وصياغة المحتوى الأكاديمي المتقدم باللغة الإنجليزية.</p>
-        </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- قسم طرق الدفع -->
+  <!-- قسم طرائق الدفع -->
   <section id="payment">
     <div class="container">
-      <div class="section-header">
+      <div class="section-title reveal">
         <h2>طرائق الدفع المتاحة</h2>
         <p>لتيسير إتمام المعاملات، أقبل وسائل الدفع الإلكترونية والمحلية الآتية:</p>
       </div>
 
       <div class="payments-grid">
-        <div class="payment-card">
-          <i class="fas fa-money-bill-wave cash-icon"></i>
-          <span class="pay-name">الدفع النقدي المباشر</span>
+        <div class="payment-card reveal">
+          <div class="pay-logo-wrapper">
+            <i class="fas fa-money-bill-wave cash-icon"></i>
+          </div>
+          <span>الدفع النقدي المباشر</span>
         </div>
 
-        <div class="payment-card">
-          <img src="https://lypay.gov.ly/wp-content/uploads/2025/06/ly-pay-logo.svg" alt="LYPAY" class="pay-logo">
-          <span class="pay-name">LYPAY (لي باي)</span>
+        <div class="payment-card reveal">
+          <div class="pay-logo-wrapper">
+            <img src="https://lypay.gov.ly/wp-content/uploads/2025/06/ly-pay-logo.svg" alt="LYPAY" class="pay-logo">
+          </div>
+          <span>LYPAY (لي باي)</span>
         </div>
 
-        <div class="payment-card">
-          <img src="https://masarat.ly/ms_uploads/2025/10/OnePay-Full-Logo.svg" alt="ONEPAY" class="pay-logo">
-          <span class="pay-name">ONEPAY (وان باي)</span>
+        <div class="payment-card reveal">
+          <div class="pay-logo-wrapper">
+            <img src="https://masarat.ly/ms_uploads/2025/10/OnePay-Full-Logo.svg" alt="ONEPAY" class="pay-logo">
+          </div>
+          <span>ONEPAY (وان باي)</span>
         </div>
 
-        <div class="payment-card">
-          <img src="https://lypay.gov.ly/wp-content/uploads/2025/06/NAB.svg" alt="NAB Mobile" class="pay-logo">
-          <span class="pay-name">NAB Mobile</span>
+        <div class="payment-card reveal">
+          <div class="pay-logo-wrapper">
+            <img src="https://lypay.gov.ly/wp-content/uploads/2025/06/NAB.svg" alt="NAB Mobile" class="pay-logo">
+          </div>
+          <span>NAB Mobile</span>
         </div>
       </div>
     </div>
@@ -193,23 +196,25 @@
   <!-- قسم التواصل -->
   <section id="contact">
     <div class="container">
-      <h2>هل لديك مشروع تودّ تنفيذه باحترافية؟</h2>
-      <p style="color: var(--text-muted); margin-top: 10px; max-width: 600px; margin-inline: auto;">
-        يسعدني التعاون معك لتحويل متطلباتك إلى نتائج ملموسة، بأعلى معايير الجودة والالتزام التام بالسرية المهنية.
-      </p>
-      
-      <div class="contact-links">
-        <a href="https://t.me/azzubairx" target="_blank" class="contact-item">
-          <i class="fab fa-telegram"></i> @azzubairx
-        </a>
-        <a href="mailto:azzubair@tuta.io" class="contact-item">
-          <i class="fas fa-envelope"></i> azzubair@tuta.io
-        </a>
-        <a href="https://www.linkedin.com/in/azzubair-husain" target="_blank" class="contact-item">
-          <i class="fab fa-linkedin"></i> لينكد إن
-        </a>
-        <div class="contact-item" style="cursor: default;">
-          <i class="fas fa-map-marker-alt"></i> طبرق، ليبيا
+      <div class="contact-box reveal">
+        <h2>هل لديك مشروع تودّ تنفيذه باحترافية؟</h2>
+        <p style="color: var(--text-muted); margin-top: 10px; margin-bottom: 20px;">
+          يسعدني التعاون معك لتحويل متطلباتك إلى نتائج ملموسة، بأعلى معايير الجودة والالتزام التام بالسرية المهنية.
+        </p>
+        
+        <div class="contact-links">
+          <a href="https://t.me/azzubairx" target="_blank" class="contact-item">
+            <i class="fab fa-telegram"></i> @azzubairx
+          </a>
+          <a href="mailto:azzubair@tuta.io" class="contact-item">
+            <i class="fas fa-envelope"></i> azzubair@tuta.io
+          </a>
+          <a href="https://www.linkedin.com/in/azzubair-husain" target="_blank" class="contact-item">
+            <i class="fab fa-linkedin"></i> لينكد إن
+          </a>
+          <div class="contact-item" style="cursor: default;">
+            <i class="fas fa-map-marker-alt"></i> طبرق، ليبيا
+          </div>
         </div>
       </div>
     </div>
@@ -220,9 +225,9 @@
     <p>© 2026 الزبير إبراهيم. جميع الحقوق محفوظة.</p>
   </footer>
 
-  <!-- جافاسكربت -->
+  <!-- جافاسكربت التفاعلية (Scroll Reveal & Logic) -->
   <script>
-    // تبديل الوضع (Dark/Light Mode)
+    // 1. تبديل الوضع النهاري والليلي
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
     const icon = toggle.querySelector('i');
@@ -233,7 +238,7 @@
       icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
     });
 
-    // قائمة الهاتف (Mobile Menu)
+    // 2. قائمة الهاتف المتحركة
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     const hamburgerIcon = hamburger.querySelector('i');
@@ -243,7 +248,6 @@
       hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
     });
 
-    // إغلاق القائمة عند الضغط على أي رابط في الجوال
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
@@ -251,7 +255,7 @@
       });
     });
 
-    // إبراز الرابط النشط أثناء التمرير
+    // 3. تحديد القسم النشط في القائمة أثناء التمرير
     const sections = document.querySelectorAll('section');
     window.addEventListener('scroll', () => {
       let current = '';
@@ -261,7 +265,6 @@
           current = section.getAttribute('id');
         }
       });
-
       document.querySelectorAll('.nav-links a').forEach(a => {
         a.classList.remove('active');
         if (a.getAttribute('href') === `#${current}`) {
@@ -269,6 +272,23 @@
         }
       });
     });
+
+    // 4. الحركات التفاعلية عند التمرير (Scroll Reveal)
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // تشغيل الحركة مرة واحدة فقط
+        }
+      });
+    }, {
+      threshold: 0.1, // يبدأ الظهور عندما يظهر 10% من العنصر
+      rootMargin: "0px 0px -50px 0px"
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
   </script>
 
 </body>
