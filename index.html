@@ -14,7 +14,6 @@
   <!-- شريط التنقل -->
   <nav id="navbar">
     <div class="container">
-      <!-- الشعار بالخط اليدوي -->
       <a href="#hero" class="logo">Azzubair</a>
       
       <ul class="nav-links" id="navLinks">
@@ -260,8 +259,7 @@
 
   <!-- السكربت الآمن -->
   <script>
-    // حل مشكلة الشاشة البيضاء: 
-    // نقوم بوضع كلاس hidden عبر الجافاسكربت أولاً لكي لا يختفي الموقع إذا كان المتصفح يمنع السكربتات
+    // إخفاء مبدئي للعناصر للحركة (وعدم اختفائها لو تعطل الجافاسكربت)
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
 
     // Theme Toggle
