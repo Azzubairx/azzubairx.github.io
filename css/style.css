@@ -1,6 +1,6 @@
 /* ============================================================
    AZZUBAIR IBRAHIM — GLASSMORPHISM PORTFOLIO
-   Theme: Tech Blue · Glass Effect · Circular Profile
+   Theme: Tech Blue · Glass Effect · Perfect Circle Profile
    ============================================================ */
 
 /* استيراد الخط اليدوي للشعار فقط */
@@ -24,7 +24,9 @@
   
   --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}[data-theme="light"] {
+}
+
+[data-theme="light"] {
   /* الوضع النهاري */
   --bg-main: #F0F4F8;
   --bg-glass: rgba(255, 255, 255, 0.6);
@@ -169,11 +171,16 @@ nav .container {
 }
 
 .hero-image { flex: 1; display: flex; justify-content: center; min-height: 350px; }
+
+/* إجبار الصورة على أن تكون دائرية 100% رغماً عن المتصفح */
 .hero-image img {
-  width: 350px; height: 350px; object-fit: cover;
-  border-radius: 50%; /* تم جعل الصورة دائرية بالكامل هنا */
-  border: 4px solid var(--border-glass); /* إطار زجاجي متناسق */
-  box-shadow: var(--shadow-glass), 0 0 40px var(--primary-glass); /* توهج خفيف للتركيز */
+  width: 350px !important;
+  height: 350px !important;
+  aspect-ratio: 1 / 1 !important; /* يضمن الطول والعرض متساويان تماماً */
+  object-fit: cover !important;
+  border-radius: 50% !important; /* دائرة كاملة */
+  border: 4px solid var(--border-glass); 
+  box-shadow: var(--shadow-glass), 0 0 40px var(--primary-glass);
   transition: var(--transition);
 }
 .hero-image img:hover { transform: scale(1.02); border-color: var(--primary); }
@@ -207,7 +214,7 @@ section { padding: 6rem 0; }
 .service-content h3 { font-size: 1.3rem; color: var(--text-main); margin-bottom: 0.8rem; }
 .service-content p { font-size: 1rem; color: var(--text-muted); flex-grow: 1; }
 
-/* ── 5. PAYMENTS (استرجاع التصميم السابق الأبيض الكبير) ── */
+/* ── 5. PAYMENTS (White solid cards) ── */
 .payments-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -270,7 +277,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-g
 @media (max-width: 992px) {
   .hero-wrapper { flex-direction: column-reverse; text-align: center; }
   .btn-group { justify-content: center; }
-  .hero-image img { width: 300px; height: 300px; }
+  .hero-image img { width: 300px !important; height: 300px !important; }
 }
 
 @media (max-width: 768px) {
