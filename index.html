@@ -213,9 +213,10 @@
           <span>ONEPAY (وان باي)</span>
         </div>
 
+        <!-- تم تحديث رابط صورة NAB هنا -->
         <div class="payment-card reveal">
           <div class="pay-logo-wrapper">
-            <img src="https://lypay.gov.ly/wp-content/uploads/2025/06/NAB.svg" alt="NAB Mobile" class="pay-logo">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a8/99/c8/a899c89f-e69b-67c4-3148-d36366aa579b/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp" alt="NAB Mobile" class="pay-logo">
           </div>
           <span>NAB Mobile</span>
         </div>
@@ -239,8 +240,9 @@
           <a href="mailto:azzubair@tuta.io" class="contact-item">
             <i class="fas fa-envelope"></i> azzubair@tuta.io
           </a>
+          <!-- تم تعديل كلمة "لينكد إن" إلى "LinkedIn" هنا -->
           <a href="https://www.linkedin.com/in/azzubair-husain" target="_blank" class="contact-item">
-            <i class="fab fa-linkedin"></i> لينكد إن
+            <i class="fab fa-linkedin"></i> LinkedIn
           </a>
           <div class="contact-item" style="cursor: default;">
             <i class="fas fa-map-marker-alt"></i> طبرق، ليبيا
@@ -267,10 +269,17 @@
     const root = document.documentElement;
     const icon = toggle.querySelector('i');
 
+    // تفعيل الوضع المحفوظ من زيارة سابقة إن وُجد
+    if (localStorage.getItem('theme') === 'light') {
+      root.setAttribute('data-theme', 'light');
+      icon.className = 'fas fa-sun';
+    }
+
     toggle.addEventListener('click', () => {
       const isDark = root.getAttribute('data-theme') === 'dark';
       root.setAttribute('data-theme', isDark ? 'light' : 'dark');
       icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
     });
 
     // Mobile Menu
