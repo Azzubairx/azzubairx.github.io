@@ -3,33 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الزبير حسين | الرئيسية</title>
+    <title>الزبير إبراهيم | خدمات احترافية</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- استدعاء مكتبة الأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo">الزبير حسين</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="about.html">عني</a></li>
-                <li><a href="services.html">الخدمات وطرق الدفع</a></li>
-                <li><a href="contact.html">تواصل معي</a></li>
+    <!-- شريط التنقل -->
+    <nav>
+        <a href="#home" class="logo">الزبير إبراهيم</a>
+        <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">من أنا</a></li>
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#payments">طرق الدفع</a></li>
+            <li><a href="#contact">تواصل معي</a></li>
+        </ul>
+    </nav>
+
+    <!-- الواجهة الرئيسية -->
+    <section id="home">
+        <h1>مرحباً، أنا الزبير إبراهيم</h1>
+        <p>مستقل متخصص في الترجمة، اللغويات، الحلول التقنية، وتنسيق الأعمال الأكاديمية والمهنية بجودة ودقة عالية.</p>
+        <a href="#services" class="btn">اكتشف خدماتي</a>
+    </section>
+
+    <!-- نبذة عني -->
+    <section id="about">
+        <div class="section-header">
+            <h2>من أنا</h2>
+            <p>نبذة مختصرة عن خبرتي ومؤهلاتي</p>
+        </div>
+        <div style="background: var(--white); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); text-align: justify;">
+            <p style="font-size: 1.1rem; color: var(--primary);">أنا <strong>الزبير إبراهيم</strong>، مقيم في طبرق، ليبيا. حاصل على البكالوريوس بمرتبة الشرف في اللغة الإنجليزية، وأمتلك خبرة واسعة تجمع بين إجادة اللغات، اللغويات التطبيقية، وإتقان التقنية والبرمجيات. أقدم مجموعة متكاملة من الخدمات للمؤسسات والأفراد، بدءاً من الترجمة وتدريب الذكاء الاصطناعي، وصولاً إلى التصميم وتنسيق البحوث العلمية بأعلى المعايير المهنية العالمية.</p>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات (15 خدمة) -->
+    <section id="services" style="background-color: var(--accent); border-radius: 30px; margin-top: 2rem;">
+        <div class="section-header">
+            <h2>خدماتي</h2>
+            <p>حلول متكاملة مصممة خصيصاً لتلبية احتياجاتك</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-language"></i><h3>الترجمة والتعريب</h3></div>
+            <div class="service-card"><i class="fas fa-brain"></i><h3>تدريب الذكاء الاصطناعي</h3></div>
+            <div class="service-card"><i class="fas fa-certificate"></i><h3>تصميم الشهادات</h3></div>
+            <div class="service-card"><i class="fas fa-book-open"></i><h3>تنسيق البحوث العلمية</h3></div>
+            <div class="service-card"><i class="fas fa-file-pdf"></i><h3>البحث عن الكتب الرقمية PDF</h3></div>
+            <div class="service-card"><i class="fas fa-id-card"></i><h3>إنشاء سيرة ذاتية (ATS)</h3></div>
+            <div class="service-card"><i class="fas fa-spell-check"></i><h3>التدقيق اللغوي</h3></div>
+            <div class="service-card"><i class="fas fa-keyboard"></i><h3>إدخال البيانات</h3></div>
+            <div class="service-card"><i class="fas fa-file-excel"></i><h3>تصميم جداول البيانات Excel</h3></div>
+            <div class="service-card"><i class="fas fa-headphones"></i><h3>التفريغ النصي للصوتيات والمرئيات</h3></div>
+            <div class="service-card"><i class="fas fa-laptop-code"></i><h3>حل مشكلات أنظمة (Android/Windows/Linux)</h3></div>
+            <div class="service-card"><i class="fas fa-closed-captioning"></i><h3>ترجمة المرئيات</h3></div>
+            <div class="service-card"><i class="fas fa-volume-up"></i><h3>تدريس علم الصوتيات الإنجليزية</h3></div>
+            <div class="service-card"><i class="fas fa-briefcase"></i><h3>Microsoft Office / Google Workspace</h3></div>
+            <div class="service-card"><i class="fas fa-pen-nib"></i><h3>الكتابة الأكاديمية (الإنجليزية)</h3></div>
+        </div>
+    </section>
+
+    <!-- طرق الدفع -->
+    <section id="payments">
+        <div class="section-header">
+            <h2>طرق الدفع المتاحة</h2>
+            <p>خيارات مرنة وآمنة لتسهيل المعاملات</p>
+        </div>
+        
+        <div class="payments-container">
+            <!-- الدفع النقدي -->
+            <div class="payment-method">
+                <i class="fas fa-money-bill-wave"></i>
+                <h3 style="font-size: 1rem;">نقداً (كاش)</h3>
+            </div>
+            <!-- LYPAY -->
+            <div class="payment-method">
+                <img src="https://lypay.gov.ly/wp-content/uploads/2025/06/ly-pay-logo.svg" alt="LYPAY">
+                <h3 style="font-size: 1rem; color: #555;">لي باي</h3>
+            </div>
+            <!-- ONEPAY -->
+            <div class="payment-method">
+                <img src="https://masarat.ly/ms_uploads/2025/10/OnePay-Full-Logo.svg" alt="ONEPAY">
+                <h3 style="font-size: 1rem; color: #555;">وان باي</h3>
+            </div>
+            <!-- NAB -->
+            <div class="payment-method">
+                <img src="https://lypay.gov.ly/wp-content/uploads/2025/06/NAB.svg" alt="NAB Mobile">
+                <h3 style="font-size: 1rem; color: #555;">مصرف شمال أفريقيا</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الشروط والأحكام -->
+    <section id="terms">
+        <div class="section-header">
+            <h2>ضمان الجودة</h2>
+        </div>
+        <div style="background: var(--white); padding: 2.5rem; border-radius: 12px; border-right: 6px solid var(--secondary); box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <ul style="list-style-type: none; display: flex; flex-direction: column; gap: 1rem;">
+                <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-left: 10px;"></i> <strong>الالتزام بالمواعيد:</strong> تسليم المشاريع بدقة في الإطار الزمني المتفق عليه.</li>
+                <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-left: 10px;"></i> <strong>السرية التامة:</strong> خصوصية بيانات العميل ومستنداته مضمونة بالكامل ولن يتم مشاركتها أبداً.</li>
+                <li><i class="fas fa-check-circle" style="color: var(--secondary); margin-left: 10px;"></i> <strong>التعديلات:</strong> أرحب بطلب التعديلات المنطقية للوصول إلى رضا العميل التام.</li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </section>
 
-    <div class="hero">
-        <h1>خدمات احترافية في الترجمة واللغة والتقييم اللغوي</h1>
-        <p>مرحباً بكم. أقدم لكم حلولاً لغوية متكاملة تشمل الترجمة الاحترافية، تقييم مخرجات الذكاء الاصطناعي، وتدريس اللغة الإنجليزية، مع الالتزام بأعلى معايير الجودة والموثوقية.</p>
-        <a href="services.html" class="btn">استكشف خدماتي</a>
-        <a href="contact.html" class="btn" style="background: transparent; border: 2px solid #fff; color: #fff; margin-right: 10px;">تواصل معي</a>
-    </div>
+    <!-- تواصل معي -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>تواصل معي</h2>
+            <p>مستعد للبدء في مشروعك الجديد؟ لا تتردد في مراسلتي.</p>
+        </div>
+        
+        <div class="contact-wrapper">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">الزبير إبراهيم</h3>
+            <p style="margin-bottom: 1rem;"><i class="fas fa-map-marker-alt" style="margin-left: 5px;"></i> طبرق، ليبيا</p>
+            
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                <a href="mailto:azzubair@tuta.io"><i class="fas fa-envelope"></i> azzubair@tuta.io</a>
+                <a href="https://t.me/azzubairx" target="_blank"><i class="fab fa-telegram-plane"></i> @azzubairx</a>
+                <a href="https://linkedin.com/in/azzubair-husain" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- الفوتر -->
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 | الزبير حسين</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 | الزبير إبراهيم</p>
     </footer>
 
 </body>
