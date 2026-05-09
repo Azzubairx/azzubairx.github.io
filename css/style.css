@@ -6,6 +6,8 @@
 /* استيراد الخط اليدوي للشعار فقط */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
+
 :root {
   /* الوضع الليلي */
   --bg-main: #0B1121;
@@ -135,8 +137,12 @@ nav .container {
 
 .hero-text { flex: 1; }
 .hero-text h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.2;
-  margin-bottom: 1.5rem; color: var(--text-main);
+  font-family: 'Rakkas', serif !important; /* تطبيق الخط الجديد هنا إجبارياً */
+  font-size: clamp(3rem, 6vw, 4.5rem); /* تم تكبير الحجم قليلاً لأن خط Rakkas يبدو أصغر بطبيعته */
+  font-weight: 400; /* خط Rakkas يأتي بوزن عادي 400 */
+  line-height: 1.2;
+  margin-bottom: 1.5rem; 
+  color: var(--text-main);
 }
 .hero-text p {
   font-size: 1.2rem; color: var(--text-muted);
