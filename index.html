@@ -13,12 +13,19 @@
     <!-- شريط التنقل -->
     <nav>
         <a href="#home" class="logo">&lt;الزبير <span>إبراهيم</span>/&gt;</a>
-        <ul>
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#services">الخدمات</a></li>
-            <li><a href="#payments">طرق الدفع</a></li>
-            <li><a href="#contact">تواصل معي</a></li>
-        </ul>
+        
+        <div class="nav-links">
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#payments">طرق الدفع</a></li>
+                <li><a href="#contact">تواصل معي</a></li>
+            </ul>
+            <!-- زر تبديل الوضع النهاري والليلي -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="تبديل وضع العرض">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
     </nav>
 
     <!-- الواجهة الرئيسية -->
@@ -27,7 +34,7 @@
         <div class="container hero-content">
             <div class="hello-badge">مرحباً، أنا</div>
             <h1>الزبير إبراهيم</h1>
-            <h2>مستقل متخصص في الترجمة، الذكاء الاصطناعي، وتنسيق الأعمال الأكاديمية والتقنية.</h2>
+            <h2>مستقل متخصص في الترجمة التحريرية، تقييم الذكاء الاصطناعي، وتنسيق الأعمال الأكاديمية والتقنية.</h2>
             <div class="buttons-group">
                 <a href="#services" class="btn-primary">تصفح أعمالي وخدماتي</a>
                 <a href="https://t.me/azzubairx" target="_blank" class="btn-secondary">راسلني الآن</a>
@@ -35,7 +42,7 @@
         </div>
     </section>
 
-    <!-- قسم الخدمات (15 خدمة مدمجة ببطاقات عصرية) -->
+    <!-- قسم الخدمات بالمسميات الاحترافية -->
     <section id="services" class="container">
         <h2 class="section-title">أعمالي وخدماتي</h2>
         <p class="section-desc">استعراض لأبرز الخدمات التقنية واللغوية التي أقدمها بدقة واحترافية عالية.</p>
@@ -43,63 +50,63 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-language"></i></div>
-                <h3>الترجمة والتعريب</h3>
+                <h3>الترجمة التحريرية والتعريب المتقدم</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-brain"></i></div>
-                <h3>تدريب الذكاء الاصطناعي</h3>
+                <h3>تقييم وتدريب نماذج الذكاء الاصطناعي</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-certificate"></i></div>
-                <h3>تصميم الشهادات</h3>
+                <h3>التصميم الاحترافي للشهادات والمستندات</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-book-open"></i></div>
-                <h3>تنسيق البحوث العلمية</h3>
+                <h3>التنسيق والهيكلة الأكاديمية للبحوث العلمية</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-file-pdf"></i></div>
-                <h3>البحث عن الكتب الرقمية PDF</h3>
+                <h3>البحث والاستخراج المتقدم للكتب الرقمية (PDF)</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-id-card"></i></div>
-                <h3>إنشاء سيرة ذاتية (ATS)</h3>
+                <h3>صياغة وتصميم السير الذاتية (متوافقة مع أنظمة ATS)</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-spell-check"></i></div>
-                <h3>التدقيق اللغوي</h3>
+                <h3>التدقيق اللغوي والمراجعة النحوية</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-keyboard"></i></div>
-                <h3>إدخال البيانات</h3>
+                <h3>الإدخال الدقيق للبيانات وإدارة السجلات</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-file-excel"></i></div>
-                <h3>تصميم جداول البيانات Excel</h3>
+                <h3>بناء وتصميم قواعد البيانات والجداول (Excel)</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-headphones"></i></div>
-                <h3>التفريغ النصي للصوتيات والمرئيات</h3>
+                <h3>التفريغ النصي الدقيق للمواد الصوتية والمرئية</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                <h3>حل مشكلات أنظمة (Android / Windows / Linux)</h3>
+                <h3>الدعم الفني واستكشاف الأخطاء لأنظمة (Android/Windows/Linux)</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-closed-captioning"></i></div>
-                <h3>ترجمة المرئيات</h3>
+                <h3>الترجمة المرئية وصناعة الترجمات النصية (Subtitling)</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-volume-up"></i></div>
-                <h3>تدريس علم الصوتيات الإنجليزية</h3>
+                <h3>التدريب المتقدم في علم الصوتيات الإنجليزية (Phonetics)</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fab fa-microsoft"></i></div>
-                <h3>Microsoft Office / Google Workspace</h3>
+                <h3>الحلول المؤسسية عبر حزم (Microsoft Office / Google Workspace)</h3>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
-                <h3>الكتابة الأكاديمية (الإنجليزية)</h3>
+                <h3>صياغة وتحرير المحتوى الأكاديمي باللغة الإنجليزية</h3>
             </div>
         </div>
     </section>
@@ -112,15 +119,15 @@
         <div class="payments-grid">
             <div class="payment-card">
                 <i class="fas fa-money-bill-wave cash-icon"></i>
-                <span>نقداً (كاش)</span>
+                <span>الدفع النقدي المباشر</span>
             </div>
             <div class="payment-card">
                 <img src="https://lypay.gov.ly/wp-content/uploads/2025/06/ly-pay-logo.svg" alt="LYPAY">
-                <span>لي باي</span>
+                <span>خدمة لي باي (LYPAY)</span>
             </div>
             <div class="payment-card">
                 <img src="https://masarat.ly/ms_uploads/2025/10/OnePay-Full-Logo.svg" alt="ONEPAY">
-                <span>وان باي</span>
+                <span>محفظة وان باي (ONEPAY)</span>
             </div>
             <div class="payment-card">
                 <img src="https://lypay.gov.ly/wp-content/uploads/2025/06/NAB.svg" alt="NAB">
@@ -153,6 +160,38 @@
     <footer>
         <p>&copy; 2026 | الزبير إبراهيم. جميع الحقوق محفوظة.</p>
     </footer>
+
+    <!-- سكربت التبديل بين الوضع الليلي والنهاري -->
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = toggleBtn.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        // التحقق من الوضع المحفوظ مسبقاً في متصفح الزائر
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            htmlElement.setAttribute('data-theme', 'light');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
+        // عند الضغط على الزر
+        toggleBtn.addEventListener('click', () => {
+            if (htmlElement.getAttribute('data-theme') === 'light') {
+                // التحويل للوضع الليلي
+                htmlElement.removeAttribute('data-theme');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // التحويل للوضع النهاري
+                htmlElement.setAttribute('data-theme', 'light');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
 
 </body>
 </html>
