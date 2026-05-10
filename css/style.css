@@ -3,7 +3,7 @@
    Theme: Tech Blue · Glass Effect · Perfect Circle Profile
    ============================================================ */
 
-/* استيراد الخط اليدوي للشعار فقط */
+/* استيراد الخط اليدوي للشعار فقط وخط Rakkas للاسم */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
 
@@ -11,7 +11,6 @@
   /* الوضع الليلي */
   --bg-main: #0B1121;
   --bg-glass: rgba(30, 41, 59, 0.4);
-  /* تم زيادة العتامة هنا إلى 0.95 لضمان وضوح القائمة */
   --bg-nav: rgba(11, 17, 33, 0.95);
   
   --primary: #3B82F6;
@@ -32,7 +31,6 @@
   /* الوضع النهاري */
   --bg-main: #F0F4F8;
   --bg-glass: rgba(255, 255, 255, 0.6);
-  /* تم استخدام الأبيض مع عتامة 0.95 لضمان الوضوح في الوضع النهاري */
   --bg-nav: rgba(255, 255, 255, 0.95);
   
   --primary: #2563EB;
@@ -102,9 +100,7 @@ nav .container {
 
 .nav-links { display: flex; gap: 2rem; }
 .nav-links a {
-  font-weight: bold; font-size: 1.1rem; 
-  /* تم تغيير اللون إلى اللون الرئيسي الساطع ليكون بارزاً أكثر */
-  color: var(--text-main);
+  font-weight: bold; font-size: 1.1rem; color: var(--text-main);
   transition: var(--transition);
 }
 .nav-links a:hover, .nav-links a.active { color: var(--primary); }
@@ -244,11 +240,9 @@ section { padding: 6rem 0; }
   height: 60px; width: 100%;
   display: flex; justify-content: center; align-items: center;
 }
-
 .pay-logo {
   max-height: 100%; max-width: 100%; object-fit: contain;
 }
-
 .payment-card span {
   font-weight: bold; font-size: 1.1rem; 
   color: #0F172A !important; 
@@ -325,7 +319,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-g
 .reveal.hidden { opacity: 0; transform: translateY(30px); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* ── 9. ABOUT ME PAGE SPECIFIC STYLES ── */
+/* ── 9. ABOUT ME PAGE SPECIFIC STYLES & SPAN BADGES ── */
 .about-card {
   background: var(--bg-glass);
   backdrop-filter: blur(16px);
@@ -341,34 +335,6 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-g
   color: var(--text-main);
   margin-bottom: 2rem;
   text-align: center;
-}
-
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-
-.skill-tag {
-  background: var(--primary-glass);
-  color: var(--primary);
-  border: 1px solid var(--border-primary);
-  padding: 10px 20px;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: var(--transition);
-}
-
-.skill-tag:hover {
-  background: var(--primary);
-  color: #fff;
-  transform: translateY(-2px);
 }
 
 .resume-grid {
@@ -439,6 +405,78 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-g
   line-height: 1.6;
 }
 
+/* التنسيقات الجديدة للشهادات، اللغات، والكفاءات */
+
+/* 1. الشهادات والجوائز (Badge Tags) */
+.cert-box {
+  margin-bottom: 1.5rem;
+}
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-glass);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  border: 1px solid var(--border-primary);
+}
+.cert-box p {
+  margin-top: 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* 2. اللغات جنبًا إلى جنب (Language Tags) */
+.lang-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+.lang-tag {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  color: var(--text-main);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-glass);
+}
+.lang-tag strong {
+  color: var(--primary);
+}
+
+/* 3. الكفاءات تحت بعضها (Competency Tags) */
+.competency-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+.comp-tag {
+  background: var(--bg-main);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: var(--transition);
+  display: block;
+}
+.comp-tag:hover {
+  border-color: var(--primary);
+  color: var(--text-main);
+  transform: translateX(-5px); /* تأثير حركة خفيف لليسار في الواجهة العربية */
+}
+
 /* ── 10. RESPONSIVE ── */
 @media (max-width: 992px) {
   .hero-wrapper { flex-direction: column-reverse; text-align: center; }
@@ -450,7 +488,6 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-g
   .hamburger { display: block; }
   .nav-links {
     position: fixed; top: 80px; left: 0; right: 0;
-    /* تأكيد العتامة للقائمة المنسدلة في الهاتف أيضاً */
     background: var(--bg-nav); backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-glass);
     flex-direction: column; padding: 2rem; gap: 1.5rem;
