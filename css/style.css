@@ -322,6 +322,12 @@ section { padding: 6rem 0; }
 }
 .contact-item:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateY(-3px); }
 
+/* تصغير قالب الموقع الجغرافي (طبرق، ليبيا) */
+div.contact-item {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+}
+
 /* ── 7. FOOTER ── */
 footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-glass); color: var(--text-muted); }
 
