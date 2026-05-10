@@ -25,9 +25,7 @@
   
   --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-[data-theme="light"] {
+}[data-theme="light"] {
   /* الوضع النهاري */
   --bg-main: #F0F4F8;
   --bg-glass: rgba(255, 255, 255, 0.6);
@@ -127,14 +125,26 @@ nav .container {
 
 /* ── 3. HERO SECTION ── */
 #hero {
-  min-height: 100vh; display: flex; align-items: center; padding-top: 80px;
+  min-height: 100vh; 
+  display: flex; 
+  align-items: center; 
+  /* زيادة الـ padding-top لإبعاد المحتوى عن شريط التنقل وتحقيق توازن بصري */
+  padding-top: 120px; 
+  padding-bottom: 60px;
 }
 
 .hero-wrapper {
-  display: flex; align-items: center; justify-content: space-between; gap: 4rem; width: 100%;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; /* توسيط المحتوى للحفاظ على توازن المسافات */
+  gap: 3rem; /* تقليل المسافة بين الصورة والنص */
+  width: 100%;
 }
 
-.hero-text { flex: 1; }
+.hero-text { 
+  flex: 1; 
+  max-width: 600px; /* تقييد عرض النص حتى لا يبتعد كثيراً عن الصورة */
+}
 .hero-text h1 {
   font-family: 'Rakkas', serif !important; 
   font-size: clamp(3rem, 6vw, 4.5rem); 
@@ -145,7 +155,7 @@ nav .container {
 }
 .hero-text p {
   font-size: 1.2rem; color: var(--text-muted);
-  margin-bottom: 2rem; max-width: 600px;
+  margin-bottom: 2rem;
 }
 
 .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
@@ -175,7 +185,9 @@ nav .container {
   border-color: var(--primary); color: var(--primary); transform: translateY(-3px);
 }
 
-.hero-image { flex: 1; display: flex; justify-content: center; min-height: 350px; }
+.hero-image { 
+  display: flex; justify-content: center; min-height: 350px; 
+}
 
 .hero-image img {
   width: 350px !important;
@@ -240,9 +252,11 @@ section { padding: 6rem 0; }
   height: 60px; width: 100%;
   display: flex; justify-content: center; align-items: center;
 }
+
 .pay-logo {
   max-height: 100%; max-width: 100%; object-fit: contain;
 }
+
 .payment-card span {
   font-weight: bold; font-size: 1.1rem; 
   color: #0F172A !important; 
@@ -405,9 +419,9 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-g
   line-height: 1.6;
 }
 
-/* التنسيقات الجديدة للشهادات، اللغات، والكفاءات */
+/* التنسيقات الخاصة بالشهادات، اللغات، والكفاءات */
 
-/* 1. الشهادات والجوائز (Badge Tags) */
+/* 1. الشهادات والجوائز (Badge Tags) - أصبحت دائرية الحواف */
 .cert-box {
   margin-bottom: 1.5rem;
 }
@@ -417,8 +431,8 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-g
   gap: 8px;
   background: var(--primary-glass);
   color: var(--primary);
-  padding: 6px 14px;
-  border-radius: 8px;
+  padding: 8px 18px; /* ضبط المسافة الداخلية لتتناسب مع الشكل الدائري */
+  border-radius: 50px; /* تم تعديل الحواف لتكون مدورة بالكامل */
   font-size: 0.95rem;
   font-weight: bold;
   margin-bottom: 8px;
@@ -474,7 +488,7 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-g
 .comp-tag:hover {
   border-color: var(--primary);
   color: var(--text-main);
-  transform: translateX(-5px); /* تأثير حركة خفيف لليسار في الواجهة العربية */
+  transform: translateX(-5px);
 }
 
 /* ── 10. RESPONSIVE ── */
