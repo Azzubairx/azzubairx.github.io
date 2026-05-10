@@ -3,39 +3,50 @@
    Theme: Tech Blue · Glass Effect · Perfect Circle Profile
    ============================================================ */
 
+/* استيراد الخط اليدوي للشعار فقط وخط Rakkas للاسم */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
 
 :root {
+  /* الوضع الليلي */
   --bg-main: #0B1121;
   --bg-glass: rgba(30, 41, 59, 0.4);
   --bg-nav: rgba(11, 17, 33, 0.95);
+  
   --primary: #3B82F6;
   --primary-hover: #60A5FA;
   --primary-glass: rgba(59, 130, 246, 0.15);
+  
   --text-main: #F8FAFC;
   --text-muted: #94A3B8;
+  
   --border-glass: rgba(255, 255, 255, 0.08);
   --border-primary: rgba(59, 130, 246, 0.3);
+  
   --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="light"] {
+  /* الوضع النهاري */
   --bg-main: #F0F4F8;
   --bg-glass: rgba(255, 255, 255, 0.6);
   --bg-nav: rgba(255, 255, 255, 0.95);
+  
   --primary: #2563EB;
   --primary-hover: #1D4ED8;
   --primary-glass: rgba(37, 99, 235, 0.1);
+  
   --text-main: #0F172A;
   --text-muted: #475569;
+  
   --border-glass: rgba(255, 255, 255, 1);
   --border-primary: rgba(37, 99, 235, 0.3);
+  
   --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
 
-/* ── BASE & RESET ── */
+/* ── 1. BASE & RESET ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -45,12 +56,13 @@ body {
   transition: background-color var(--transition), color var(--transition);
   background-image: radial-gradient(circle at 15% 50%, var(--primary-glass), transparent 25%), radial-gradient(circle at 85% 30%, var(--primary-glass), transparent 25%);
   background-attachment: fixed;
+  word-wrap: break-word; /* منع تداخل النصوص الطويلة */
 }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-/* ── NAVBAR ── */
+/* ── 2. NAVBAR ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; background: var(--bg-nav);
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
@@ -72,7 +84,7 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 .theme-toggle:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: rotate(30deg); }
 .hamburger { display: none; background: none; border: none; color: var(--text-main); font-size: 1.8rem; cursor: pointer; }
 
-/* ── HERO SECTION ── */
+/* ── 3. HERO SECTION ── */
 #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 120px; padding-bottom: 60px; }
 .hero-wrapper { display: flex; align-items: center; justify-content: center; gap: 3rem; width: 100%; }
 .hero-text { flex: 1; max-width: 650px; }
@@ -106,7 +118,7 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 .scarcity-text { color: var(--primary) !important; font-weight: bold; margin-bottom: 2rem !important; }
 
 /* ── HOW WE WORK (STEPS) ── */
-.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
 .step-card {
   background: var(--bg-glass); backdrop-filter: blur(16px); border: 1px solid var(--border-glass);
   border-radius: 24px; padding: 2.5rem 2rem; text-align: center; position: relative; box-shadow: var(--shadow-glass);
@@ -119,8 +131,21 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 .step-card h3 { color: var(--text-main); margin-top: 1rem; margin-bottom: 0.5rem; font-size: 1.3rem;}
 .step-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 0; }
 
-/* ── SECTIONS & CARDS ── */
-section { padding: 5rem 0; }
+/* ── SECTIONS, CARDS & DIVIDERS ── */
+section { padding: 5rem 0; position: relative; }
+
+/* الفاصل الزجاجي الأنيق بين الأقسام */
+section:not(:last-of-type)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-primary), transparent);
+  opacity: 0.6;
+}
+
 .section-title { text-align: center; margin-bottom: 4rem; }
 .section-title h2 { font-size: 2.5rem; color: var(--text-main); margin-bottom: 0.5rem; }
 .section-title p { font-size: 1.1rem; color: var(--text-muted); }
@@ -130,7 +155,8 @@ section { padding: 5rem 0; }
   padding-bottom: 10px; border-bottom: 2px solid var(--primary-glass); display: inline-block;
 }
 
-.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; align-items: stretch; }
+/* تم تقليل العرض الأدنى إلى 280px لمنع التداخل على الهواتف */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; align-items: stretch; }
 .service-card {
   background: var(--bg-glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-glass); border-radius: 28px; padding: 2.5rem 2rem;
@@ -165,7 +191,7 @@ section { padding: 5rem 0; }
 .cash-icon { font-size: 3rem; color: #10B981; }
 
 /* ── TERMS GRID ── */
-.terms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+.terms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
 .term-card {
   background: var(--bg-glass); backdrop-filter: blur(16px); border: 1px solid var(--border-glass);
   border-radius: 24px; padding: 2rem; display: flex; align-items: flex-start; gap: 1.5rem;
@@ -192,6 +218,17 @@ section { padding: 5rem 0; }
   margin-top: 5px;
 }
 .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-glass); }
+
+/* إصلاح وتجميل زر "إرسال الطلب" */
+.form-submit { 
+  width: 100%; 
+  justify-content: center; 
+  border-radius: 50px !important; /* حواف دائرية تتطابق مع باقي الأزرار */
+  padding: 15px; 
+  font-size: 1.15rem;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
 
 .divider { display: flex; align-items: center; text-align: center; color: var(--text-muted); margin: 2rem 0; }
 .divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid var(--border-glass); }
@@ -230,7 +267,10 @@ section { padding: 5rem 0; }
 .research-highlight i { position: absolute; top: 20px; left: 20px; font-size: 3rem; color: var(--primary); opacity: 0.2; }
 
 .subsection-title { font-size: 1.8rem; color: var(--text-main); margin-bottom: 2rem; text-align: center; }
-.resume-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; }
+
+/* تقليل العرض الأدنى لمنع التداخل في الهواتف */
+.resume-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
+
 .resume-header { display: flex; align-items: center; gap: 15px; margin-bottom: 2rem; color: var(--primary); }
 .resume-header h3 { font-size: 1.6rem; color: var(--text-main); }
 .resume-header i { font-size: 2rem; }
@@ -248,6 +288,7 @@ section { padding: 5rem 0; }
 .part-time { font-size: 0.8rem; background: var(--bg-glass); border: 1px solid var(--border-glass); padding: 2px 8px; border-radius: 10px; color: var(--text-muted); margin-right: 10px; }
 .timeline-item p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
 
+/* Span Badges for About Page */
 .cert-box { margin-bottom: 1.5rem; }
 .badge-tag {
   display: inline-flex; align-items: center; gap: 8px; background: var(--primary-glass); color: var(--primary);
@@ -273,18 +314,20 @@ section { padding: 5rem 0; }
 }
 
 /* ── SAFE ANIMATIONS & FOOTER ── */
-footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-glass); color: var(--text-muted); }
+footer { text-align: center; padding: 2rem; color: var(--text-muted); position: relative; }
 .reveal { transition: opacity 0.8s ease-out, transform 0.8s ease-out; will-change: opacity, transform; }
 .reveal.hidden { opacity: 0; transform: translateY(30px); }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE (الهواتف والأجهزة اللوحية) ── */
 @media (max-width: 992px) {
   .hero-wrapper { flex-direction: column-reverse; text-align: center; }
   .btn-group { justify-content: center; }
   .hero-image img { width: 300px !important; height: 300px !important; }
 }
+
 @media (max-width: 768px) {
+  /* Navbar */
   .hamburger { display: block; }
   .nav-links {
     position: fixed; top: 80px; left: 0; right: 0;
@@ -294,11 +337,17 @@ footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-g
   }
   .nav-links.active { clip-path: circle(150% at top right); }
   .nav-links a { font-size: 1.2rem; display: block; text-align: center; }
+  
+  /* Layout Adjustments */
   .form-group { flex-direction: column; }
+  .hero-stats { justify-content: center; flex-wrap: wrap; }
   .contact-item { width: 100%; justify-content: center; }
   .terms-grid { grid-template-columns: 1fr; }
   .term-card { flex-direction: column; align-items: center; text-align: center; }
   .term-icon { margin-top: 0; margin-bottom: 1rem; }
-  .about-card { padding: 2rem; }
+  
+  /* تقليل المساحات الداخلية على الهواتف لمنع الانضغاط */
+  .about-card { padding: 1.5rem; }
+  .research-highlight { padding: 1.5rem; margin: 2rem 0; }
   .resume-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
