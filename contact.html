@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Azzubair | التواصل والدفع</title>
+  <meta name="description" content="تواصل معي الآن لطلب تسعيرة أو بدء مشروعك الجديد. أقبل الدفع عبر LYPAY، ONEPAY، و NAB Mobile." />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Azzubair</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="about.html">من أنا</a></li>
+        <li><a href="services.html">الخدمات</a></li>
+        <li><a href="contact.html" class="active">التواصل والدفع</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع"><i class="fas fa-sun"></i></button>
+        <button class="hamburger" id="hamburger" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container reveal">
+      <h1>التواصل والدفع</h1>
+      <p>مستعد لبدء مشروعك؟ أرسل التفاصيل أدناه وسأرد عليك في أقرب وقت لتقييم حجم العمل والبدء فيه فوراً.</p>
+    </div>
+  </div>
+
+  <!-- التواصل -->
+  <section id="contact" style="padding-top: 0;">
+    <div class="container">
+      <div class="contact-box reveal">
+        <h2>أرسل تفاصيل مشروعك</h2>
+        <p class="scarcity-text">أقبل عدداً محدوداً من المشاريع شهرياً لضمان الجودة والسرية التامة.</p>
+        
+        <!-- Formspree (استبدل YOUR_FORM_ID برمزك) -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+          <div class="form-group">
+            <label>الاسم الكريم<br><input type="text" name="name" required></label>
+            <label>البريد الإلكتروني<br><input type="email" name="email" required></label>
+          </div>
+          <label>وصف المشروع المختصر<br><textarea name="message" rows="5" required></textarea></label>
+          <button type="submit" class="btn btn-primary form-submit">إرسال الطلب الآن</button>
+        </form>
+
+        <div class="divider"><span>أو عبر الروابط المباشرة</span></div>
+
+        <div class="contact-links">
+          <a href="https://t.me/azzubairx" target="_blank" class="contact-item"><i class="fab fa-telegram"></i> تليغرام</a>
+          <a href="mailto:azzubair@tuta.io" class="contact-item"><i class="fas fa-envelope"></i> البريد الإلكتروني</a>
+          <a href="https://www.linkedin.com/in/azzubair-husain" target="_blank" class="contact-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <div class="contact-item" style="cursor: default;"><i class="fas fa-map-marker-alt"></i> طبرق، ليبيا</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الدفع -->
+  <section id="payment">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>طرائق الدفع المتاحة</h2>
+        <p>بعد الاتفاق على تفاصيل المشروع، يمكنك تسديد الدفعات عبر إحدى الوسائل التالية بكل أمان:</p>
+      </div>
+      <div class="payments-grid">
+        <div class="payment-card reveal">
+          <div class="pay-logo-wrapper"><i class="fas fa-money-bill-wave cash-icon"></i></div>
+          <span>الدفع النقدي المباشر</span>
+        </div>
+        <div class="payment-card reveal">
+          <div class="pay-logo-wrapper"><img src="https://lypay.gov.ly/wp-content/uploads/2025/06/ly-pay-logo.svg" alt="LYPAY" class="pay-logo" loading="lazy"></div>
+          <span>LYPAY (لي باي)</span>
+        </div>
+        <div class="payment-card reveal">
+          <div class="pay-logo-wrapper"><img src="https://masarat.ly/ms_uploads/2025/10/OnePay-Full-Logo.svg" alt="ONEPAY" class="pay-logo" loading="lazy"></div>
+          <span>ONEPAY (وان باي)</span>
+        </div>
+        <div class="payment-card reveal">
+          <div class="pay-logo-wrapper"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a8/99/c8/a899c89f-e69b-67c4-3148-d36366aa579b/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp" alt="NAB Mobile" class="pay-logo" loading="lazy"></div>
+          <span>NAB Mobile - شمال أفريقيا</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container"><p>© 2026 الزبير إبراهيم. جميع الحقوق محفوظة.</p></div>
+  </footer>
+
+  <script data-goatcounter="https://azzubairx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script>
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const icon = toggle.querySelector('i');
+    if (localStorage.getItem('theme') === 'light') { root.setAttribute('data-theme', 'light'); icon.className = 'fas fa-sun'; }
+    toggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    const hamburgerIcon = hamburger.querySelector('i');
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars'; });
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.remove('hidden'); entry.target.classList.add('active'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    
+    // Multi-page Active Nav Script
+    const currentPath = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === currentPath) link.classList.add('active');
+    });
+  </script>
+</body>
+</html>
