@@ -70,7 +70,7 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 .nav-links { display: flex; gap: 2rem; }
 .nav-links a { font-weight: bold; font-size: 1.1rem; color: var(--text-main); transition: var(--transition); }
 .nav-links a:hover, .nav-links a.active { color: var(--primary); }
-.nav-controls { display: flex; align-items: center; gap: 1rem; }
+.nav-controls { display: flex; align-items: center; gap: 1rem; flex-direction: row-reverse; }
 .theme-toggle {
   background: var(--bg-glass); backdrop-filter: blur(10px); border: 1px solid var(--border-glass);
   color: var(--text-main); width: 45px; height: 45px; border-radius: 50%;
@@ -79,18 +79,6 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 }
 .theme-toggle:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: rotate(30deg); }
 .hamburger { display: none; background: none; border: none; color: var(--text-main); font-size: 1.8rem; cursor: pointer; }
-
-/* ── تخصيص ترتيب الشريط العلوي ── */
-nav .container { 
-  justify-content: flex-start; /* تجميع العناصر على اليمين */
-  gap: 2rem; /* مسافة بين الروابط وأزرار التحكم */
-}
-nav .nav-links { order: 1; } /* وضع الروابط في البداية (يميناً) */
-nav .nav-controls { order: 2; } /* وضع أزرار التحكم ثانياً */
-nav .logo { 
-  order: 3; /* وضع الشعار ثالثاً */
-  margin-right: auto; /* دفع الشعار إلى أقصى اليسار */
-}
 
 /* ── 3. HERO SECTION ── */
 #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 120px; padding-bottom: 60px; }
