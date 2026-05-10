@@ -3,9 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="الزبير إبراهيم —متخصص في الترجمة التحريرية وتقييم الذكاء الاصطناعي." />
-  <title>Azzubair | مستقل محترف</title>
   
+  <!-- SEO & Open Graph Tags (البُعد التقني) -->
+  <title>Azzubair | مستقل محترف في الترجمة والذكاء الاصطناعي</title>
+  <meta name="description" content="أجمع بين الفهم الأكاديمي العميق للغويات التطبيقية والخبرة التقنية في تقييم الذكاء الاصطناعي، لأقدم حلولاً لغوية لا تبدو مُترجمة، بل كُتبت أصلاً بالعربية." />
+  <meta property="og:title" content="Azzubair | مستقل محترف" />
+  <meta property="og:description" content="حلول لغوية وتقنية احترافية للأفراد والمؤسسات." />
+  <meta property="og:image" content="profile.jpg" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "الزبير إبراهيم",
+      "jobTitle": "مترجم ومقيم ذكاء اصطناعي",
+      "url": "https://azzubairx.github.io",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "طبرق",
+        "addressCountry": "LY"
+      }
+    }
+  </script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -14,16 +36,15 @@
   <!-- شريط التنقل -->
   <nav id="navbar">
     <div class="container">
-      <a href="index.html" class="logo">Azzubair</a>
-      
+      <a href="#hero" class="logo">Azzubair</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#hero" class="active">الرئيسية</a></li>
+        <li><a href="#hero" class="active">الرئيسية</a></li>
         <li><a href="about.html">من أنا</a></li>
-        <li><a href="index.html#services">الخدمات</a></li>
-        <li><a href="index.html#payment">طرائق الدفع</a></li>
-        <li><a href="index.html#contact">التواصل</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#how-it-works">آلية العمل</a></li>
+        <li><a href="#payment">الدفع</a></li>
+        <li><a href="#contact">التواصل</a></li>
       </ul>
-      
       <div class="nav-controls">
         <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
           <i class="fas fa-sun"></i>
@@ -35,159 +56,200 @@
     </div>
   </nav>
 
-  <!-- الواجهة الرئيسية -->
+  <!-- الواجهة الرئيسية (البُعد النفسي والنصي) -->
   <section id="hero">
     <div class="container hero-wrapper">
       <div class="hero-text reveal">
+        <span class="authority-badge"><i class="fas fa-award"></i> خريج مرتبة الشرف — الثاني على الدفعة</span>
         <h1>الزُّبَير إبْرَاهِيم</h1>
-        <p>متخصص في الترجمة التحريرية، وتقييم نماذج الذكاء الاصطناعي، وتنسيق الأعمال الأكاديمية والتقنية. 
+        <p class="hero-pitch">أجمع بين الفهم الأكاديمي للغويات التطبيقية والخبرة التقنية في الذكاء الاصطناعي. أُقدم لك نصوصاً لا تبدو "مُترجمة"، بل كُتبت أصلاً بالعربية، وحلولاً تقنية دقيقة مصممة خصيصاً لاحتياجك.</p>
+        
+        <!-- Social Proof Counter -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>40+</h3>
+            <p>مشروع مكتمل</p>
+          </div>
+          <div class="stat-item">
+            <h3>15+</h3>
+            <p>خدمة متخصصة</p>
+          </div>
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>سرية تامة</p>
+          </div>
+        </div>
 
-أُقدِّم حلولًا لغوية وتقنية عالية الجودة لعملاء الأفراد والمؤسسات، بالتزام تام بمعايير الدقة والسرية المهنية.</p>
         <div class="btn-group">
           <a href="#services" class="btn btn-primary"><i class="fas fa-layer-group"></i> استعرض خدماتي</a>
-          <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> تواصل معي</a>
+          <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> طلب تسعيرة</a>
         </div>
       </div>
       <div class="hero-image reveal">
-        <img src="profile.jpg" alt="الزبير إبراهيم" onerror="this.src='https://placehold.co/400x400/1E293B/3B82F6?text=Z'">
+        <!-- Lazy Loading added -->
+        <img src="profile.jpg" alt="الزبير إبراهيم" loading="lazy" onerror="this.src='https://placehold.co/400x400/1E293B/3B82F6?text=Z'">
       </div>
     </div>
   </section>
 
-  <!-- قسم الخدمات -->
+  <!-- قسم آلية العمل (تقليل الاحتكاك النفسي) -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-title reveal">
+        <h2>كيف نعمل معاً؟</h2>
+        <p>خطوات بسيطة وواضحة لبدء مشروعك واستلامه بأعلى جودة.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3>التواصل والتقييم</h3>
+          <p>أرسل تفاصيل مشروعك عبر النموذج أو تليجرام، وسأقوم بتقييم حجم العمل والوقت المطلوب مجاناً.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h3>الاتفاق والبدء</h3>
+          <p>نتفق على تسعيرة واضحة (تبدأ من أسعار تنافسية حسب حجم العمل) وموعد تسليم صارم، ثم أبدأ التنفيذ.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h3>التسليم والمراجعة</h3>
+          <p>تستلم عملك جاهزاً ومنسقاً. مع أحقيتك في طلب التعديلات المشروعة لضمان رضاك التام 100%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الخدمات (مُجمّعة هرمياً لتسهيل اتخاذ القرار) -->
   <section id="services">
     <div class="container">
       <div class="section-title reveal">
         <h2>الخدمات التي أقدّمها</h2>
-        <p>مجموعة متكاملة من الخدمات اللغوية والتقنية، تُنفَّذ وفق أعلى معايير الجودة والاحترافية.</p>
+        <p>حلول مقسمة حسب تخصصك لتسهيل وصولك لما تبحث عنه بالضبط.</p>
       </div>
 
+      <!-- التصنيف 1: اللغويات والترجمة -->
+      <h3 class="category-title reveal"><i class="fas fa-language"></i> خدمات الترجمة واللغويات</h3>
       <div class="services-grid">
         <div class="service-card reveal">
           <div class="service-icon"><i class="fas fa-language"></i></div>
           <div class="service-content">
             <h3>الترجمة التحريرية والتعريب</h3>
-            <p>ترجمة دقيقة تراعي السياق اللغوي والأبعاد الثقافية بين العربية والإنجليزية.</p>
+            <p>ترجمة دقيقة تراعي السياق اللغوي والأبعاد الثقافية.</p>
+            <span class="why-me">مُصاغة لتبدو كأنها كُتبت أصلاً بالعربية، للشركات والأفراد.</span>
           </div>
         </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon"><i class="fas fa-robot"></i></div>
-          <div class="service-content">
-            <h3>تدريب نماذج الذكاء الاصطناعي</h3>
-            <p>ضبط جودة مخرجات نماذج الذكاء الاصطناعي وتحسين دقتها اللغوية.</p>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon"><i class="fas fa-certificate"></i></div>
-          <div class="service-content">
-            <h3>تصميم الشهادات والمستندات</h3>
-            <p>التصميم الاحترافي للشهادات والمستندات الرسمية للأفراد والمؤسسات.</p>
-          </div>
-        </div>
-     
-        <div class="service-card reveal">
-          <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
-          <div class="service-content">
-            <h3>إعداد وتنسيق الامتحانات</h3>
-            <p>صياغة وتنسيق أوراق الاختبارات والتقييمات بدقة واحترافية وفق المعايير الأكاديمية.</p>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-          <div class="service-content">
-            <h3>التنسيق الأكاديمي للبحوث</h3>
-            <p>هيكلة وتنسيق البحوث العلمية بدقة وفق المعايير الدولية المعتمدة.</p>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon"><i class="fas fa-file-pdf"></i></div>
-          <div class="service-content">
-            <h3>البحث المتقدم للكتب الرقمية</h3>
-            <p>استخراج المحتوى الأكاديمي والمصادر الرقمية بكفاءة عالية.</p>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon"><i class="fas fa-id-card"></i></div>
-          <div class="service-content">
-            <h3>إعداد السير الذاتية (ATS)</h3>
-            <p>صياغة وتصميم احترافي يضمن تجاوز السير الذاتية لفلاتر الفرز الآلي للتوظيف.</p>
-          </div>
-        </div>
-
         <div class="service-card reveal">
           <div class="service-icon"><i class="fas fa-spell-check"></i></div>
           <div class="service-content">
             <h3>التدقيق اللغوي والمراجعة</h3>
             <p>مراجعة نحوية وأسلوبية شاملة لضمان خلو النصوص من الأخطاء.</p>
+            <span class="why-me">عين أكاديمية تضمن رصانة نصك أمام جمهورك.</span>
           </div>
         </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon"><i class="fas fa-database"></i></div>
-          <div class="service-content">
-            <h3>إدخال البيانات والأرشفة</h3>
-            <p>إدخال البيانات الدقيق وإدارة السجلات وتصميم قواعد البيانات.</p>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon"><i class="fas fa-table"></i></div>
-          <div class="service-content">
-            <h3>بناء جداول احترافية (Excel)</h3>
-            <p>تصميم الجداول التحليلية والمعادلات المتقدمة لتسهيل إدارة الأعمال.</p>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
-          <div class="service-content">
-            <h3>النسخ النصي (Transcription)</h3>
-            <p>التفريغ النصي الدقيق للمحتوى الصوتي والمرئي بوضوح وسرعة.</p>
-          </div>
-        </div>
-
-        <div class="service-card reveal">
-          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-          <div class="service-content">
-            <h3>الدعم الفني وتشخيص الأعطال</h3>
-            <p>حل مشكلات أنظمة التشغيل (Android, Windows, Linux).</p>
-          </div>
-        </div>
-
         <div class="service-card reveal">
           <div class="service-icon"><i class="fas fa-closed-captioning"></i></div>
           <div class="service-content">
             <h3>الترجمة المرئية (Subtitling)</h3>
             <p>إنتاج ترجمات نصية دقيقة متزامنة مع الفيديوهات والأعمال المرئية.</p>
+            <span class="why-me">تزامن دقيق للقراءة المريحة على الشاشة.</span>
           </div>
         </div>
+      </div>
 
+      <!-- التصنيف 2: الذكاء الاصطناعي والتقنية -->
+      <h3 class="category-title reveal" style="margin-top: 4rem;"><i class="fas fa-robot"></i> الذكاء الاصطناعي وحلول التقنية</h3>
+      <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-icon"><i class="fas fa-headphones"></i></div>
+          <div class="service-icon"><i class="fas fa-robot"></i></div>
           <div class="service-content">
-            <h3>التدريب في علم الصوتيات</h3>
-            <p>تدريب متخصص في نطق وصوتيات اللغة الإنجليزية (Phonetics).</p>
+            <h3>تدريب وتقييم نماذج AI</h3>
+            <p>ضبط جودة مخرجات نماذج الذكاء الاصطناعي وتحسين دقتها اللغوية.</p>
+            <span class="why-me">خبرة عملية وبحثية في معالجة هلوسة النماذج (MTPE).</span>
           </div>
         </div>
-
         <div class="service-card reveal">
-          <div class="service-icon"><i class="fab fa-microsoft"></i></div>
+          <div class="service-icon"><i class="fas fa-database"></i></div>
           <div class="service-content">
-            <h3>الحلول المكتبية المتكاملة</h3>
-            <p>إدارة العمليات عبر حزم Microsoft Office و Google Workspace.</p>
+            <h3>إدخال البيانات والأرشفة</h3>
+            <p>إدخال البيانات الدقيق وإدارة السجلات وتصميم قواعد البيانات.</p>
+            <span class="why-me">دقة 100% مع الحفاظ التام على سرية بيانات مؤسستك.</span>
           </div>
         </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-table"></i></div>
+          <div class="service-content">
+            <h3>بناء جداول احترافية (Excel)</h3>
+            <p>تصميم الجداول التحليلية والمعادلات المتقدمة.</p>
+            <span class="why-me">تحويل البيانات الخام إلى لوحات تحكم قابلة للقراءة.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+          <div class="service-content">
+            <h3>النسخ النصي (Transcription)</h3>
+            <p>التفريغ النصي الدقيق للمحتوى الصوتي والمرئي بوضوح وسرعة.</p>
+            <span class="why-me">نقل دقيق لا يسقط أي تفصيلة من التسجيل الأصلي.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="service-content">
+            <h3>الدعم الفني (OS Support)</h3>
+            <p>حل مشكلات أنظمة التشغيل (Android, Windows, Linux).</p>
+            <span class="why-me">تشخيص سريع للأعطال لتوفير وقتك.</span>
+          </div>
+        </div>
+      </div>
 
+      <!-- التصنيف 3: الأكاديميا والمستندات -->
+      <h3 class="category-title reveal" style="margin-top: 4rem;"><i class="fas fa-graduation-cap"></i> الأكاديميا والمستندات الرسمية</h3>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="service-content">
+            <h3>التنسيق الأكاديمي للبحوث</h3>
+            <p>هيكلة وتنسيق البحوث العلمية بدقة وفق المعايير الدولية المعتمدة.</p>
+            <span class="why-me">أعرف بدقة متطلبات النشر الأكاديمي (APA وغيرها).</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-certificate"></i></div>
+          <div class="service-content">
+            <h3>تصميم الشهادات والمستندات</h3>
+            <p>التصميم الاحترافي للشهادات والمستندات الرسمية للأفراد والمؤسسات.</p>
+            <span class="why-me">تصاميم تعكس الهوية البصرية الرسمية لمؤسستك.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+          <div class="service-content">
+            <h3>إعداد وتنسيق الامتحانات</h3>
+            <p>صياغة وتنسيق أوراق الاختبارات والتقييمات بدقة واحترافية.</p>
+            <span class="why-me">أوراق خالية من الأخطاء وجاهزة للطباعة الفورية.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-id-card"></i></div>
+          <div class="service-content">
+            <h3>إعداد السير الذاتية (ATS)</h3>
+            <p>صياغة وتصميم احترافي يضمن تجاوز السير الذاتية لفلاتر الفرز.</p>
+            <span class="why-me">كلمات مفتاحية مدروسة تزيد فرصة قبولك الوظيفي.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-file-pdf"></i></div>
+          <div class="service-content">
+            <h3>استخراج الكتب الرقمية (PDF)</h3>
+            <p>استخراج المحتوى الأكاديمي والمصادر الرقمية بكفاءة عالية.</p>
+            <span class="why-me">توفير المراجع النادرة والمهمة لبحثك.</span>
+          </div>
+        </div>
         <div class="service-card reveal">
           <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
           <div class="service-content">
             <h3>تحرير المحتوى الأكاديمي</h3>
             <p>كتابة وصياغة المحتوى الأكاديمي المتقدم باللغة الإنجليزية.</p>
+            <span class="why-me">لغة إنجليزية بليغة خالية من الركاكة.</span>
           </div>
         </div>
       </div>
@@ -199,7 +261,7 @@
     <div class="container">
       <div class="section-title reveal">
         <h2>طرائق الدفع المتاحة</h2>
-        <p>لتيسير إتمام المعاملات، أقبل وسائل الدفع الإلكترونية والمحلية الآتية:</p>
+        <p>أسعار مرنة تعتمد على حجم العمل، مع قبول وسائل الدفع الآتية:</p>
       </div>
 
       <div class="payments-grid">
@@ -209,24 +271,21 @@
           </div>
           <span>الدفع النقدي المباشر</span>
         </div>
-
         <div class="payment-card reveal">
           <div class="pay-logo-wrapper">
-            <img src="https://lypay.gov.ly/wp-content/uploads/2025/06/ly-pay-logo.svg" alt="LYPAY" class="pay-logo">
+            <img src="https://lypay.gov.ly/wp-content/uploads/2025/06/ly-pay-logo.svg" alt="LYPAY" loading="lazy" class="pay-logo">
           </div>
           <span>LYPAY (لي باي)</span>
         </div>
-
         <div class="payment-card reveal">
           <div class="pay-logo-wrapper">
-            <img src="https://masarat.ly/ms_uploads/2025/10/OnePay-Full-Logo.svg" alt="ONEPAY" class="pay-logo">
+            <img src="https://masarat.ly/ms_uploads/2025/10/OnePay-Full-Logo.svg" alt="ONEPAY" loading="lazy" class="pay-logo">
           </div>
           <span>ONEPAY (وان باي)</span>
         </div>
-
         <div class="payment-card reveal">
           <div class="pay-logo-wrapper">
-            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a8/99/c8/a899c89f-e69b-67c4-3148-d36366aa579b/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp" alt="NAB Mobile" class="pay-logo">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a8/99/c8/a899c89f-e69b-67c4-3148-d36366aa579b/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp" loading="lazy" alt="NAB Mobile" class="pay-logo">
           </div>
           <span>NAB Mobile - شمال أفريقيا</span>
         </div>
@@ -234,65 +293,31 @@
     </div>
   </section>
 
-<!-- قسم شروط الخدمة -->
-  <section id="terms">
-    <div class="container">
-      <div class="section-title reveal">
-        <h2>شروط الخدمة وضمان الجودة</h2>
-        <p>مبادئ العمل التي ألتزم بها لضمان حقوق الطرفين وتقديم أفضل تجربة احترافية ممكنة.</p>
-      </div>
-
-      <div class="terms-grid">
-        <div class="term-card reveal">
-          <div class="term-icon"><i class="fas fa-user-secret"></i></div>
-          <div class="term-content">
-            <h3>السرية والخصوصية</h3>
-            <p>أتعامل مع جميع المستندات، البيانات، ومعلومات العملاء بسرية مطلقة، ولا يتم مشاركتها أو عرضها لأي طرف ثالث تحت أي ظرف.</p>
-          </div>
-        </div>
-
-        <div class="term-card reveal">
-          <div class="term-icon"><i class="fas fa-clock"></i></div>
-          <div class="term-content">
-            <h3>الالتزام بالمواعيد والجودة</h3>
-            <p>ألتزم التزامًا تامًّا بتسليم المشاريع في الوقت المتفق عليه، مع ضمان توافق العمل المنجز مع أعلى المعايير الأكاديمية والمهنية.</p>
-          </div>
-        </div>
-
-        <div class="term-card reveal">
-          <div class="term-icon"><i class="fas fa-sync-alt"></i></div>
-          <div class="term-content">
-            <h3>سياسة التعديلات</h3>
-            <p>لضمان الرضا التام، أرحب بإجراء التعديلات المنطقية والمشروعة على العمل المسلّم خلال فترة المراجعة المُتَّفق عليها مجانًا.</p>
-          </div>
-        </div>
-
-        <div class="term-card reveal">
-          <div class="term-icon"><i class="fas fa-handshake"></i></div>
-          <div class="term-content">
-            <h3>آلية الدفع وحفظ الحقوق</h3>
-            <p>يتم الاتفاق بشفافية على تسعيرة العمل وآلية الدفع (دفعة مقدمة أو عند التسليم) بناءً على حجم المشروع لحفظ حقوق كلا الطرفين.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- قسم التواصل -->
+  <!-- قسم التواصل (مُحدث بالنموذج وحافز الندرة) -->
   <section id="contact">
     <div class="container">
       <div class="contact-box reveal">
         <h2>هل لديك مشروع تودّ تنفيذه باحترافية؟</h2>
-        <p style="color: var(--text-muted); margin-top: 10px;">
-          يسعدني التعاون معك لتحويل متطلباتك إلى نتائج ملموسة، بأعلى معايير الجودة والالتزام التام بالسرية المهنية.
-        </p>
+        <p class="scarcity-text">أقبل عدداً محدوداً من المشاريع شهرياً لضمان إعطاء كل عمل حقه من الجودة والدقة والسرية.</p>
         
+        <!-- نموذج التواصل (FormsPree) -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="contact-form">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="الاسم الكريم" required>
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+          </div>
+          <textarea name="message" rows="4" placeholder="أخبرني عن مشروعك بشكل مختصر..." required></textarea>
+          <button type="submit" class="btn btn-primary form-submit">إرسال تفاصيل المشروع</button>
+        </form>
+
+        <div class="divider"><span>أو تواصل معي مباشرة</span></div>
+
         <div class="contact-links">
           <a href="https://t.me/azzubairx" target="_blank" class="contact-item">
-            <i class="fab fa-telegram"></i> تليغرام
+            <i class="fab fa-telegram"></i> Azzubair
           </a>
           <a href="mailto:azzubair@tuta.io" class="contact-item">
-            <i class="fas fa-envelope"></i> البريد الإلكتروني
+            <i class="fas fa-envelope"></i> azzubair@tuta.io
           </a>
           <a href="https://www.linkedin.com/in/azzubair-husain" target="_blank" class="contact-item">
             <i class="fab fa-linkedin"></i> LinkedIn
@@ -305,7 +330,6 @@
     </div>
   </section>
 
-  <!-- الفوتر -->
   <footer>
     <div class="container">
       <p>© 2026 الزبير إبراهيم. جميع الحقوق محفوظة.</p>
@@ -314,15 +338,12 @@
 
   <!-- السكربت الآمن -->
   <script>
-    // إخفاء مبدئي للعناصر للحركة (وعدم اختفائها لو تعطل الجافاسكربت)
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
 
-    // Theme Toggle
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
     const icon = toggle.querySelector('i');
 
-    // تفعيل الوضع المحفوظ من زيارة سابقة إن وُجد
     if (localStorage.getItem('theme') === 'light') {
       root.setAttribute('data-theme', 'light');
       icon.className = 'fas fa-sun';
@@ -335,7 +356,6 @@
       localStorage.setItem('theme', isDark ? 'light' : 'dark');
     });
 
-    // Mobile Menu
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     const hamburgerIcon = hamburger.querySelector('i');
@@ -352,7 +372,6 @@
       });
     });
 
-    // Active link on scroll (Home Page Only)
     const sections = document.querySelectorAll('section');
     window.addEventListener('scroll', () => {
       let current = '';
@@ -370,7 +389,6 @@
       });
     });
 
-    // Scroll Reveal
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -383,6 +401,5 @@
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   </script>
-
 </body>
 </html>
