@@ -80,20 +80,16 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 .theme-toggle:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: rotate(30deg); }
 .hamburger { display: none; background: none; border: none; color: var(--text-main); font-size: 1.8rem; cursor: pointer; }
 
-.hamburger {
-    order: 1;
+/* ── تخصيص ترتيب الشريط العلوي ── */
+nav .container { 
+  justify-content: flex-start; /* تجميع العناصر على اليمين */
+  gap: 2rem; /* مسافة بين الروابط وأزرار التحكم */
 }
-
-.nav-controls {
-    order: 2;
-}
-
-.nav-links {
-    order: 3;
-}
-
-.logo {
-    order: 4;
+nav .nav-links { order: 1; } /* وضع الروابط في البداية (يميناً) */
+nav .nav-controls { order: 2; } /* وضع أزرار التحكم ثانياً */
+nav .logo { 
+  order: 3; /* وضع الشعار ثالثاً */
+  margin-right: auto; /* دفع الشعار إلى أقصى اليسار */
 }
 
 /* ── 3. HERO SECTION ── */
