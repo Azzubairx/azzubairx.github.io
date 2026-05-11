@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,13 +28,17 @@
     </div>
   </nav>
 
+  <!-- العنوان المتطابق مع باقي الصفحات (Page Hero) -->
+  <div class="page-hero">
+    <div class="container reveal">
+      <h1>من أنا</h1>
+      <p>نبذة شاملة عن مسيرتي الأكاديمية، خبراتي المهنية، وشغفي باللغة والتقنية.</p>
+    </div>
+  </div>
+
   <!-- القسم العلوي: نبذة عني -->
-  <section class="about-hero" style="padding-top: 150px; padding-bottom: 30px;">
+  <section class="about-hero" style="padding-top: 0; padding-bottom: 30px;">
     <div class="container">
-      <div class="section-title reveal" style="margin-bottom: 2rem;">
-        <h2>من أنا</h2>
-        <p>نبذة شاملة عن مسيرتي الأكاديمية، خبراتي المهنية، وشغفي باللغة والتقنية.</p>
-      </div>
 
       <!-- Anchor Links -->
       <div class="page-nav reveal">
@@ -47,7 +51,7 @@
       <div class="about-card reveal" style="margin-top: 2rem;">
         <div class="about-card-wrapper">
           <div class="about-text-content">
-            <h1 style="font-family: 'Rakkas', serif !important; color: var(--text-main); font-size: 3rem; margin-bottom: 1.5rem; font-weight: 400;">الزُّبَير إبْرَاهِيم</h1>
+            <h2 style="font-family: 'Rakkas', serif !important; color: var(--text-main); font-size: 2.8rem; margin-bottom: 1.5rem; font-weight: 400;">الزُّبَير إبْرَاهِيم حسين</h2>
             
             <div class="personal-voice">
               "درست اللغة الإنجليزية لأن اللغة في نظري ليست مجرد تواصل — بل هي نظام تفكير. وحين بدأت أرى كيف تُترجم نماذج الذكاء الاصطناعي النصوص العربية وتُفقدها معناها الحقيقي، أصبح واضحاً لي أن المشكلة ليست تقنية فحسب — بل لغوية وثقافية في جوهرها. هذا ما يوجّه عملي سواء في الترجمة أو التقييم أو التدريس."
@@ -67,58 +71,71 @@
     </div>
   </section>
 
-  <!-- الكفاءات الأساسية -->
+  <!-- الكفاءات الأساسية (تفاعلية) -->
   <section id="skills" style="padding-top: 0; padding-bottom: 50px;">
     <div class="container">
       <h3 class="subsection-title reveal">الكفاءات الأساسية</h3>
       <div class="terms-grid">
+        
+        <!-- كفاءة التدريس -->
         <div class="term-card reveal">
           <div class="term-icon"><i class="fas fa-chalkboard-teacher"></i></div>
           <div class="term-content">
             <h3>التدريس والتعليم</h3>
-            <div class="competency-tags">
+            <div class="competency-tags" id="comp-1">
               <span class="comp-tag">تدريس الإنجليزية (ESL / EFL / TEFL)</span>
-              <span class="comp-tag">التدريس الفردي والجماعي</span>
-              <span class="comp-tag">تدريس الأصوات بمنهج Jolly Phonics</span>
-              <span class="comp-tag">التعليم المتمايز وبناء ثقة المتعلم</span>
+              <span class="comp-tag hidden-tag">التدريس الفردي والجماعي</span>
+              <span class="comp-tag hidden-tag">تدريس الأصوات بمنهج Jolly Phonics</span>
+              <span class="comp-tag hidden-tag">التعليم المتمايز وبناء ثقة المتعلم</span>
+              <button class="expand-tags-btn" onclick="toggleTags('comp-1', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
             </div>
           </div>
         </div>
+
+        <!-- كفاءة الترجمة -->
         <div class="term-card reveal">
           <div class="term-icon"><i class="fas fa-language"></i></div>
           <div class="term-content">
             <h3>الترجمة والخدمات اللغوية</h3>
-            <div class="competency-tags">
+            <div class="competency-tags" id="comp-2">
               <span class="comp-tag">ترجمة عربي-إنجليزي والتحرير الثنائي</span>
-              <span class="comp-tag">تدقيق الترجمة الآلية (MTPE)</span>
-              <span class="comp-tag">التعريب الثقافي وترجمة الواجهات</span>
-              <span class="comp-tag">التفريغ النصي الصوتي والترجمة المرئية</span>
+              <span class="comp-tag hidden-tag">تدقيق الترجمة الآلية (MTPE)</span>
+              <span class="comp-tag hidden-tag">التعريب الثقافي وترجمة الواجهات</span>
+              <span class="comp-tag hidden-tag">التفريغ النصي الصوتي والترجمة المرئية</span>
+              <button class="expand-tags-btn" onclick="toggleTags('comp-2', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
             </div>
           </div>
         </div>
+
+        <!-- كفاءة التقنية -->
         <div class="term-card reveal">
           <div class="term-icon"><i class="fas fa-microchip"></i></div>
           <div class="term-content">
             <h3>الذكاء الاصطناعي والتقنية</h3>
-            <div class="competency-tags">
+            <div class="competency-tags" id="comp-3">
               <span class="comp-tag">تقييم جودة مخرجات النماذج اللغوية</span>
-              <span class="comp-tag">تحليل أخطاء الذكاء الاصطناعي العربية</span>
-              <span class="comp-tag">Office و Workspace ورقمنة المستندات</span>
-              <span class="comp-tag">أنظمة التشغيل: Windows، Android</span>
+              <span class="comp-tag hidden-tag">تحليل أخطاء الذكاء الاصطناعي العربية</span>
+              <span class="comp-tag hidden-tag">Office و Workspace ورقمنة المستندات</span>
+              <span class="comp-tag hidden-tag">أنظمة التشغيل: Windows، Android</span>
+              <button class="expand-tags-btn" onclick="toggleTags('comp-3', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
             </div>
           </div>
         </div>
+
+        <!-- كفاءة البحث -->
         <div class="term-card reveal">
           <div class="term-icon"><i class="fas fa-pen-nib"></i></div>
           <div class="term-content">
             <h3>البحث والكتابة الأكاديمية</h3>
-            <div class="competency-tags">
+            <div class="competency-tags" id="comp-4">
               <span class="comp-tag">التصميم البحثي النوعي</span>
-              <span class="comp-tag">الكتابة الأكاديمية بأسلوب APA</span>
-              <span class="comp-tag">إنشاء المحتوى الثنائي اللغة وتحريره</span>
+              <span class="comp-tag hidden-tag">الكتابة الأكاديمية بأسلوب APA</span>
+              <span class="comp-tag hidden-tag">إنشاء المحتوى الثنائي اللغة وتحريره</span>
+              <button class="expand-tags-btn" onclick="toggleTags('comp-4', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -146,6 +163,7 @@
     <div class="container">
       <div class="resume-grid">
         
+        <!-- العمود الأول: التعليم -->
         <div class="resume-column reveal">
           <div class="resume-header">
             <i class="fas fa-graduation-cap"></i>
@@ -160,8 +178,14 @@
             
             <div class="timeline-item">
               <h4>الشهادات الاحترافية</h4>
-              <div class="cert-box"><span class="badge-tag"><i class="fas fa-certificate"></i> دورة التعلُّم النشِط واستراتيجيَّاتُهُ (سبتمبر 2025)</span></div>
-              <div class="cert-box"><span class="badge-tag"><i class="fas fa-certificate"></i> دورة Jolly Phonics للصوتيَّات (سبتمبر 2025)</span></div>
+              <div class="cert-box">
+                <span class="badge-tag"><i class="fas fa-certificate"></i> شهادة حضور ومشاركة</span>
+                <p>دورة التعلُّم النشِط واستراتيجيَّاتُهُ (سبتمبر 2025)</p>
+              </div>
+              <div class="cert-box">
+                <span class="badge-tag"><i class="fas fa-certificate"></i> شهادة حضور ومشاركة</span>
+                <p>دورة Jolly Phonics للصوتيَّات (سبتمبر 2025)</p>
+              </div>
             </div>
           </div>
 
@@ -179,6 +203,7 @@
           </div>
         </div>
 
+        <!-- العمود الثاني: الخبرة المهنية -->
         <div class="resume-column reveal" id="experience">
           <div class="resume-header">
             <i class="fas fa-briefcase"></i>
@@ -220,6 +245,7 @@
 
       </div>
 
+      <!-- صف سفلي: التطوع والجوائز -->
       <div class="resume-grid" id="volunteer" style="margin-top: 3rem;">
         <div class="resume-column reveal">
           <div class="resume-header">
@@ -248,10 +274,12 @@
           <div class="timeline">
             <div class="timeline-item">
               <div class="cert-box">
-                <span class="badge-tag"><i class="fas fa-medal"></i> أفضل طالب في مادة Reading Comprehension (2023)</span>
+                <span class="badge-tag"><i class="fas fa-medal"></i> أفضل طالب</span>
+                <p>في مادة Reading Comprehension — السنة الثانية، جامعة طبرق (2023)</p>
               </div>
               <div class="cert-box">
-                <span class="badge-tag"><i class="fas fa-award"></i> الترتيب الثاني على الدفعة (2025)</span>
+                <span class="badge-tag"><i class="fas fa-award"></i> الترتيب الثاني على الدفعة</span>
+                <p>بكالوريوس اللغة الإنجليزية، جامعة طبرق (2025)</p>
               </div>
             </div>
           </div>
@@ -280,114 +308,46 @@
   </footer>
 
   <script data-goatcounter="https://azzubairx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  
   <script>
-    // 1. منع اختفاء العناصر عند تعطل الجافاسكربت
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
+    // سكربت إظهار التفاصيل التفاعلي (جديد)
+    function toggleTags(id, btn) {
+      const container = document.getElementById(id);
+      container.classList.toggle('expanded');
+      btn.classList.toggle('active');
+      if(container.classList.contains('expanded')) {
+        btn.innerHTML = '<i class="fas fa-chevron-up"></i> إخفاء التفاصيل';
+      } else {
+        btn.innerHTML = '<i class="fas fa-chevron-down"></i> عرض التفاصيل';
+      }
+    }
 
-    // 2. إعدادات المظهر التلقائي (الوضع الليلي/النهاري)
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
     const icon = toggle.querySelector('i');
-
-    // التحقق من تفضيلات النظام المحفوظة أو إعدادات الجهاز
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-
-    // تحديد المظهر الأولي
-    let currentTheme = 'dark';
-    if (savedTheme) {
-      currentTheme = savedTheme; // احترام اختيار الزائر السابق
-    } else if (systemPrefersLight) {
-      currentTheme = 'light'; // التوافق مع نظام جهاز الزائر
-    }
-
-    // تطبيق المظهر الأولي
-    if (currentTheme === 'light') {
-      root.setAttribute('data-theme', 'light');
-      icon.className = 'fas fa-sun';
-    } else {
-      root.setAttribute('data-theme', 'dark');
-      icon.className = 'fas fa-moon';
-    }
-
-    // الاستماع لضغطات زر التبديل اليدوي
+    if (localStorage.getItem('theme') === 'light') { root.setAttribute('data-theme', 'light'); icon.className = 'fas fa-sun'; }
     toggle.addEventListener('click', () => {
       const isDark = root.getAttribute('data-theme') === 'dark';
-      const newTheme = isDark ? 'light' : 'dark';
-      
-      root.setAttribute('data-theme', newTheme);
-      icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-      localStorage.setItem('theme', newTheme);
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
     });
-
-    // الاستماع لتغير مظهر جهاز الزائر في الوقت الفعلي
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-      // يتغير فقط إذا لم يكن الزائر قد اختار مظهراً يدوياً
-      if (!localStorage.getItem('theme')) {
-        const newTheme = e.matches ? 'light' : 'dark';
-        root.setAttribute('data-theme', newTheme);
-        icon.className = e.matches ? 'fas fa-sun' : 'fas fa-moon';
-      }
-    });
-
-    // 3. القائمة الجانبية للهاتف (Hamburger Menu)
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     const hamburgerIcon = hamburger.querySelector('i');
-
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburgerIcon.className = 'fas fa-bars';
-      });
-    });
-
-    // 4. إبراز الرابط النشط أثناء التمرير في الصفحة الواحدة
-    const sections = document.querySelectorAll('section');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 150) {
-          current = section.getAttribute('id');
-        }
-      });
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        a.classList.remove('active');
-        // تفادي الخطأ في صفحات أخرى عند التمرير
-        if (a.getAttribute('href') === `#${current}` || a.getAttribute('href') === `index.html#${current}`) {
-          a.classList.add('active');
-        }
-      });
-    });
-
-    // 5. حركات الظهور عند التمرير (Scroll Reveal)
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars'; });
+    document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); hamburgerIcon.className = 'fas fa-bars'; }); });
     const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('hidden');
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.remove('hidden'); entry.target.classList.add('active'); observer.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
-
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     
-    // 6. تحديد الصفحة النشطة حالياً في القائمة العلوية
     const currentPath = window.location.pathname.split('/').pop();
     document.querySelectorAll('.nav-links a').forEach(link => {
-      if (currentPath && link.getAttribute('href') === currentPath) {
-        link.classList.add('active');
-      } else if ((currentPath === '' || currentPath === 'index.html') && link.getAttribute('href') === 'index.html') {
-        link.classList.add('active');
-      }
+      if (link.getAttribute('href') === currentPath) link.classList.add('active');
     });
   </script>
+
 </body>
 </html>
