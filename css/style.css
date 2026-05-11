@@ -11,30 +11,24 @@
 @font-face {
   font-family: 'Casa';
   src: url('../fonts/Casa.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  font-weight: normal; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'Casa';
   src: url('../fonts/CasaB.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
+  font-weight: bold; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'Casa';
   src: url('../fonts/CasaI.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
+  font-weight: normal; font-style: italic; font-display: swap;
 }
 
 :root {
   /* الوضع الليلي */
   --bg-main: #0B1121;
   --bg-glass: rgba(30, 41, 59, 0.4);
-  --bg-nav: rgba(11, 17, 33, 0.85);
+  --bg-nav: rgba(11, 17, 33, 0.85); /* تقليل العتامة قليلاً لإظهار الحركة الخلفية */
   --primary: #3B82F6;
   --primary-hover: #60A5FA;
   --primary-glass: rgba(59, 130, 246, 0.1);
@@ -62,14 +56,13 @@
   --border-glass: rgba(255, 255, 255, 1);
   --border-primary: rgba(37, 99, 235, 0.3);
   --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-  
   --primary-glow: rgba(37, 99, 235, 0.15);
   --shadow-hover: 0 16px 40px 0 rgba(37, 99, 235, 0.14);
 }
 
 /* ── 1. BASE & RESET ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; max-width: 100vw; width: 100%; overflow-x: hidden; }
+html, body { scroll-behavior: smooth; max-width: 100vw; width: 100%; overflow-x: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -90,39 +83,20 @@ body {
 
 /* ── 2. LIQUID GLASS BACKGROUND (جديد) ── */
 .aurora-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    overflow: hidden;
-    filter: blur(100px);
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1; overflow: hidden; filter: blur(100px);
 }
-.aurora-blob {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.15;
-}
+.aurora-blob { position: absolute; border-radius: 50%; opacity: 0.3; }
 .aurora-blob.blue {
-    width: 600px;
-    height: 600px;
-    background: #3B82F6;
-    top: -10%;
-    right: -10%;
-    animation: moveBlobBlue 20s infinite alternate;
+  width: 600px; height: 600px; background: #3B82F6;
+  top: -10%; right: -10%; animation: moveBlobBlue 20s infinite alternate;
 }
 .aurora-blob.cyan {
-    width: 500px;
-    height: 500px;
-    background: #06b6d4;
-    bottom: -15%;
-    left: -15%;
-    animation: moveBlobCyan 25s infinite alternate-reverse;
+  width: 500px; height: 500px; background: #06b6d4;
+  bottom: -15%; left: -15%; animation: moveBlobCyan 25s infinite alternate-reverse;
 }
 @keyframes moveBlobBlue { from { transform: translate(0, 0) scale(1); } to { transform: translate(100px, 50px) scale(1.2); } }
 @keyframes moveBlobCyan { from { transform: translate(0, 0) scale(1); } to { transform: translate(-80px, -40px) scale(0.9); } }
-
 
 a, .btn, .logo, .nav-links a { text-decoration: none !important; color: inherit; outline: none; }
 ul { list-style: none; }
@@ -171,16 +145,14 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 120px; padding-bottom: 60px; }
 .hero-wrapper { display: flex; align-items: center; justify-content: center; gap: 3rem; width: 100%; }
 .hero-text { flex: 1; max-width: 650px; }
-.hero-text h1 { font-family: 'Rakkas', serif !important; font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; line-height: 1.2; margin-bottom: 1.5rem; color: var(--text-main); }
+.hero-text h1, .page-hero h1 { font-family: 'Rakkas', serif !important; font-weight: 400; line-height: 1.2; color: var(--text-main); }
+.hero-text h1 { font-size: clamp(3rem, 6vw, 4.5rem); margin-bottom: 1.5rem; }
 .hero-text p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; }
 
 .page-hero { padding-top: 140px; padding-bottom: 40px; text-align: center; }
 .page-hero h1 { 
-  font-family: 'Casa', sans-serif !important; /* استخدام Casa العريض */
-  font-weight: bold;
-  font-size: clamp(2.5rem, 5vw, 4rem); 
-  color: var(--primary); 
-  margin-bottom: 1rem; 
+  font-family: 'Casa', sans-serif !important; font-weight: bold;
+  font-size: clamp(2.5rem, 5vw, 4rem); color: var(--primary); margin-bottom: 1rem; 
 }
 .page-hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
 
@@ -241,7 +213,7 @@ section:not(:last-of-type)::after {
   padding-bottom: 10px; border-bottom: 2px solid var(--primary-glass); display: inline-block;
 }
 
-.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; align-items: stretch; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: stretch; }
 .service-card {
   background: var(--bg-glass); backdrop-filter: blur(16px); border: 1px solid var(--border-glass);
   border-radius: 28px; padding: 2.5rem 2rem;
@@ -299,10 +271,15 @@ section:not(:last-of-type)::after {
   border-radius: 12px; color: var(--text-main); font-family: inherit; font-size: 1rem; transition: all 0.3s ease; margin-top: 5px;
 }
 .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-glass); }
-.form-submit { width: 100%; justify-content: center; border-radius: 50px !important; padding: 15px; font-size: 1.15rem; margin-top: 10px; letter-spacing: 0.5px; }
+.form-submit { 
+  width: 100%; justify-content: center; border-radius: 50px !important; 
+  padding: 15px; font-size: 1.15rem; margin-top: 10px; letter-spacing: 0.5px;
+}
+
 .divider { display: flex; align-items: center; text-align: center; color: var(--text-muted); margin: 2rem 0; }
 .divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid var(--border-glass); }
 .divider span { padding: 0 10px; font-size: 0.95rem; }
+
 .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
 .contact-item {
   background: var(--bg-main); border: 1px solid var(--border-glass) !important;
@@ -312,7 +289,7 @@ section:not(:last-of-type)::after {
 .contact-item:hover { background: var(--primary); color: #fff !important; border-color: var(--primary) !important; transform: translateY(-3px); }
 .contact-links div.contact-item { padding: 0.4rem 1rem; font-size: 0.9rem; width: fit-content; height: fit-content; align-self: center; opacity: 0.85; }
 
-/* ── ABOUT PAGE ── */
+/* ── ABOUT PAGE STYLES ── */
 .about-card {
   background: var(--bg-glass); backdrop-filter: blur(16px); border: 1px solid var(--border-glass);
   border-radius: 28px; padding: 3rem; box-shadow: var(--shadow-glass); margin-bottom: 2rem;
@@ -322,7 +299,7 @@ section:not(:last-of-type)::after {
 .about-image-content { flex-shrink: 0; display: flex; justify-content: center; }
 .about-profile-img {
   width: 280px !important; height: 280px !important; aspect-ratio: 1 / 1 !important; object-fit: cover !important;
-  border-radius: 50% !important; border: 4px solid var(--border-glass); box-shadow: var(--shadow-glass), 0 0 30px var(--primary-glass);
+  border-radius: 50% !important; border: 4px solid var(--border-glass); box-shadow: var(--shadow-glass), 0 0 30px var(--primary-glow);
 }
 .personal-voice {
   font-size: 1.2rem; color: var(--text-main); font-style: italic; margin: 1.5rem 0;
@@ -342,6 +319,7 @@ section:not(:last-of-type)::after {
 }
 .research-highlight i { position: absolute; top: 20px; left: 20px; font-size: 3rem; color: var(--primary); opacity: 0.2; }
 .subsection-title { font-size: 1.8rem; color: var(--text-main); margin-bottom: 2rem; text-align: center; }
+
 .resume-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
 .resume-header { display: flex; align-items: center; gap: 15px; margin-bottom: 2rem; color: var(--primary); }
 .resume-header h3 { font-size: 1.6rem; color: var(--text-main); }
@@ -351,7 +329,8 @@ section:not(:last-of-type)::after {
 .timeline-item { position: relative; margin-bottom: 2.5rem; }
 .timeline-item::before {
   content: ''; position: absolute; top: 8px; right: -29px; width: 15px; height: 15px;
-  background: var(--bg-main); border: 3px solid var(--primary); border-radius: 50%; transition: background 0.3s ease;
+  background: var(--bg-main); border: 3px solid var(--primary); border-radius: 50%;
+  transition: background 0.3s ease;
 }
 .timeline-item:hover::before { background: var(--primary); }
 .timeline-item h4 { font-size: 1.3rem; color: var(--text-main); margin-bottom: 5px; font-weight: bold;}
@@ -362,14 +341,19 @@ section:not(:last-of-type)::after {
 .part-time { font-size: 0.85rem; background: var(--bg-glass); border: 1px solid var(--border-glass); padding: 2px 8px; border-radius: 10px; color: var(--text-muted); margin-right: 10px; }
 .timeline-item p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
 
+/* ── الشهادات التفاعلية واللغات (الإصلاح الجديد) ── */
 .cert-box {
-  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.03); 
+  border: 1px solid var(--border-glass); padding: 1.2rem; border-radius: 16px;
+  margin-bottom: 1.2rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
+[data-theme="light"] .cert-box { background: rgba(0, 0, 0, 0.02); }
+.cert-box:hover { border-color: var(--primary); box-shadow: var(--shadow-glass); transform: translateX(-5px); }
 .cert-box .badge-tag {
   display: inline-flex; align-items: center; gap: 8px; background: var(--primary-glass); color: var(--primary);
-  padding: 8px 18px; border-radius: 50px; font-size: 0.95rem; font-weight: bold; margin-bottom: 8px; border: 1px solid var(--border-primary);
+  padding: 8px 18px; border-radius: 50px; font-size: 0.95rem; font-weight: bold; margin-bottom: 12px; border: 1px solid var(--border-primary);
 }
-.cert-box p { margin: 0; font-size: 1rem; line-height: 1.6; color: var(--text-muted); padding-right: 10px; }
+.cert-box p { margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--text-muted); }
 
 .lang-container { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
 .lang-tag {
@@ -429,6 +413,7 @@ footer { text-align: center; padding: 2rem; color: var(--text-muted); position: 
   .nav-links.active { clip-path: circle(150% at top right); }
   .nav-links a { font-size: 1.2rem; display: block; text-align: center; }
   .form-group { flex-direction: column; }
+  .hero-stats { justify-content: center; flex-wrap: wrap; }
   .contact-item { width: 100%; justify-content: center; }
   .terms-grid { grid-template-columns: 1fr; }
   .term-card { flex-direction: column; align-items: center; text-align: center; }
@@ -445,362 +430,4 @@ footer { text-align: center; padding: 2rem; color: var(--text-muted); position: 
   .btn { padding: 11px 22px; font-size: 1.05rem; }
   .section-title h2 { font-size: 1.8rem; }
   .contact-box { padding: 2rem 1rem; }
-}```
-
----
-
-### 2. ملف `about.html` (محدث بتنسيق الشهادات والجوائز)```html
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Azzubair | من أنا</title>
-  <meta name="description" content="الزبير إبراهيم — مترجم عربي-إنجليزي ومقيّم لغوي للذكاء الاصطناعي. خريج لغة إنجليزية بمرتبة الشرف (91.23%)، متخصص في اللغويات ونظريات الترجمة، طبرق، ليبيا." />
-  <meta property="og:title" content="الزبير إبراهيم — مترجم ومقيّم لغوي للذكاء الاصطناعي" />
-  <meta property="og:description" content="مترجم عربي-إنجليزي محترف، خريج مرتبة الشرف، متاح للعمل المستقل عن بُعد." />
-  <meta property="og:image" content="https://azzubairx.github.io/profile.jpg" />
-  <meta property="og:type" content="profile" />
-  <meta property="og:url" content="https://azzubairx.github.io/about.html" />
-  
-  <script>
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    const currentTheme = savedTheme ? savedTheme : (systemPrefersLight ? 'light' : 'dark');
-    document.documentElement.setAttribute('data-theme', currentTheme);
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-
-  <nav id="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">Azzubair</a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="about.html" class="active">من أنا</a></li>
-        <li><a href="services.html">الخدمات</a></li>
-        <li><a href="contact.html">التواصل والدفع</a></li>
-      </ul>
-      <div class="nav-controls">
-        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button>
-        <button class="hamburger" id="hamburger" aria-label="القائمة"><i class="fas fa-bars"></i></button>
-      </div>
-    </div>
-  </nav>
-
-  <div class="page-hero">
-    <div class="container reveal">
-      <h1>من أنا</h1>
-      <p>نبذة شاملة عن مسيرتي الأكاديمية وخبراتي المهنية في مجالَيْ اللغة والتقنية.</p>
-    </div>
-  </div>
-
-  <section class="about-hero" style="padding-top: 0; padding-bottom: 30px;">
-    <div class="container">
-      <div class="page-nav reveal">
-        <a href="#skills">الكفاءات الأساسية</a>
-        <a href="#education">التعليم الأكاديمي</a>
-        <a href="#experience">الخبرة المهنية</a>
-        <a href="#volunteer">التطوع والجوائز</a>
-      </div>
-      
-      <div class="about-card reveal" style="margin-top: 2rem;">
-        <div class="about-card-wrapper">
-          <div class="about-text-content">
-            <h2 style="font-family: 'Rakkas', serif !important; color: var(--text-main); font-size: 2.8rem; margin-bottom: 1.5rem; font-weight: 400;">الزُّبَير إبْرَاهِيم</h2>
-            
-            <div class="personal-voice">
-              "درست اللغة الإنجليزية لأن اللغة في نظري ليست مجرد أداة تواصل .. بل هي نظام تفكير. وحين بدأت أرصد كيف تُترجم نماذج الذكاء الاصطناعي النصوص العربية وتُجرِّدها من معناها الحقيقي، اتضح لي أن الإشكالية ليست تقنية في جوهرها؛ بل لغوية وثقافية بامتياز. هذا ما يوجِّه عملي في الترجمة والتقييم والتدريس."
-            </div>
-
-            <p>حاصل على بكالوريوس آداب في اللغة الإنجليزية بمرتبة الشرف (91.23%) من جامعة طبرق، بتخصص في اللغويات وعلم الصوتيات ونظريات الترجمة.</p>
-            <p style="margin-top: 1rem;">تجمع مسيرتي بين الأساس الأكاديمي الرصين في اللغويات والتحليل اللساني، والتطبيق الميداني في التدريس والترجمة التحريرية وتعريب البرمجيات وتدريب نماذج الذكاء الاصطناعي لغويًّا. أسعى دائمًا إلى تحويل هذه الكفاءات إلى حلول دقيقة تُلبّي المتطلبات المهنية في البيئات المحلية والدولية.</p>
-            <p style="margin-top: 1.5rem; font-weight: bold; color: var(--text-main); font-size: 1.1rem; padding-right: 15px; border-right: 4px solid var(--primary);">
-              متاح للعمل عن بُعد، بصيغة مستقلة، تعاقدية، أو بدوام كامل.
-            </p>
-          </div>
-          <div class="about-image-content">
-            <img src="profile.jpg" alt="الزبير إبراهيم" loading="lazy" class="about-profile-img" onerror="this.src='https://placehold.co/250x250/1E293B/3B82F6?text=Z'">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" style="padding-top: 0; padding-bottom: 50px;">
-    <div class="container">
-      <h3 class="subsection-title reveal">الكفاءات الأساسية</h3>
-      <div class="terms-grid">
-        <div class="term-card reveal">
-          <div class="term-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-          <div class="term-content">
-            <h3>التدريس والتعليم</h3>
-            <div class="competency-tags" id="comp-1">
-              <span class="comp-tag">تدريس الإنجليزية (ESL / EFL / TEFL)</span>
-              <span class="comp-tag hidden-tag">التدريس الفردي والجماعي</span>
-              <span class="comp-tag hidden-tag">تدريس الصوتيات</span>
-              <span class="comp-tag hidden-tag">التعليم المتمايز وبناء ثقة المتعلم</span>
-              <button class="expand-tags-btn" onclick="toggleTags('comp-1', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="term-card reveal">
-          <div class="term-icon"><i class="fas fa-language"></i></div>
-          <div class="term-content">
-            <h3>الترجمة والخدمات اللغوية</h3>
-            <div class="competency-tags" id="comp-2">
-              <span class="comp-tag">ترجمة عربي⇄إنجليزي والتحرير الثنائي</span>
-              <span class="comp-tag hidden-tag">مراجعة الترجمة الآلية وضبط جودتها (MTPE)</span>
-              <span class="comp-tag hidden-tag">التعريب الثقافي وترجمة واجهات البرمجيات</span>
-              <span class="comp-tag hidden-tag">التفريغ النصي الصوتي والترجمة المرئية</span>
-              <button class="expand-tags-btn" onclick="toggleTags('comp-2', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="term-card reveal">
-          <div class="term-icon"><i class="fas fa-microchip"></i></div>
-          <div class="term-content">
-            <h3>الذكاء الاصطناعي والتقنية</h3>
-            <div class="competency-tags" id="comp-3">
-              <span class="comp-tag">تقييم جودة مخرجات النماذج اللغوية</span>
-              <span class="comp-tag hidden-tag">تحليل أخطاء الذكاء الاصطناعي (عربي/إنجليزي)</span>
-              <span class="comp-tag hidden-tag">حُزم Office وWorkspace ورقمنة المستندات</span>
-              <span class="comp-tag hidden-tag">أنظمة التشغيل: Windows وAndroid</span>
-              <button class="expand-tags-btn" onclick="toggleTags('comp-3', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="term-card reveal">
-          <div class="term-icon"><i class="fas fa-pen-nib"></i></div>
-          <div class="term-content">
-            <h3>البحث والكتابة الأكاديمية</h3>
-            <div class="competency-tags" id="comp-4">
-              <span class="comp-tag">التصميم البحثي النوعي</span>
-              <span class="comp-tag hidden-tag">الكتابة الأكاديمية وفق أسلوب APA</span>
-              <span class="comp-tag hidden-tag">إنشاء المحتوى ثنائي اللغة وتحريره</span>
-              <button class="expand-tags-btn" onclick="toggleTags('comp-4', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="education" style="padding-top: 0; padding-bottom: 30px;">
-    <div class="container">
-      <div class="research-highlight reveal">
-        <i class="fas fa-quote-right"></i>
-        <h3>بحث التخرج: "انعدام التكافؤ في ترجمة الذكاء الاصطناعي للغة العناوين"</h3>
-        <p style="margin-bottom: 10px;">دراسة نوعية تحليلية رصدت أربع فئات من الإخفاقات المنهجية في ترجمة 20 نصًّ من عناوين الصحف والأخبار الإنجليزية إلى العربية باستخدام أداة OpenL:</p>
-        <ul style="color: var(--text-muted); list-style-type: decimal; padding-right: 25px; line-height: 1.8;">
-          <li>أخطاء معجمية ناجمة عن التفسير الحرفي للغموض والمجاز والتعابير الاصطلاحية.</li>
-          <li>قصور تركيبي مردّه التباين البنيوي بين الإنجليزية والعربية.</li>
-          <li>إخفاق في تأويل المرجعيات الثقافية.</li>
-          <li>اضطراب في إدراك السياق، مُفاقَم بالطابع المكثّف للغة العناوين.</li>
-        </ul>
-        <p style="margin-top: 15px; font-weight: bold; color: var(--primary);">الخلاصة: خلصت الدراسة إلى أن الإشراف البشري يظل ضرورة لا غنى عنها لضمان جودة الترجمة في هذا الميدان.</p>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top: 0;">
-    <div class="container">
-      <div class="resume-grid">
-        <div class="resume-column reveal">
-          <div class="resume-header">
-            <i class="fas fa-graduation-cap"></i>
-            <h3>التعليم الأكاديمي والشهادات</h3>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h4>بكالوريوس آداب في اللغة الإنجليزية بمرتبة الشرف</h4>
-              <span class="timeline-date">جامعة طبرق | فبراير 2022 – مايو 2025</span>
-              <p>تخرجت بالترتيب الثاني على الدفعة بمعدل تراكمي 91.23%، بتخصص في اللغويات وعلم الصوتيات ونظريات الترجمة. غطّى المسار الدراسي تحليل الخطاب، والصرف والنحو المقارن.</p>
-            </div>
-            <div class="timeline-item">
-              <h4>الشهادات الاحترافية</h4>
-              <!-- تم تعديل الهيكلة هنا -->
-              <div class="cert-box">
-                <span class="badge-tag"><i class="fas fa-certificate"></i> دورة التعلُّم النشِط واستراتيجياته</span>
-                <p>(سبتمبر 2025)</p>
-              </div>
-              <div class="cert-box">
-                <span class="badge-tag"><i class="fas fa-certificate"></i> دورة Jolly Phonics في تعليم الصوتيات</span>
-                <p>(سبتمبر 2025)</p>
-              </div>
-            </div>
-          </div>
-          <div class="resume-header" style="margin-top: 3rem;">
-            <i class="fas fa-language"></i>
-            <h3>اللغات</h3>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="lang-container">
-                <span class="lang-tag"><i class="fas fa-globe-americas"></i> <strong>العربية:</strong> اللغة الأم، كفاءة ثنائية</span>
-                <span class="lang-tag"><i class="fas fa-comment-dots"></i> <strong>الإنجليزية:</strong> كفاءة مهنية كاملة (C1)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="resume-column reveal" id="experience">
-          <div class="resume-header">
-            <i class="fas fa-briefcase"></i>
-            <h3>الخبرة المهنية</h3>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h4>مترجم مستقل</h4>
-              <span class="timeline-date">عمل حر عن بُعد | يناير 2024 – الحاضر</span>
-              <p>أُنجز ترجمات متخصصة وأُقيّم مخرجات الترجمة الآلية من حيث التكافؤ الدلالي والدقة الثقافية والملاءمة الاصطلاحية. أُنفّذ كذلك مهام التفريغ النصي الصوتي ثنائي اللغة والتعليق على المحتوى.</p>
-            </div>
-            <div class="timeline-item">
-              <h4>معلم لغة إنجليزية</h4>
-              <span class="timeline-date">مدرسة جواهر طبرق النموذجية | أكتوبر 2025 – الحاضر</span>
-              <p>تعليم لغوي منهجي للمرحلة الإعدادية. أصمّم طريقة شرح الدروس وفق المناهج الوطنية، موظّفًا خبرتي في تبسيط المفاهيم النحوية لغير الناطقين بالإنجليزية.</p>
-            </div>
-            <div class="timeline-item">
-              <h4>معلم لغة إنجليزية</h4>
-              <span class="timeline-date">مدرسة نخبة المتفوقين | أكتوبر 2025 – الحاضر</span>
-              <p>تدريس المرحلة الابتدائية مع التركيز على مهارات القراءة والتواصل الشفهي. أُطبّق استراتيجيات الاستماع والقراءة لتأسيس المتعلمين في المراحل الأولى.</p>
-              <p style="font-size: 0.85rem; color: var(--primary); margin-top: 8px;">*ملاحظة التوظيف: كلا المنصبَين بدوام جزئي، مما أتاح العمل المتزامن في كلتا المؤسستين إلى جانب النشاط المهني المستقل.*</p>
-            </div>
-            <div class="timeline-item">
-              <h4>مدرّس خصوصي للغة الإنجليزية</h4>
-              <span class="timeline-date">مركز ETC للتدريب | يناير 2026 – أبريل 2026</span>
-              <p>دروس فردية وجماعية مصغّرة للتحضير للاختبارات وتطوير الطلاقة الشفهية، مع تزويد المتعلمين بتغذية راجعة منهجية ودقيقة.</p>
-            </div>
-            <div class="timeline-item">
-              <h4>منسق رقمنة وإدخال بيانات</h4>
-              <span class="timeline-date">مدرسة النور | يوليو – أغسطس 2024</span>
-              <p>رقّمت ورفعت السجلات الوظيفية (620 مستندًا) إلى المنظومة الوطنية لإدارة بيانات التعليم، بدقة تامة وضمن المُهَل الزمنية المحددة.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="resume-grid" id="volunteer" style="margin-top: 3rem;">
-        <div class="resume-column reveal">
-          <div class="resume-header">
-            <i class="fas fa-hands-helping"></i>
-            <h3>المساهمات التطوعية</h3>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h4>مساهم في تعريب Telegram Messenger</h4>
-              <span class="timeline-date">عن بُعد | سبتمبر 2024 – الحاضر</span>
-              <p>مراجعة وترجمة واجهات المستخدم إلى العربية عبر المنصة الرسمية للتطبيق، بهدف ضمان الدقة الاصطلاحية واتساق المصطلحات في أحد أوسع تطبيقات المراسلة استخدامًا عالميًّا.</p>
-            </div>
-            <div class="timeline-item">
-              <h4>مساهم في تعريب AntennaPod</h4>
-              <span class="timeline-date">عن بُعد | مارس 2025 – الحاضر</span>
-              <p>ترجمة سلاسل التطبيق مفتوح المصدر ضمن بيئة تعاونية، مع الالتزام بالمعاجم المرجعية والأدلة الأسلوبية للمشروع.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="resume-column reveal">
-          <div class="resume-header">
-            <i class="fas fa-trophy"></i>
-            <h3>الجوائز والتكريمات</h3>
-          </div>
-          <div class="timeline">
-            <div class="timeline-item">
-              <!-- تم تعديل الهيكلة هنا -->
-              <div class="cert-box">
-                <span class="badge-tag"><i class="fas fa-medal"></i> جائزة أفضل طالب</span>
-                <p>في مادة القراءة والفهم (2023)</p>
-              </div>
-              <div class="cert-box">
-                <span class="badge-tag"><i class="fas fa-award"></i> الترتيب الثاني على الدفعة</span>
-                <p>بكالوريوس اللغة الإنجليزية (2025)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top: 0; padding-bottom: 20px;">
-    <div class="container">
-      <div class="about-cta reveal">
-        <h2>هل تبحث عن مترجم أو تِقَني ولُغوي متخصِّص؟</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">يسعدني تسخير هذه الكفاءات الأكاديمية والخبرة التقنية لإنجاح مشروعك.</p>
-        <div class="btn-group" style="justify-content: center;">
-          <a href="services.html" class="btn btn-primary"><i class="fas fa-layer-group"></i> استعرض خدماتي</a>
-          <a href="contact.html" class="btn btn-outline"><i class="fas fa-paper-plane"></i> تواصل معي الآن</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container"><p>© 2026 الزبير إبراهيم. جميع الحقوق محفوظة.</p></div>
-  </footer>
-
-  <script data-goatcounter="https://azzubairx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-  <script>
-    function toggleTags(id, btn) {
-      const container = document.getElementById(id);
-      container.classList.toggle('expanded');
-      btn.classList.toggle('active');
-      if(container.classList.contains('expanded')) {
-        btn.innerHTML = '<i class="fas fa-chevron-up"></i> إخفاء التفاصيل';
-      } else {
-        btn.innerHTML = '<i class="fas fa-chevron-down"></i> عرض التفاصيل';
-      }
-    }
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
-    
-    const toggle = document.getElementById('themeToggle');
-    const root = document.documentElement;
-    const icon = toggle.querySelector('i');
-    
-    if (root.getAttribute('data-theme') === 'light') { icon.className = 'fas fa-sun'; } else { icon.className = 'fas fa-moon'; }
-    
-    toggle.addEventListener('click', () => {
-      const isDark = root.getAttribute('data-theme') === 'dark';
-      const newTheme = isDark ? 'light' : 'dark';
-      root.setAttribute('data-theme', newTheme);
-      icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-      localStorage.setItem('theme', newTheme);
-    });
-    
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-      if (!localStorage.getItem('theme')) {
-        const newTheme = e.matches ? 'light' : 'dark';
-        root.setAttribute('data-theme', newTheme);
-        icon.className = e.matches ? 'fas fa-sun' : 'fas fa-moon';
-      }
-    });
-
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    const hamburgerIcon = hamburger.querySelector('i');
-    hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars'; });
-    document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); hamburgerIcon.className = 'fas fa-bars'; }); });
-    
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.remove('hidden'); entry.target.classList.add('active'); observer.unobserve(entry.target); } });
-    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-    
-    const currentPath = window.location.pathname.split('/').pop();
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      const href = link.getAttribute('href');
-      if (currentPath === '' && href === 'index.html') { link.classList.add('active'); }
-      else if (href === currentPath) { link.classList.add('active'); }
-    });
-  </script>
-</body>
-</html>
+}
