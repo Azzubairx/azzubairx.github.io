@@ -4,8 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Azzubair | خدماتي</title>
+  
   <meta name="description" content="مجموعة متكاملة من الخدمات اللغوية والتقنية، تشمل الترجمة التحريرية، هندسة الأوامر (Prompt Engineering)، استشارات الخصوصية، والتنسيق الأكاديمي والديني." />
   
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const currentTheme = savedTheme ? savedTheme : (systemPrefersLight ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -21,7 +31,7 @@
         <li><a href="contact.html">التواصل والدفع</a></li>
       </ul>
       <div class="nav-controls">
-        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع"><i class="fas fa-sun"></i></button>
+        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button>
         <button class="hamburger" id="hamburger" aria-label="القائمة"><i class="fas fa-bars"></i></button>
       </div>
     </div>
@@ -81,8 +91,8 @@
           <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
           <div class="service-content">
             <h3>استشارات الخصوصية والأمن الرقمي</h3>
-            <p>توجيه تقني عملي لاختيار أدوات الاتصال المشفرة، والمتصفحات، والأجهزة، وضبط إعدادات الشبكة للحد من التتبع، وتقييم خوادم DNS وVPN.</p>
-            <span class="why-me">حماية بياناتك تبدأ بإعداد صحيح لا بشراء برمجيات — مناسبة للأفراد والمؤسسات الراغبة في التحكم ببيئتها الرقمية فعليًّا لا بحسب ادعاءات التسويق.</span>
+            <p>توجيه تقني عملي لاختيار أدوات الاتصال المشفرة، المتصفحات، وضبط إعدادات الشبكة للحد من التتبع.</p>
+            <span class="why-me">حماية بياناتك تبدأ بإعداد صحيح لا بشراء برمجيات — تحكم ببيئتك الرقمية فعليًّا لا بحسب ادعاءات التسويق.</span>
           </div>
         </div>
         <div class="service-card reveal">
@@ -90,7 +100,15 @@
           <div class="service-content">
             <h3>هندسة الأوامر (Prompt Engineering)</h3>
             <p>صياغة أوامر دقيقة وموجَّهة لنماذج الذكاء الاصطناعي الكبرى للحصول على مخرجات موثوقة وقابلة للتكرار.</p>
-            <span class="why-me">صياغة الأوامر هي الفارق بين مُخرَج عشوائي ومُخرَج قابل للاستخدام — مع تركيز خاص على السياقات العربية لتجنب الانحرافات التلقائية للنموذج.</span>
+            <span class="why-me">صياغة الأوامر هي الفارق بين مُخرَج عشوائي وقابل للاستخدام — مع تركيز خاص على السياقات العربية.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-brain"></i></div>
+          <div class="service-content">
+            <h3>تدريب وتقييم نماذج AI</h3>
+            <p>ضبط جودة مخرجات نماذج الذكاء الاصطناعي وتحسين دقتها اللغوية.</p>
+            <span class="why-me">تقييم مبني على بحث أكاديمي منشور في أخطاء الترجمة الآلية — وليس مجرد رأي شخصي.</span>
           </div>
         </div>
         <div class="service-card reveal">
@@ -118,8 +136,8 @@
           <div class="service-icon"><i class="fas fa-book-open"></i></div>
           <div class="service-content">
             <h3>تنسيق الوثائق الأكاديمية والدينية</h3>
-            <p>تنسيق احترافي وفق الأنماط الدولية (APA وMLA وChicago)، وتنسيق الأبحاث القرآنية والتفسيرية المستندة إلى المصادر التراثية.</p>
-            <span class="why-me">خبرة في التعامل مع النص العربي الكلاسيكي إلى جانب المتطلبات الهيكلية الصارمة للمراجعة الأكاديمية.</span>
+            <p>تنسيق احترافي وفق الأنماط الدولية (APA وMLA وChicago)، وتنسيق الأبحاث القرآنية والتفسيرية.</p>
+            <span class="why-me">خبرة في التعامل مع النص العربي الكلاسيكي والتراثي إلى جانب المتطلبات الهيكلية الصارمة للمراجعة الأكاديمية.</span>
           </div>
         </div>
         <div class="service-card reveal">
@@ -163,8 +181,8 @@
           <div class="service-icon"><i class="fas fa-file-export"></i></div>
           <div class="service-content">
             <h3>تحويل صيغ الملفات بدقة</h3>
-            <p>تحويل الملفات بين صيغ PDF وWord وExcel وJPG وغيرها مع الحفاظ التام على تنسيق النصوص العربية والتخطيط المرئي.</p>
-            <span class="why-me">أتجاوز إخفاقات أدوات التحويل المجانية مع النصوص ذات الاتجاه من اليمين لليسار (RTL) — ضرورة قصوى للوثائق الرسمية والأكاديمية التي لا تحتمل أي خطأ في التنسيق.</span>
+            <p>تحويل الملفات بين صيغ PDF وWord وExcel وغيرها مع الحفاظ التام على تنسيق النصوص العربية.</p>
+            <span class="why-me">أتجاوز إخفاقات أدوات التحويل المجانية مع النصوص العربية (RTL) — ضرورة للوثائق التي لا تحتمل خطأ في التنسيق.</span>
           </div>
         </div>
         <div class="service-card reveal">
@@ -262,14 +280,13 @@
   <script data-goatcounter="https://azzubairx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script>
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
+    
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
     const icon = toggle.querySelector('i');
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    let currentTheme = 'dark';
-    if (savedTheme) { currentTheme = savedTheme; } else if (systemPrefersLight) { currentTheme = 'light'; }
-    if (currentTheme === 'light') { root.setAttribute('data-theme', 'light'); icon.className = 'fas fa-sun'; } else { root.setAttribute('data-theme', 'dark'); icon.className = 'fas fa-moon'; }
+    
+    if (root.getAttribute('data-theme') === 'light') { icon.className = 'fas fa-sun'; } else { icon.className = 'fas fa-moon'; }
+    
     toggle.addEventListener('click', () => {
       const isDark = root.getAttribute('data-theme') === 'dark';
       const newTheme = isDark ? 'light' : 'dark';
@@ -277,6 +294,7 @@
       icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
       localStorage.setItem('theme', newTheme);
     });
+
     window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
       if (!localStorage.getItem('theme')) {
         const newTheme = e.matches ? 'light' : 'dark';
@@ -284,18 +302,23 @@
         icon.className = e.matches ? 'fas fa-sun' : 'fas fa-moon';
       }
     });
+
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     const hamburgerIcon = hamburger.querySelector('i');
     hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars'; });
     document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); hamburgerIcon.className = 'fas fa-bars'; }); });
+    
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.remove('hidden'); entry.target.classList.add('active'); observer.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    
     const currentPath = window.location.pathname.split('/').pop();
     document.querySelectorAll('.nav-links a').forEach(link => {
-      if (link.getAttribute('href') === currentPath) link.classList.add('active');
+      const href = link.getAttribute('href');
+      if (currentPath === '' && href === 'index.html') { link.classList.add('active'); }
+      else if (href === currentPath) { link.classList.add('active'); }
     });
   </script>
 </body>
