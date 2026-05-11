@@ -4,8 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Azzubair | التواصل والدفع</title>
+  
   <meta name="description" content="تواصل معي الآن لطلب تسعيرة أو بدء مشروعك الجديد. أقبل الدفع عبر LYPAY، ONEPAY، و NAB Mobile." />
   
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const currentTheme = savedTheme ? savedTheme : (systemPrefersLight ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -21,7 +31,7 @@
         <li><a href="contact.html" class="active">التواصل والدفع</a></li>
       </ul>
       <div class="nav-controls">
-        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع"><i class="fas fa-sun"></i></button>
+        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button>
         <button class="hamburger" id="hamburger" aria-label="القائمة"><i class="fas fa-bars"></i></button>
       </div>
     </div>
@@ -95,14 +105,13 @@
   <script data-goatcounter="https://azzubairx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script>
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
+    
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
     const icon = toggle.querySelector('i');
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    let currentTheme = 'dark';
-    if (savedTheme) { currentTheme = savedTheme; } else if (systemPrefersLight) { currentTheme = 'light'; }
-    if (currentTheme === 'light') { root.setAttribute('data-theme', 'light'); icon.className = 'fas fa-sun'; } else { root.setAttribute('data-theme', 'dark'); icon.className = 'fas fa-moon'; }
+    
+    if (root.getAttribute('data-theme') === 'light') { icon.className = 'fas fa-sun'; } else { icon.className = 'fas fa-moon'; }
+    
     toggle.addEventListener('click', () => {
       const isDark = root.getAttribute('data-theme') === 'dark';
       const newTheme = isDark ? 'light' : 'dark';
@@ -110,6 +119,7 @@
       icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
       localStorage.setItem('theme', newTheme);
     });
+
     window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
       if (!localStorage.getItem('theme')) {
         const newTheme = e.matches ? 'light' : 'dark';
@@ -117,18 +127,23 @@
         icon.className = e.matches ? 'fas fa-sun' : 'fas fa-moon';
       }
     });
+
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     const hamburgerIcon = hamburger.querySelector('i');
     hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars'; });
     document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); hamburgerIcon.className = 'fas fa-bars'; }); });
+    
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.remove('hidden'); entry.target.classList.add('active'); observer.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    
     const currentPath = window.location.pathname.split('/').pop();
     document.querySelectorAll('.nav-links a').forEach(link => {
-      if (link.getAttribute('href') === currentPath) link.classList.add('active');
+      const href = link.getAttribute('href');
+      if (currentPath === '' && href === 'index.html') { link.classList.add('active'); }
+      else if (href === currentPath) { link.classList.add('active'); }
     });
   </script>
 </body>
