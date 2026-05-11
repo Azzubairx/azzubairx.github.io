@@ -175,7 +175,6 @@
             </div>
             <div class="timeline-item">
               <h4>الشهادات الاحترافية</h4>
-              <!-- تم تعديل الهيكلة هنا -->
               <div class="cert-box">
                 <span class="badge-tag"><i class="fas fa-certificate"></i> دورة التعلُّم النشِط واستراتيجياته</span>
                 <p>(سبتمبر 2025)</p>
@@ -263,7 +262,6 @@
           </div>
           <div class="timeline">
             <div class="timeline-item">
-              <!-- تم تعديل الهيكلة هنا لتطابق طلبك -->
               <div class="cert-box">
                 <span class="badge-tag"><i class="fas fa-medal"></i> جائزة أفضل طالب</span>
                 <p>في مادة القراءة والفهم (2023)</p>
@@ -308,8 +306,8 @@
         btn.innerHTML = '<i class="fas fa-chevron-down"></i> عرض التفاصيل';
       }
     }
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
     
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
     const icon = toggle.querySelector('i');
