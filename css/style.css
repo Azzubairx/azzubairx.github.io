@@ -8,6 +8,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap');
 
+/* ── تعريف خط Calibri المرفوع يدوياً ── */
+
+/* 1. الخط العادي (Regular) */
+@font-face {
+  font-family: 'MyCalibri';
+  src: url('../fonts/CALIBRI.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. الخط العريض (Bold) */
+@font-face {
+  font-family: 'MyCalibri';
+  src: url('../fonts/CALIBRIB.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. الخط المائل (Italic) للاقتباسات */
+@font-face {
+  font-family: 'MyCalibri';
+  src: url('../fonts/CALIBRII.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   /* الوضع الليلي */
   --bg-main: #0B1121;
@@ -73,8 +102,11 @@ html { scroll-behavior: smooth; max-width: 100vw; width: 100%; overflow-x: hidde
 }
 
 body {
-  /* هنا يكمن السر: نطلب Calibri أولاً، وإن لم يوجد (كالأيفون) نستخدم Carlito (توأم الكاليبري) */
-  font-family: 'Calibri', 'Carlito', system-ui, -apple-system, sans-serif !important;
+  /* سيقرأ المتصفح خطك المرفوع أولاً، ولن يحتاج لأي بدائل */
+  font-family: 'MyCalibri', system-ui, -apple-system, sans-serif !important;
+  
+  /* ... بقية كود body ... */
+}
   background-color: var(--bg-main); color: var(--text-main);
   line-height: 1.7; direction: rtl;
   transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
