@@ -12,6 +12,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://azzubairx.github.io/" />
 
+  <!-- سكربت تسريع المظهر لمنع وميض الشاشة (No-FOUC) -->
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const currentTheme = savedTheme ? savedTheme : (systemPrefersLight ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  </script>
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,6 +35,9 @@
     }
   </script>
 
+  <!-- Preconnect لتسريع الخطوط -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -42,7 +53,7 @@
         <li><a href="contact.html">التواصل والدفع</a></li>
       </ul>
       <div class="nav-controls">
-        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع"><i class="fas fa-sun"></i></button>
+        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button>
         <button class="hamburger" id="hamburger" aria-label="القائمة"><i class="fas fa-bars"></i></button>
       </div>
     </div>
@@ -68,7 +79,7 @@
     </div>
   </section>
 
-  <section id="how-it-works" style="padding-top: 0;">
+  <section id="how-it-works">
     <div class="container">
       <div class="section-title reveal">
         <h2>كيف نعمل معًا</h2>
@@ -112,48 +123,24 @@
 
   <script data-goatcounter="https://azzubairx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script>
-    // 1. منع اختفاء العناصر عند تعطل الجافاسكربت
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
-
-    // 2. إعدادات المظهر التلقائي (الوضع الليلي/النهاري)
+    
     const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
     const icon = toggle.querySelector('i');
-
-    // التحقق من تفضيلات النظام المحفوظة أو إعدادات الجهاز
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-
-    // تحديد المظهر الأولي
-    let currentTheme = 'dark';
-    if (savedTheme) {
-      currentTheme = savedTheme; // احترام اختيار الزائر السابق
-    } else if (systemPrefersLight) {
-      currentTheme = 'light'; // التوافق مع نظام جهاز الزائر
-    }
-
-    // تطبيق المظهر الأولي
-    if (currentTheme === 'light') {
-      root.setAttribute('data-theme', 'light');
-      icon.className = 'fas fa-sun';
-    } else {
-      root.setAttribute('data-theme', 'dark');
-      icon.className = 'fas fa-moon';
-    }
-
-    // الاستماع لضغطات زر التبديل اليدوي
+    
+    // ضبط أيقونة المظهر بناءً على السمة التي طبقناها في الـ head
+    if (root.getAttribute('data-theme') === 'light') { icon.className = 'fas fa-sun'; } else { icon.className = 'fas fa-moon'; }
+    
     toggle.addEventListener('click', () => {
       const isDark = root.getAttribute('data-theme') === 'dark';
       const newTheme = isDark ? 'light' : 'dark';
-      
       root.setAttribute('data-theme', newTheme);
       icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
       localStorage.setItem('theme', newTheme);
     });
 
-    // الاستماع لتغير مظهر جهاز الزائر في الوقت الفعلي
     window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-      // يتغير فقط إذا لم يكن الزائر قد اختار مظهراً يدوياً
       if (!localStorage.getItem('theme')) {
         const newTheme = e.matches ? 'light' : 'dark';
         root.setAttribute('data-theme', newTheme);
@@ -161,63 +148,22 @@
       }
     });
 
-    // 3. القائمة الجانبية للهاتف (Hamburger Menu)
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     const hamburgerIcon = hamburger.querySelector('i');
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars'; });
+    document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); hamburgerIcon.className = 'fas fa-bars'; }); });
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars';
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        hamburgerIcon.className = 'fas fa-bars';
-      });
-    });
-
-    // 4. إبراز الرابط النشط أثناء التمرير في الصفحة الواحدة
-    const sections = document.querySelectorAll('section');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 150) {
-          current = section.getAttribute('id');
-        }
-      });
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        a.classList.remove('active');
-        // تفادي الخطأ في صفحات أخرى عند التمرير
-        if (a.getAttribute('href') === `#${current}` || a.getAttribute('href') === `index.html#${current}`) {
-          a.classList.add('active');
-        }
-      });
-    });
-
-    // 5. حركات الظهور عند التمرير (Scroll Reveal)
     const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('hidden');
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.remove('hidden'); entry.target.classList.add('active'); observer.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
-
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     
-    // 6. تحديد الصفحة النشطة حالياً في القائمة العلوية
     const currentPath = window.location.pathname.split('/').pop();
     document.querySelectorAll('.nav-links a').forEach(link => {
-      if (currentPath && link.getAttribute('href') === currentPath) {
-        link.classList.add('active');
-      } else if ((currentPath === '' || currentPath === 'index.html') && link.getAttribute('href') === 'index.html') {
-        link.classList.add('active');
-      }
+      const href = link.getAttribute('href');
+      if (currentPath === '' && href === 'index.html') { link.classList.add('active'); }
+      else if (href === currentPath) { link.classList.add('active'); }
     });
   </script>
 </body>
