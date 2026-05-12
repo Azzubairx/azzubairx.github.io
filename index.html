@@ -64,7 +64,7 @@
       <div class="hero-text reveal">
         <span class="authority-badge"><i class="fas fa-award"></i> خريج بمرتبة الشرف — الثاني على الدفعة</span>
         <h1>الزُّبَير إبْرَاهِيم</h1>
-        <p>مترجم عربي ⇄ إنجليزي محترف. مدرب لغوي للذكاء الاصطناعي... قلّة من المترجمين المستقلين يجمعون بين الكفاءة اللغوية الأصيلة في العربية، والتخصص الأكاديمي في الإنجليزية، والخبرة التقنية والنقدية في التعامل مع مخرجات نماذج الذكاء الاصطناعي. أقدّم هذا المزيج لعملائي مع التزام صارم بالدقة والسرية المهنية.</p>
+        <p>مترجم عربي ⇄ إنجليزي محترف. مدرب لغوي للذكاء الاصطناعي. قلّة من المترجمين المستقلين يجمعون بين الكفاءة اللغوية الأصيلة في العربية، والتخصص الأكاديمي في الإنجليزية، والخبرة التقنية والنقدية في التعامل مع مخرجات نماذج الذكاء الاصطناعي. أقدّم هذا المزيج لعملائي مع التزام صارم بالدقة والسرية المهنية.</p>
         <p class="scarcity-text">أقبل عددًا محدودًا من المشاريع شهريًّا لضمان جودة كل مشروع على حدة.</p>
         
         <div class="btn-group">
@@ -119,21 +119,7 @@
   <footer>
     <div class="container">
       <p>© 2026 الزبير إبراهيم. جميع الحقوق محفوظة.</p>
-      
-      <!-- عداد الزيارات الفعلي -->
-      <div class="glass-counter-wrapper reveal">
-        <div class="glass-counter" title="يتم حساب الزيارات الفريدة لكل جلسة">
-          <div class="counter-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div class="counter-data">
-            <span class="counter-label">زيارات الموقع</span>
-            <span class="counter-number" id="visit-count"><i class="fas fa-spinner fa-spin" style="font-size: 1rem;"></i></span>
-          </div>
-        </div>
-      </div>
 
-    </div>
   </footer>
 
   <script data-goatcounter="https://azzubairx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -180,51 +166,6 @@
       const href = link.getAttribute('href');
       if ((currentPath === '' && href === 'index.html') || href === currentPath) { link.classList.add('active'); }
     });
-  
-  <script>
-    // === نظام العداد الفعلي (Real Visitor Counter) ===
-    async function initVisitorCounter() {
-      const counterEl = document.getElementById('visit-count');
-      if (!counterEl) return;
-      
-      const hasVisited = sessionStorage.getItem('azzubair_visited');
-      const namespace = 'azzubair-portfolio-2026'; 
-      const key = 'visits';
-      let url = `https://api.counterapi.dev/v2/azzubair-portfolio-2026/first-counter-4112/up \
-  -H "ut_cAuOCVNZ3p95Y0GUMp2vTAywGOST7o8DB2DKak0g"`;
-      
-      if (!hasVisited) {
-        url += '/up'; 
-        sessionStorage.setItem('azzubair_visited', 'true');
-      }
-      
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        
-        let start = Math.max(0, data.count - 40);
-        const end = data.count;
-        const duration = 1000; 
-        const stepTime = Math.abs(Math.floor(duration / 40));
-        
-        const timer = setInterval(() => {
-          start += 1;
-          counterEl.innerText = start.toLocaleString('en-US');
-          if (start >= end) {
-            counterEl.innerText = end.toLocaleString('en-US');
-            clearInterval(timer);
-          }
-        }, stepTime);
-        
-      } catch (err) {
-        console.error("تعذر جلب العداد:", err);
-        counterEl.innerHTML = '<span style="font-size:1rem;">نشِط</span>';
-      }
-    }
-    
-    // تشغيل العداد
-    initVisitorCounter();
   </script>
-  <!-- 👆👆 نهاية كود العداد 👆👆 -->
 </body>
 </html>
