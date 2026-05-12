@@ -122,14 +122,15 @@
   </footer>
 
   <script data-goatcounter="https://azzubairx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://azzubairx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script>
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
     
-    const toggle = document.getElementById('themeToggle');
     const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
     const icon = toggle.querySelector('i');
     
-    // ضبط أيقونة المظهر بناءً على السمة التي طبقناها في الـ head
+    // ضبط الأيقونة حسب السمة المحملة
     if (root.getAttribute('data-theme') === 'light') { icon.className = 'fas fa-sun'; } else { icon.className = 'fas fa-moon'; }
     
     toggle.addEventListener('click', () => {
@@ -153,7 +154,7 @@
     const hamburgerIcon = hamburger.querySelector('i');
     hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars'; });
     document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); hamburgerIcon.className = 'fas fa-bars'; }); });
-
+    
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.remove('hidden'); entry.target.classList.add('active'); observer.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
@@ -162,8 +163,7 @@
     const currentPath = window.location.pathname.split('/').pop();
     document.querySelectorAll('.nav-links a').forEach(link => {
       const href = link.getAttribute('href');
-      if (currentPath === '' && href === 'index.html') { link.classList.add('active'); }
-      else if (href === currentPath) { link.classList.add('active'); }
+      if ((currentPath === '' && href === 'index.html') || href === currentPath) { link.classList.add('active'); }
     });
   </script>
 </body>
