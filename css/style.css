@@ -436,62 +436,69 @@ footer { text-align: center; padding: 2rem; color: var(--text-muted); position: 
   .contact-box { padding: 2rem 1rem; }
 }
 
-/* ── 10. GOATCOUNTER VISITOR COUNTER ── */
+/* ── 10. GOATCOUNTER VISITOR COUNTER (MINIMAL) ── */
 .glass-counter-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
+  margin-top: 1.5rem; /* تقريب العداد من نص الحقوق */
+  margin-bottom: 1.5rem; /* إعطاء مسافة للخط الفاصل */
   opacity: 0.85;
 }
 .glass-counter {
   display: inline-flex;
   align-items: center;
-  gap: 12px; /* تقليل المسافة الداخلية */
   background: var(--bg-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-glass);
-  padding: 8px 20px 8px 16px; /* تصغير الهوامش */
+  padding: 6px 18px; /* تصغير الهوامش بشكل كبير */
   border-radius: 50px;
   box-shadow: var(--shadow-glass);
   transition: all 0.4s ease;
-  /* تمت إزالة cursor: pointer لأنه لم يعد قابلاً للنقر */
 }
 .glass-counter:hover {
-  transform: translateY(-2px); /* حركة خفيفة جداً */
+  transform: translateY(-2px);
   border-color: var(--primary);
   box-shadow: 0 5px 20px var(--primary-glass);
   opacity: 1;
 }
-.counter-icon {
-  width: 34px; /* تصغير الأيقونة */
-  height: 34px;
-  background: var(--primary-glass);
-  color: var(--primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.95rem; /* تصغير حجم الأيقونة */
-  border: 1px solid var(--border-primary);
-  box-shadow: inset 0 0 10px var(--primary-glow);
-}
 .counter-data {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  line-height: 1.2;
+  text-align: center; /* توسيط النص بعد إزالة الأيقونة */
+  line-height: 1.3;
 }
 .counter-label {
-  font-size: 0.8rem; /* تصغير النص */
+  font-size: 0.75rem; /* تصغير النص */
   color: var(--text-muted);
   font-weight: bold;
 }
 .counter-number {
-  font-size: 1.15rem; /* تصغير الرقم */
+  font-size: 1.1rem; /* تصغير الرقم */
   color: var(--text-main);
   font-weight: bold;
   font-family: system-ui, -apple-system, sans-serif;
   letter-spacing: 1px;
   direction: ltr; 
+}
+
+/* تصميم الخط الفاصل الجديد */
+.footer-divider {
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--primary);
+  margin: 0 auto; /* توسيط الخط */
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+/* تعديل بسيط على الفوتر لإزالة الخط القديم */
+footer {
+  text-align: center;
+  padding: 2.5rem 0 2rem 0; /* تعديل الهوامش لتناسب الترتيب الجديد */
+  color: var(--text-muted);
+  position: relative;
+  font-size: 0.93rem;
+}
+footer::before {
+  content: none; /* إيقاف الخط القديم الذي كان يظهر تلقائياً */
 }
