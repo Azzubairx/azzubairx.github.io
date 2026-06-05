@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Azzubair | مَن أنا</title>
-  <meta name="description" content="الزبير إبراهيم — مترجم عربي ⇄ إنجليزي ومدرب لغوي للذكاء الاصطناعي. خريج لغة إنجليزية بمرتبة الشرف (91.23%)." />
   
-  <!-- سكربت تسريع المظهر لمنع التبديل المفاجئ للوضع المظلم -->
   <script>
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -19,7 +17,6 @@
 </head>
 <body>
 
-  <!-- شريط التنقل -->
   <nav id="navbar">
     <div class="container">
       <a href="index.html" class="logo">Azzubair</a>
@@ -30,8 +27,8 @@
         <li><a href="contact.html">التواصل والدَّفع</a></li>
       </ul>
       <div class="nav-controls">
-        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button>
-        <button class="hamburger" id="hamburger" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+        <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
       </div>
     </div>
   </nav>
@@ -55,11 +52,9 @@
         <div class="about-card-wrapper">
           <div class="about-text-content">
             <h2 style="font-family: 'Rakkas', serif !important; color: var(--text-main); font-size: 2.8rem; margin-bottom: 1.5rem; font-weight: 400;">الزُّبَير إبْرَاهِيم</h2>
-            
             <div class="personal-voice">
               "درست اللغة الإنجليزية لأن اللغة في نظري ليست مجرد أداة تواصل .. بل هي نظام تفكير. وحين بدأت أرصد كيف تُترجم نماذج الذكاء الاصطناعي النصوص العربية وتُجرِّدها من معناها الحقيقي، اتضح لي أن الإشكالية ليست تقنية في جوهرها؛ بل لغوية وثقافية بامتياز. هذا ما يوجِّه عملي في الترجمة والتدريب والتدريس."
             </div>
-
             <p>حاصل على بكالوريوس آداب في اللغة الإنجليزية بمرتبة الشرف (91.23%) من جامعة طبرق، بتخصص في اللغويات وعلم الصوتيات ونظريات الترجمة.</p>
             <p style="margin-top: 1rem;">تجمع مسيرتي بين الأساس الأكاديمي الرصين في اللغويات والتحليل اللساني، والتطبيق الميداني في التدريس والترجمة التحريرية وتعريب البرمجيات وتدريب نماذج الذكاء الاصطناعي لغويًّا. أسعى دائمًا إلى تحويل هذه الكفاءات إلى حلول دقيقة تُلبّي المتطلبات المهنية في البيئات المحلية والدولية.</p>
             <p style="margin-top: 1.5rem; font-weight: bold; color: var(--text-main); font-size: 1.1rem; padding-right: 15px; border-right: 4px solid var(--primary);">
@@ -86,7 +81,6 @@
               <span class="comp-tag">تدريس الإنجليزية (ESL / EFL / TEFL)</span>
               <span class="comp-tag hidden-tag">التدريس الفردي والجماعي</span>
               <span class="comp-tag hidden-tag">تدريس الصوتيات</span>
-              <span class="comp-tag hidden-tag">التعليم المتمايز وبناء ثقة المتعلم</span>
               <button class="expand-tags-btn" onclick="toggleTags('comp-1', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
             </div>
           </div>
@@ -100,7 +94,6 @@
               <span class="comp-tag">ترجمة عربي ⇄ إنجليزي والتحرير الثنائي</span>
               <span class="comp-tag hidden-tag">مراجعة الترجمة الآلية وضبط جودتها (MTPE)</span>
               <span class="comp-tag hidden-tag">التعريب الثقافي وترجمة واجهات البرمجيات</span>
-              <span class="comp-tag hidden-tag">التفريغ النصي الصوتي والترجمة المرئية</span>
               <button class="expand-tags-btn" onclick="toggleTags('comp-2', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
             </div>
           </div>
@@ -114,7 +107,6 @@
               <span class="comp-tag">تقييم جودة مخرجات النماذج اللغوية</span>
               <span class="comp-tag hidden-tag">تحليل أخطاء الذكاء الاصطناعي (عربي/إنجليزي)</span>
               <span class="comp-tag hidden-tag">حُزم Office وWorkspace ورقمنة المستندات</span>
-              <span class="comp-tag hidden-tag">أنظمة التشغيل: Windows وAndroid</span>
               <button class="expand-tags-btn" onclick="toggleTags('comp-3', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
             </div>
           </div>
@@ -127,7 +119,6 @@
             <div class="competency-tags" id="comp-4">
               <span class="comp-tag">التصميم البحثي النوعي</span>
               <span class="comp-tag hidden-tag">الكتابة الأكاديمية وفق أسلوب APA</span>
-              <span class="comp-tag hidden-tag">إنشاء المحتوى ثنائي اللغة وتحريره</span>
               <button class="expand-tags-btn" onclick="toggleTags('comp-4', this)"><i class="fas fa-chevron-down"></i> عرض التفاصيل</button>
             </div>
           </div>
@@ -158,28 +149,23 @@
   <section id="education" style="padding-top: 30px;">
     <div class="container">
       <div class="resume-grid">
-        
-        <!-- العمود الأول: المسار الأكاديمي والمهارات -->
         <div class="resume-column reveal">
           <div class="resume-header">
             <i class="fas fa-graduation-cap"></i>
             <h3>المسار الأكاديمي والمؤهلات</h3>
           </div>
           <div class="timeline">
-            <!-- 1. الشهادة الجامعية -->
             <div class="timeline-item">
               <h4>بكالوريوس آداب في اللغة الإنجليزية بمرتبة الشرف</h4>
               <span class="timeline-date">جامعة طبرق | فبراير 2022 – مايو 2025</span>
-              <p>تخرجت بالترتيب الثاني على الدفعة بمعدل تراكمي 91.23%، بتخصص في اللغويات وعلم الصوتيات ونظريات الترجمة. غطَّى المسار الدراسي تحليل الخطاب، والصرف والنحو المقارن.</p>
+              <p>تخرجت بالترتيب الثاني على الدفعة بمعدل تراكمي 91.23%، بتخصص في اللغويات وعلم الصوتيات ونظريات الترجمة.</p>
             </div>
-            
-            <!-- 2. الجوائز -->
             <div class="timeline-item">
               <h4>الجوائز والتكريمات</h4>
               <div class="awards-container">
                 <div class="award-card">
                   <div class="award-icon"><i class="fas fa-medal"></i></div>
-                  <div class="award-text"><strong>أفضل طالب في السنة</strong> في مادة Reading Comprehension لسنة (2023)</div>
+                  <div class="award-text"><strong>أفضل طالب في السنة</strong> مادة Reading Comprehension (2023)</div>
                 </div>
                 <div class="award-card">
                   <div class="award-icon"><i class="fas fa-award"></i></div>
@@ -187,24 +173,8 @@
                 </div>
               </div>
             </div>
-
-            <!-- 3. الشهادات -->
-            <div class="timeline-item">
-              <h4>الشهادات الاحترافية</h4>
-              <div class="awards-container">
-                <div class="award-card">
-                  <div class="award-icon"><i class="fas fa-certificate"></i></div>
-                  <div class="award-text"><strong>شهادة حضور ومشاركة</strong> دورة التعلُّم النشِط واستراتيجياته (سبتمبر 2025)</div>
-                </div>
-                <div class="award-card">
-                  <div class="award-icon"><i class="fas fa-certificate"></i></div>
-                  <div class="award-text"><strong>شهادة حضور ومشاركة</strong> دورة Jolly Phonics في تعليم الصوتيات (سبتمبر 2025)</div>
-                </div>
-              </div>
-            </div>
           </div>
           
-          <!-- 4. اللغات (بدون Timeline لتظهر بشكل مرتب) -->
           <div class="resume-header" style="margin-top: 3rem;">
             <i class="fas fa-language"></i>
             <h3>اللغات</h3>
@@ -215,63 +185,33 @@
           </div>
         </div>
 
-        <!-- العمود الثاني: الخبرة المهنية والتطوع -->
         <div class="resume-column reveal" id="experience">
           <div class="resume-header">
             <i class="fas fa-briefcase"></i>
             <h3>الخبرة المهنية</h3>
           </div>
           <div class="timeline">
-            <!-- 1. العمل الحر -->
             <div class="timeline-item">
               <h4>مترجم مستقل</h4>
               <span class="timeline-date">عمل حر عن بُعد | يناير 2024 – حتى الآن</span>
-              <p>أُنجز ترجمات متخصصة وأُقيّم مخرجات الترجمة الآلية من حيث التكافؤ الدلالي والدقة الثقافية والملاءمة الاصطلاحية. أُنفّذ كذلك مهام التفريغ النصي الصوتي ثنائي اللغة والتعليق على المحتوى.</p>
+              <p>ترجمات متخصصة وتقييم مخرجات الترجمة الآلية، والتفريغ النصي الصوتي ثنائي اللغة.</p>
             </div>
-            <!-- 2. مدرسة جواهر -->
             <div class="timeline-item">
               <h4>معلم لغة إنجليزية</h4>
               <span class="timeline-date">مدرسة جواهر طبرق النموذجية | أكتوبر 2025 – حتى الآن</span>
-              <p>تعليم لغوي منهجي للمرحلة الإعدادية. أصمّم طريقة شرح الدروس وفق المناهج الوطنية، موظّفًا خبرتي في تبسيط المفاهيم النحوية لغير الناطقين بالإنجليزية.</p>
-            </div>
-            <!-- 3. مدرسة النخبة -->
-            <div class="timeline-item">
-              <h4>معلم لغة إنجليزية</h4>
-              <span class="timeline-date">مدرسة نخبة المتفوقين | أكتوبر 2025 – حتى الآن</span>
-              <p>تدريس المرحلة الابتدائية مع التركيز على مهارات القراءة والتواصل الشفهي. أُطبّق استراتيجيات الاستماع والقراءة لتأسيس المتعلمين في المراحل الأولى.</p>
-              <p style="font-size: 0.85rem; color: var(--primary); margin-top: 8px;">* ملاحظة التوظيف: كلا المنصبَين بدوام جزئي، مما أتاح العمل المتزامن في كلتا المؤسستين إلى جانب النشاط المهني المستقل.</p>
-            </div>
-            <!-- 4. مركز ETC -->
-            <div class="timeline-item">
-              <h4>مدرّس خصوصي للغة الإنجليزية</h4>
-              <span class="timeline-date">مركز ETC للتدريب | يناير 2026 – أبريل 2026</span>
-              <p>دروس فردية وجماعية مصغّرة للتحضير للاختبارات وتطوير الطلاقة الشفهية، مع تزويد المتعلمين بتغذية راجعة منهجية ودقيقة.</p>
-            </div>
-            <!-- 5. رقمنة البيانات -->
-            <div class="timeline-item">
-              <h4>منسق رقمنة وإدخال بيانات</h4>
-              <span class="timeline-date">مدرسة النور | يوليو – أغسطس 2024</span>
-              <p>رقّمت ورفعت السجلات الوظيفية (620 مستندًا) إلى المنظومة الوطنية لإدارة بيانات التعليم، بدقة تامة وضمن المُهَل الزمنية المحددة.</p>
             </div>
           </div>
 
-          <div class="resume-header" style="margin-top: 3rem;" id="volunteer">
+          <div class="resume-header" style="margin-top: 3rem;">
             <i class="fas fa-hands-helping"></i>
             <h3>المساهمات التطوعية</h3>
           </div>
           <div class="timeline">
             <div class="timeline-item">
               <h4>مساهم في تعريب Telegram Messenger</h4>
-              <span class="timeline-date">عن بُعد | سبتمبر 2024 – حتى الآن</span>
-              <p>مراجعة وترجمة واجهات المستخدم إلى العربية عبر المنصة الرسمية للتطبيق، بهدف ضمان الدقة الاصطلاحية واتساق المصطلحات في أحد أوسع تطبيقات المراسلة استخدامًا عالميًّا.</p>
-            </div>
-            <div class="timeline-item">
-              <h4>مساهم في تعريب AntennaPod</h4>
-              <span class="timeline-date">عن بُعد | مارس 2025 – حتى الآن</span>
-              <p>ترجمة سلاسل التطبيق مفتوح المصدر ضمن بيئة تعاونية، مع الالتزام بالمعاجم المرجعية والأدلة الأسلوبية للمشروع.</p>
+              <span class="timeline-date">سبتمبر 2024 – حتى الآن</span>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -291,12 +231,24 @@
   </section>
 
   <footer>
-    <div class="container"><p>© 2026 الزبير إبراهيم. جميع الحقوق محفوظة.</p></div>
+    <div class="container">
+      <div class="glass-counter-wrapper reveal">
+        <div class="glass-counter" title="إجمالي الزيارات">
+          <div class="counter-data">
+            <span class="counter-label">الزيارات:</span>
+            <span class="counter-number" id="visit-count"><i class="fas fa-spinner fa-spin" style="font-size: 0.85rem;"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="copyright-text">© 2026 الزبير إبراهيم. جميع الحقوق محفوظة.</p>
+    </div>
   </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="العودة للأعلى"><i class="fas fa-arrow-up"></i></button>
 
   <script data-goatcounter="https://azzubairx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script>
-    // دالة عرض وإخفاء تفاصيل الكفاءات
     function toggleTags(id, btn) {
       const container = document.getElementById(id);
       container.classList.toggle('expanded');
@@ -308,14 +260,12 @@
       }
     }
 
-    // إعدادات المظهر العام والأنيميشن
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
     
     const root = document.documentElement;
     const toggle = document.getElementById('themeToggle');
     const icon = toggle.querySelector('i');
     
-    // ضبط الأيقونة حسب السمة المحملة
     if (root.getAttribute('data-theme') === 'light') { icon.className = 'fas fa-sun'; } else { icon.className = 'fas fa-moon'; }
     
     toggle.addEventListener('click', () => {
@@ -326,66 +276,40 @@
       localStorage.setItem('theme', newTheme);
     });
 
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-      if (!localStorage.getItem('theme')) {
-        const newTheme = e.matches ? 'light' : 'dark';
-        root.setAttribute('data-theme', newTheme);
-        icon.className = e.matches ? 'fas fa-sun' : 'fas fa-moon';
-      }
-    });
-
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     const hamburgerIcon = hamburger.querySelector('i');
     hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars'; });
-    document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); hamburgerIcon.className = 'fas fa-bars'; }); });
     
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.remove('hidden'); entry.target.classList.add('active'); observer.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-    
-    const currentPath = window.location.pathname.split('/').pop();
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      const href = link.getAttribute('href');
-      if ((currentPath === '' && href === 'index.html') || href === currentPath) { link.classList.add('active'); }
-    });
-  </script>
 
-<!-- سكربت العداد المباشر من GoatCounter -->
-  <script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    if(scrollBtn) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) { scrollBtn.style.display = "block"; } else { scrollBtn.style.display = "none"; }
+      });
+      scrollBtn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
+    }
+
     async function initGoatCounter() {
       const counterEl = document.getElementById('visit-count');
       if (!counterEl) return;
-      
       try {
         const response = await fetch('https://azzubairx.goatcounter.com/counter/TOTAL.json');
-        if (!response.ok) throw new Error('لا يمكن الوصول للعداد');
-        
+        if (!response.ok) throw new Error('Error');
         const data = await response.json();
         const endCount = parseInt(data.count.replace(/,/g, ''), 10);
-        
         let start = Math.max(0, endCount - 40);
-        const duration = 1000; 
-        const stepTime = Math.abs(Math.floor(duration / 40));
-        
         const timer = setInterval(() => {
           start += 1;
           counterEl.innerText = start.toLocaleString('en-US');
-          if (start >= endCount) {
-            counterEl.innerText = data.count; 
-            clearInterval(timer);
-          }
-        }, stepTime);
-        
-      } catch (err) {
-        console.error("تعذر جلب عداد GoatCounter:", err);
-        // عرض الرقم صفر فقط إذا حدث أي خطأ
-        counterEl.innerText = '∞';
-      }
+          if (start >= endCount) { counterEl.innerText = data.count; clearInterval(timer); }
+        }, 25);
+      } catch (err) { counterEl.innerText = '∞'; }
     }
-    
-    // تشغيل العداد
     initGoatCounter();
   </script>
 </body>
