@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Azzubair | التواصل والدفع</title>
   
+  <meta name="description" content="تواصل معي الآن لطلب تسعيرة أو بدء مشروعك الجديد. أقبل الدفع عبر LYPAY، ONEPAY، NAB Mobile، و Binance Pay." />
+  
   <script>
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -17,6 +19,7 @@
 </head>
 <body>
 
+  <!-- شريط التنقل -->
   <nav id="navbar">
     <div class="container">
       <a href="index.html" class="logo">Azzubair</a>
@@ -52,13 +55,13 @@
             <label>البريد الإلكتروني<br><input type="email" name="email" required></label>
           </div>
           
-          <!-- القائمة المنسدلة للخدمات -->
+          <!-- القائمة المنسدلة للخدمات النفسية -->
           <label style="margin-top: 15px;">نوع الخدمة المطلوبة<br>
             <select name="service" required>
               <option value="" disabled selected>— اختر التخصص —</option>
               <option value="translation">الترجمة والخدمات اللغوية</option>
               <option value="ai">الذكاء الاصطناعي والتقنية</option>
-              <option value="academic">الأكاديميا والمستندات</option>
+              <option value="academic">الأكاديميا والمستندات الرسمية</option>
               <option value="data">البيانات والإدارة</option>
               <option value="other">استشارة أخرى</option>
             </select>
@@ -92,15 +95,19 @@
         </div>
         <div class="payment-card reveal">
           <div class="pay-logo-wrapper"><img src="https://lypay.gov.ly/wp-content/uploads/2025/06/ly-pay-logo.svg" alt="LYPAY" class="pay-logo" loading="lazy"></div>
-          <span>LYPAY (لي باي)</span>
+          <span>(لي باي) LYPAY</span>
         </div>
         <div class="payment-card reveal">
           <div class="pay-logo-wrapper"><img src="https://masarat.ly/ms_uploads/2025/10/OnePay-Full-Logo.svg" alt="ONEPAY" class="pay-logo" loading="lazy"></div>
-          <span>ONEPAY (وان باي)</span>
+          <span>(وان باي) ONEPAY</span>
+        </div>
+        <div class="payment-card reveal">
+          <div class="pay-logo-wrapper"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a8/99/c8/a899c89f-e69b-67c4-3148-d36366aa579b/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp" alt="NAB Mobile" class="pay-logo" loading="lazy"></div>
+          <span>(محليًّا) NAB Mobile</span>
         </div>
         <div class="payment-card reveal">
           <div class="pay-logo-wrapper"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg" alt="Binance" class="pay-logo" style="width: 55px;" loading="lazy"></div>
-          <span>Binance (دوليًّا)</span>
+          <span>(دوليًّا) Binance</span>
         </div>
       </div>
     </div>
