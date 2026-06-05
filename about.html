@@ -380,7 +380,7 @@
         
       } catch (err) {
         console.error("تعذر جلب عداد GoatCounter:", err);
-        // عرض علامة المالانهاية فقط إذا حدث أي خطأ
+        // عرض الرقم صفر فقط إذا حدث أي خطأ
         counterEl.innerText = '∞';
       }
     }
@@ -388,6 +388,5 @@
     // تشغيل العداد
     initGoatCounter();
   </script>
-
 </body>
 </html>
