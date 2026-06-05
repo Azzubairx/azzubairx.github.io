@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Azzubair | التواصل والدفع</title>
   
-  <meta name="description" content="تواصل معي الآن لطلب تسعيرة أو بدء مشروعك الجديد. أقبل الدفع عبر LYPAY، ONEPAY، NAB Mobile، و Binance Pay." />
-  
   <script>
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -14,8 +12,6 @@
     document.documentElement.setAttribute('data-theme', currentTheme);
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -26,13 +22,13 @@
       <a href="index.html" class="logo">Azzubair</a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="about.html">من أنا</a></li>
+        <li><a href="about.html">مَن أنا</a></li>
         <li><a href="services.html">الخدمات</a></li>
-        <li><a href="contact.html" class="active">التواصل والدفع</a></li>
+        <li><a href="contact.html" class="active">التواصل والدَّفع</a></li>
       </ul>
       <div class="nav-controls">
-        <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع"><i class="fas fa-moon"></i></button>
-        <button class="hamburger" id="hamburger" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+        <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+        <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
       </div>
     </div>
   </nav>
@@ -55,7 +51,20 @@
             <label>الاسم<br><input type="text" name="name" required></label>
             <label>البريد الإلكتروني<br><input type="email" name="email" required></label>
           </div>
-          <label>وصف مختصر للمشروع<br><textarea name="message" rows="5" required></textarea></label>
+          
+          <!-- القائمة المنسدلة للخدمات -->
+          <label style="margin-top: 15px;">نوع الخدمة المطلوبة<br>
+            <select name="service" required>
+              <option value="" disabled selected>— اختر التخصص —</option>
+              <option value="translation">الترجمة والخدمات اللغوية</option>
+              <option value="ai">الذكاء الاصطناعي والتقنية</option>
+              <option value="academic">الأكاديميا والمستندات</option>
+              <option value="data">البيانات والإدارة</option>
+              <option value="other">استشارة أخرى</option>
+            </select>
+          </label>
+          
+          <label style="margin-top: 15px;">وصف مختصر للمشروع<br><textarea name="message" rows="5" required></textarea></label>
           <button type="submit" class="btn btn-primary form-submit">إرسال الطلب</button>
         </form>
 
@@ -64,7 +73,6 @@
         <div class="contact-links">
           <a href="https://t.me/azzubairx" target="_blank" class="contact-item"><i class="fab fa-telegram"></i> تليغرام</a>
           <a href="mailto:azzubair@tuta.io" class="contact-item"><i class="fas fa-envelope"></i> البريد الإلكتروني</a>
-          <a href="https://www.linkedin.com/in/azzubair-husain" target="_blank" class="contact-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
           <div class="contact-item" style="cursor: default;"><i class="fas fa-map-marker-alt"></i> طبرق، ليبيا</div>
         </div>
       </div>
@@ -91,42 +99,31 @@
           <span>ONEPAY (وان باي)</span>
         </div>
         <div class="payment-card reveal">
-          <div class="pay-logo-wrapper"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a8/99/c8/a899c89f-e69b-67c4-3148-d36366aa579b/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/400x400ia-75.webp" alt="NAB Mobile" class="pay-logo" loading="lazy"></div>
-          <span>NAB Mobile (محليًّا)</span>
-        </div>
-        
-        <!-- بطاقة باينانس الجديدة -->
-        <div class="payment-card reveal">
-          <div class="pay-logo-wrapper">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg" alt="Binance" class="pay-logo" style="width: 55px;" loading="lazy">
-          </div>
+          <div class="pay-logo-wrapper"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Binance_Logo.svg" alt="Binance" class="pay-logo" style="width: 55px;" loading="lazy"></div>
           <span>Binance (دوليًّا)</span>
         </div>
-
       </div>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <!-- 1. عداد الزيارات المصغّر -->
       <div class="glass-counter-wrapper reveal">
         <div class="glass-counter" title="إجمالي الزيارات">
           <div class="counter-data">
-            <span class="counter-label">زيارات الموقع:</span>
+            <span class="counter-label">الزيارات:</span>
             <span class="counter-number" id="visit-count"><i class="fas fa-spinner fa-spin" style="font-size: 0.85rem;"></i></span>
           </div>
         </div>
       </div>
-
-      <!-- 2. الخط الفاصل -->
       <div class="footer-divider"></div>
-
-      <!-- 3. نص الحقوق -->
       <p class="copyright-text">© 2026 الزبير إبراهيم. جميع الحقوق محفوظة.</p>
     </div>
   </footer>
 
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="العودة للأعلى"><i class="fas fa-arrow-up"></i></button>
+
+  <script data-goatcounter="https://azzubairx.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <script>
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
     
@@ -144,64 +141,40 @@
       localStorage.setItem('theme', newTheme);
     });
 
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-      if (!localStorage.getItem('theme')) {
-        const newTheme = e.matches ? 'light' : 'dark';
-        root.setAttribute('data-theme', newTheme);
-        icon.className = e.matches ? 'fas fa-sun' : 'fas fa-moon';
-      }
-    });
-
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     const hamburgerIcon = hamburger.querySelector('i');
     hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); hamburgerIcon.className = navLinks.classList.contains('active') ? 'fas fa-times' : 'fas fa-bars'; });
-    document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); hamburgerIcon.className = 'fas fa-bars'; }); });
     
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.remove('hidden'); entry.target.classList.add('active'); observer.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     
-    const currentPath = window.location.pathname.split('/').pop();
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      const href = link.getAttribute('href');
-      if ((currentPath === '' && href === 'index.html') || href === currentPath) { link.classList.add('active'); }
-    });
-  </script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    if(scrollBtn) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) { scrollBtn.style.display = "block"; } else { scrollBtn.style.display = "none"; }
+      });
+      scrollBtn.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); });
+    }
 
-  <!-- سكربت العداد المباشر من GoatCounter -->
-  <script>
     async function initGoatCounter() {
       const counterEl = document.getElementById('visit-count');
       if (!counterEl) return;
-      
       try {
         const response = await fetch('https://azzubairx.goatcounter.com/counter/TOTAL.json');
-        if (!response.ok) throw new Error('لا يمكن الوصول للعداد');
-        
+        if (!response.ok) throw new Error('Error');
         const data = await response.json();
         const endCount = parseInt(data.count.replace(/,/g, ''), 10);
-        
         let start = Math.max(0, endCount - 40);
-        const duration = 1000; 
-        const stepTime = Math.abs(Math.floor(duration / 40));
-        
         const timer = setInterval(() => {
           start += 1;
           counterEl.innerText = start.toLocaleString('en-US');
-          if (start >= endCount) {
-            counterEl.innerText = data.count; 
-            clearInterval(timer);
-          }
-        }, stepTime);
-        
-      } catch (err) {
-        console.error("تعذر جلب عداد GoatCounter:", err);
-        counterEl.innerText = '0';
-      }
+          if (start >= endCount) { counterEl.innerText = data.count; clearInterval(timer); }
+        }, 25);
+      } catch (err) { counterEl.innerText = '∞'; }
     }
-    
     initGoatCounter();
   </script>
 </body>
