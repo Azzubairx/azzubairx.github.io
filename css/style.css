@@ -221,30 +221,128 @@ section:not(:last-of-type)::after { content: ''; position: absolute; bottom: 0; 
 
 .subsection-title { font-size: 1.8rem; color: var(--text-main); margin-bottom: 2rem; text-align: center; font-weight: bold; }
 
-/* التايم لاين الأكاديمي والعملي */
+/* ── التايم لاين المضيء التفاعلي (Modern Timeline) ── */
 .resume-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
-.resume-header { display: flex; align-items: center; gap: 15px; margin-bottom: 2rem; color: var(--primary); }
+.resume-header { display: flex; align-items: center; gap: 15px; margin-bottom: 2.5rem; color: var(--primary); }
 .resume-header h3 { font-size: 1.6rem; color: var(--text-main); font-weight: bold; }
-.resume-header i { font-size: 2rem; }
-.timeline { border-right: 3px solid var(--border-primary); padding-right: 20px; }
-.timeline-item { position: relative; margin-bottom: 2.5rem; }
-.timeline-item::before { content: ''; position: absolute; top: 8px; right: -29px; width: 15px; height: 15px; background: var(--bg-main); border: 3px solid var(--primary); border-radius: 50%; transition: background 0.3s ease; }
-.timeline-item:hover::before { background: var(--primary); }
-.timeline-item h4 { font-size: 1.3rem; color: var(--text-main); margin-bottom: 5px; font-weight: bold;}
-.timeline-date { display: inline-block; background: var(--bg-glass); padding: 4px 12px; border-radius: 20px; font-size: 0.95rem; color: var(--primary); margin-bottom: 10px; border: 1px solid var(--border-glass); }
-.timeline-item p { color: var(--text-muted); font-size: 1rem; line-height: 1.6; }
+.resume-header i { font-size: 2.2rem; filter: drop-shadow(0 4px 6px var(--primary-glow)); }
 
-/* كروت الشهادات واللغات */
-.awards-container { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
-.award-card { background: var(--bg-glass); border: 1px solid var(--border-glass); padding: 14px 18px; border-radius: 16px; display: flex; align-items: center; gap: 15px; box-shadow: var(--shadow-glass); transition: all 0.3s ease; backdrop-filter: blur(10px); }
-.award-card:hover { transform: translateX(-5px); border-color: var(--primary); box-shadow: var(--shadow-hover); }
-.award-icon { background: var(--primary-glass); color: var(--primary); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; border: 1px solid var(--border-primary); }
-.award-text { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; }
-.award-text strong { color: var(--text-main); display: block; font-size: 1.05rem; margin-bottom: 2px; }
+.modern-timeline {
+  position: relative;
+  padding-right: 35px; /* مسافة للخط العمودي */
+}
 
-.lang-container { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
-.lang-tag { background: var(--bg-glass); border: 1px solid var(--border-glass); color: var(--text-main); padding: 8px 18px; border-radius: 50px; font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; box-shadow: var(--shadow-glass); }
-.lang-tag strong { color: var(--primary); }
+/* المسار المتدرج المضيء */
+.modern-timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  right: 14px; /* توسيط الخط مع النقاط */
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary), var(--primary-glass), transparent);
+  border-radius: 2px;
+}
+
+.modern-timeline__item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  perspective: 1000px;
+}
+
+/* النقطة المضيئة (Node) */
+.modern-timeline__node {
+  position: absolute;
+  top: 20px;
+  right: -35px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-main);
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* البطاقة الزجاجية للإنجاز */
+.modern-timeline__content {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: var(--shadow-glass);
+  transition: all 0.4s ease;
+}
+
+/* تأثيرات التمرير (Hover) */
+.modern-timeline__item:hover .modern-timeline__node {
+  background: var(--primary);
+  box-shadow: 0 0 20px var(--primary);
+  transform: scale(1.3);
+}
+.modern-timeline__item:hover .modern-timeline__content {
+  transform: translateX(-8px) translateY(-2px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px var(--primary-glass);
+}
+
+/* نصوص التايم لاين */
+.modern-timeline__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.modern-timeline__date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--primary);
+  background: var(--primary-glass);
+  padding: 4px 14px;
+  border-radius: 50px;
+  border: 1px solid var(--border-primary);
+}
+.modern-timeline__title {
+  font-size: 1.3rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.modern-timeline__subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.modern-timeline__desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ملاحظات التوظيف (مثل دوام جزئي) */
+.timeline-note {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--primary);
+  background: var(--bg-main);
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-top: 12px;
+  border: 1px dashed var(--border-primary);
+}
 
 /* علامات المهارات القابلة للطي */
 .competency-tags { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
