@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Azzubair | خدماتي</title>
   
+  <meta name="description" content="مجموعة متكاملة من الخدمات اللغوية والتقنية، تشمل الترجمة التحريرية، هندسة الأوامر (Prompt Engineering)، استشارات الخصوصية، والتنسيق الأكاديمي والديني." />
+  
   <script>
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -19,6 +21,7 @@
 </head>
 <body>
 
+  <!-- شريط التنقل -->
   <nav id="navbar">
     <div class="container">
       <a href="index.html" class="logo">Azzubair</a>
@@ -38,7 +41,7 @@
   <div class="page-hero">
     <div class="container reveal">
       <h1>الخدمات التي أقدِّمها</h1>
-      <p>مجموعة متكاملة من الحلول اللغوية والتقنية المصممة بدقة، مصنَّفة حسب تخصصك لتسهيل وصولك إلى ما تحتاجه بالضبط.</p>
+      <p>مجموعة متكاملة من الحلول اللغوية والتقنية المصممة بدقة، مصنَّفة حسب تخصصك لتسهيل وصولك إلى ماتحتاجه بالضبط.</p>
     </div>
   </div>
 
@@ -49,19 +52,29 @@
       <h3 class="category-title reveal"><i class="fas fa-globe"></i> الترجمة والخدمات اللغوية</h3>
       <div class="services-grid">
         <div class="service-card reveal">
-          <div class="service-badge">الأكثر طلباً <i class="fas fa-fire" style="margin-right: 5px;"></i></div>
           <div class="service-icon"><i class="fas fa-language"></i></div>
           <div class="service-content">
             <h3>الترجمة التحريرية والتعريب</h3>
             <p>ترجمة دقيقة تراعي السياق اللغوي والأبعاد الثقافية بين العربية والإنجليزية.</p>
-            <span class="why-me">مُصاغة لتبدو كأنها كُتبت أصلًا بالعربية.</span>
+            <span class="why-me">مُصاغة لتبدو كأنها كُتبت أصلًا بالعربية — للشركات والأفراد الراغبين في محتوى يُقنع القارئ العربي لا يُنفّره.</span>
           </div>
         </div>
         <div class="service-card reveal">
+          <div class="service-badge">الأكثر طلباً <i class="fas fa-fire" style="margin-right: 5px;"></i></div>
           <div class="service-icon"><i class="fas fa-spell-check"></i></div>
           <div class="service-content">
             <h3>التدقيق اللغوي والمراجعة</h3>
             <p>مراجعة نحوية وأسلوبية شاملة للغتين العربية والإنجليزية لضمان خلو النصوص من الأخطاء.</p>
+            <span class="why-me">عين أكاديمية تضمن رصانة نصك وخلوه من أي شائبة تُخل بالفهم أو تنتقص من الاحترافية.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-badge">الأكثر طلباً <i class="fas fa-fire" style="margin-right: 5px;"></i></div>
+          <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+          <div class="service-content">
+            <h3>النسخ النصي (Transcription)</h3>
+            <p>التفريغ النصي الدقيق للمحتوى الصوتي والمرئي بوضوح وسرعة.</p>
+            <span class="why-me">نقل أمين لا يُسقط أي تفصيلة من التسجيل الأصلي، مع تنسيق نصي جاهز للطباعة.</span>
           </div>
         </div>
         <div class="service-card reveal">
@@ -69,6 +82,7 @@
           <div class="service-content">
             <h3>الترجمة المرئية (Subtitling)</h3>
             <p>إنتاج ترجمات نصية دقيقة متزامنة مع المحتوى المرئي.</p>
+            <span class="why-me">تزامن دقيق يضمن قراءة مريحة على الشاشة، مع مراعاة القيود الفنية للعرض وطول السطر.</span>
           </div>
         </div>
       </div>
@@ -77,11 +91,20 @@
       <h3 class="category-title reveal" style="margin-top: 4rem;"><i class="fas fa-robot"></i> الذكاء الاصطناعي والتقنية</h3>
       <div class="services-grid">
         <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <div class="service-content">
+            <h3>استشارات الخصوصية والأمن الرقمي</h3>
+            <p>توجيه تقني عملي لاختيار أدوات الاتصال المشفرة، المتصفحات، وضبط إعدادات الشبكة للحد من التتبع.</p>
+            <span class="why-me">حماية بياناتك تبدأ بإعداد صحيح لا بشراء برمجيات — تحكم ببيئتك الرقمية فعليًّا لا بحسب ادعاءات التسويق.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
           <div class="service-badge">الأكثر طلباً <i class="fas fa-fire" style="margin-right: 5px;"></i></div>
           <div class="service-icon"><i class="fas fa-terminal"></i></div>
           <div class="service-content">
             <h3>هندسة الأوامر (Prompt Engineering)</h3>
             <p>صياغة أوامر دقيقة وموجَّهة لنماذج الذكاء الاصطناعي الكبرى للحصول على مخرجات موثوقة وقابلة للتكرار.</p>
+            <span class="why-me">صياغة الأوامر هي الفارق بين مُخرَج عشوائي وقابل للاستخدام — مع تركيز خاص على السياقات العربية.</span>
           </div>
         </div>
         <div class="service-card reveal">
@@ -89,10 +112,121 @@
           <div class="service-content">
             <h3>تدريب وتقييم نماذج AI</h3>
             <p>ضبط جودة مخرجات نماذج الذكاء الاصطناعي وتحسين دقتها اللغوية.</p>
+            <span class="why-me">تقييم مبني على بحث أكاديمي منشور في أخطاء الترجمة الآلية — وليس مجرد رأي شخصي.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-badge">الأكثر طلباً <i class="fas fa-fire" style="margin-right: 5px;"></i></div>
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="service-content">
+            <h3>الدعم الفني وتشخيص الأعطال</h3>
+            <p>حل مشكلات أنظمة التشغيل (Android وWindows).</p>
+            <span class="why-me">تشخيص جذري وسريع للأعطال التقنية توفيرًا لوقتك وجهدك.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-badge">الأكثر طلباً <i class="fas fa-fire" style="margin-right: 5px;"></i></div>
+          <div class="service-icon"><i class="fab fa-microsoft"></i></div>
+          <div class="service-content">
+            <h3>الحلول المكتبية المتكاملة</h3>
+            <p>إدارة العمليات عبر حُزَم Microsoft Office وGoogle Workspace.</p>
+            <span class="why-me">تنظيم رقمي وإدارة ملفات احترافية ترفع من كفاءة عملك وعمل مؤسستك.</span>
           </div>
         </div>
       </div>
 
+      <!-- الفئة 3 -->
+      <h3 class="category-title reveal" style="margin-top: 4rem;"><i class="fas fa-graduation-cap"></i> الأكاديميا والمستندات الرسمية</h3>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-badge">الأكثر طلباً <i class="fas fa-fire" style="margin-right: 5px;"></i></div>
+          <div class="service-icon"><i class="fas fa-book-open"></i></div>
+          <div class="service-content">
+            <h3>تنسيق البحوث والوثائق الأكاديمية والدينية</h3>
+            <p>تنسيق احترافي وفق الأنماط الدولية (APA وMLA وChicago)، وتنسيق الأبحاث القرآنية والتفسيرية.</p>
+            <span class="why-me">خبرة في التعامل مع النص العربي الكلاسيكي والتراثي إلى جانب المتطلبات الهيكلية الصارمة للمراجعة الأكاديمية.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+          <div class="service-content">
+            <h3>إعداد أوراق الاختبارات وتنسيقها</h3>
+            <p>صياغة وتنسيق أوراق الاختبارات والتقييمات الأكاديمية بدقة واحترافية وفق المعايير المعتمدة.</p>
+            <span class="why-me">أوراق خالية من الأخطاء، موزونة أكاديميًّا، وجاهزة للطباعة الفورية.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+          <div class="service-content">
+            <h3>تحرير المحتوى الأكاديمي</h3>
+            <p>كتابة وصياغة المحتوى الأكاديمي المتقدم باللغة الإنجليزية.</p>
+            <span class="why-me">لغة إنجليزية بليغة خالية من الركاكة، تستوفي متطلبات النشر الأكاديمي الصارمة.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-badge">الأكثر طلباً <i class="fas fa-fire" style="margin-right: 5px;"></i></div>
+          <div class="service-icon"><i class="fas fa-search"></i></div>
+          <div class="service-content">
+            <h3>البحث المتقدم في المصادر الرقمية</h3>
+            <p>استخراج المحتوى الأكاديمي والمصادر الرقمية بكفاءة عالية.</p>
+            <span class="why-me">توفير المراجع النادرة والمهمة لدعم بحثك العلمي في أسرع وقت ممكن.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-id-card"></i></div>
+          <div class="service-content">
+            <h3>إعداد السير الذاتية المتوافقة مع ATS</h3>
+            <p>صياغة وتصميم احترافي يضمن تجاوز السيرة الذاتية لفلاتر الفرز الآلي.</p>
+            <span class="why-me">صياغة وتنسيق مبنيان على معرفة موثّقة بآليات ATS — لا على التخمين.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- الفئة 4 -->
+      <h3 class="category-title reveal" style="margin-top: 4rem;"><i class="fas fa-database"></i> البيانات والإدارة</h3>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-file-export"></i></div>
+          <div class="service-content">
+            <h3>تحويل العديد مِن صيغ الملفات بدقة</h3>
+            <p>تحويل الملفات بين صيغ PDF وWord وExcel وغيرها مع الحفاظ التام على تنسيق النصوص العربية.</p>
+            <span class="why-me">أتجاوز إخفاقات أدوات التحويل المجانية مع النصوص العربية (RTL) — ضرورة للوثائق التي لا تحتمل خطأ في التنسيق.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-server"></i></div>
+          <div class="service-content">
+            <h3>إدخال البيانات والأرشفة الرقمية</h3>
+            <p>إدخال البيانات الدقيق وإدارة السجلات وتصميم قواعد البيانات.</p>
+            <span class="why-me">دقة تامة مع الحفاظ الصارم على سرية بيانات مؤسستك.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-table"></i></div>
+          <div class="service-content">
+            <h3>بناء جداول احترافية (Excel)</h3>
+            <p>تصميم الجداول التحليلية والمعادلات المتقدمة لتيسير إدارة الأعمال.</p>
+            <span class="why-me">تحويل البيانات الخام إلى لوحات تحكم قابلة للقراءة والتحليل الاستراتيجي.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-badge">الأكثر طلباً <i class="fas fa-fire" style="margin-right: 5px;"></i></div>
+          <div class="service-icon"><i class="fas fa-certificate"></i></div>
+          <div class="service-content">
+            <h3>تصميم الشهادات والمستندات الرسمية</h3>
+            <p>التصميم الاحترافي للشهادات والمستندات للأفراد والمؤسسات.</p>
+            <span class="why-me">تصاميم بصرية فريدة تعكس الهوية الرسمية لمؤسستك باحترافية تامة.</span>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i class="fas fa-headphones"></i></div>
+          <div class="service-content">
+            <h3>التدريب في علم الصوتيات الإنجليزية</h3>
+            <p>تدريب متخصص في نطق وصوتيات اللغة الإنجليزية البريطانية والأمريكية (Phonetics).</p>
+            <span class="why-me">تأسيس نطق سليم واحترافي مبني على أسس علم الصوتيات التطبيقي.</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -101,19 +235,19 @@
     <div class="container">
       <div class="section-title reveal">
         <h2>شروط الخدمة وضمان الجودة</h2>
-        <p>مبادئ عمل واضحة وشفافة لضمان حقوق كلا الطرفين وتجربة مهنية خالية من المتاعب.</p>
+        <p>مبادئ العمل التي أُقرّها لضمان حقوق الطرفين وتقديم أفضل تجربة مهنية ممكنة.</p>
       </div>
       
       <div class="commitments-grid">
         <div class="commitment-card reveal">
           <div class="commitment-header">
             <i class="fas fa-shield-halved"></i>
-            <h3>التزاماتي كمزوّد</h3>
+            <h3>التزاماتي كمزوّد (ضمانات لك)</h3>
           </div>
           <ul class="commitment-list">
-            <li><i class="fas fa-check-circle"></i> <strong>السرية والخصوصية:</strong> أتعامل مع جميع مستنداتك وبياناتك بسرية مطلقة ولا أشاركها مع أي طرف ثالث تحت أي ظرف.</li>
-            <li><i class="fas fa-check-circle"></i> <strong>الالتزام بالمواعيد:</strong> أضمن تسليم المشروع المتفق عليه في الموعد المحدد مسبقًا بدقة تامة.</li>
-            <li><i class="fas fa-check-circle"></i> <strong>المراجعة المجانية:</strong> أُرحِّب بإجراء التعديلات المنطقية على العمل المُسلَّم خلال فترة المراجعة وذلك مجانًا.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>السرية والخصوصية:</strong> أتعامل مع جميع المستندات والبيانات ومعلومات العملاء بسرية مطلقة، ولا يُشارَك أي منها مع أي طرف ثالث تحت أي ظرف.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>الالتزام بالمواعيد والجودة:</strong> أُسلّم المشاريع في الموعد المتفق عليه دون استثناء، مع ضمان استيفاء العمل المنجز لأعلى المعايير الأكاديمية والمهنية.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>سياسة التعديلات:</strong> أُرحِّب بإجراء التعديلات المنطقية على العمل المُسلَّم خلال فترة المراجعة المتفق عليها وذلك مجانًا.</li>
           </ul>
         </div>
         
@@ -123,13 +257,11 @@
             <h3>ما أحتاجه منك لنجاح المشروع</h3>
           </div>
           <ul class="commitment-list">
-            <li><i class="fas fa-check-circle"></i> <strong>نطاق واضح:</strong> تزويدي بتفاصيل المهمة كاملة، المصادر، والموعد المطلوب بدقة قبل بدء العمل.</li>
-            <li><i class="fas fa-check-circle"></i> <strong>التواصل الفعال:</strong> الرد على الاستفسارات الضرورية أثناء العمل، وإرسال أي طلب تعديل خلال فترة المراجعة المتفق عليها.</li>
-            <li><i class="fas fa-check-circle"></i> <strong>الالتزام بالدفع:</strong> تسديد المستحقات المالية وفق الآلية المحددة (دفعة مقدمة أو عند التسليم) بحسب الاتفاق.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>وضوح المهمة:</strong> تزويدي بتفاصيل المهمة والمصادر المطلوبة بوضوح قبل البدء.</li>
+            <li><i class="fas fa-check-circle"></i> <strong>آلية الدفع وحفظ الحقوق:</strong> يُتفق بشفافية على تسعيرة العمل وآلية الدفع — دفعة مقدمة أو عند التسليم — بحسب حجم المشروع، صونًا لحقوق كلا الطرفين.</li>
           </ul>
         </div>
       </div>
-      
     </div>
   </section>
 
