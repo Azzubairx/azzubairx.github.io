@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- إضافة تأثير حركة بسيط لحالة التوفر متاح للعمل -->
+  <!-- حركة نبض تفاعلية ذكية لحالة التوفر -->
   <style>
     @keyframes badgePulse {
       0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
@@ -70,18 +70,8 @@
 
   <section id="hero">
     <div class="container">
-      
-      <!-- إضافة الحاوية الموحدة وتوسيط الشارات تحت بعضها البعض في منتصف الصفحة -->
-      <div class="hero-badges-center reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; margin-bottom: 2.5rem; text-align: center; width: 100%;">
-        <span class="authority-badge" style="margin: 0; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; padding: 8px 18px; border-radius: 50px;">
-          <i class="fas fa-award"></i> خريج بمرتبة الشرف — الثاني على الدفعة
-        </span>
-        <span class="status-badge" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); padding: 8px 18px; border-radius: 50px; font-size: 0.9rem; font-weight: bold; display: inline-flex; align-items: center; gap: 8px; width: fit-content; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.05);">
-          <span style="width: 8px; height: 8px; background-color: #10b981; border-radius: 50%; display: inline-block; animation: badgePulse 1.8s infinite;"></span> متاح للعمل الآن
-        </span>
-      </div>
-
       <div class="hero-wrapper">
+        
         <div class="hero-text reveal">
           <h1>الزُّبَير إبْرَاهِيم</h1>
           <p>مترجم عربي ⇄ إنجليزي محترف. مدرب لغوي للذكاء الاصطناعي... قلّة من المترجمين المستقلين يجمعون بين الكفاءة اللغوية الأصيلة في العربية، والتخصص الأكاديمي في الإنجليزية، والخبرة التقنية والنقدية في التعامل مع مخرجات نماذج الذكاء الاصطناعي. أقدّم هذا المزيج لعملائي مع التزام صارم بالدقة والسرية المهنية.</p>
@@ -92,9 +82,25 @@
             <a href="contact.html" class="btn btn-outline"><i class="fas fa-paper-plane"></i> اطلب تسعيرة</a>
           </div>
         </div>
-        <div class="hero-image reveal">
+
+        <!-- قسم الصورة متضمناً شارتي التوفر والخبرة مرتبتين عمودياً -->
+        <div class="hero-image reveal" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; text-align: center;">
+          
+          <!-- (متاح للعمل الآن) فوق الصورة -->
+          <span class="status-badge" style="background-color: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); padding: 8px 18px; border-radius: 50px; font-size: 0.9rem; font-weight: bold; display: inline-flex; align-items: center; gap: 8px; width: fit-content; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.05); margin-bottom: 5px;">
+            <span style="width: 8px; height: 8px; background-color: #10b981; border-radius: 50%; display: inline-block; animation: badgePulse 1.8s infinite;"></span> متاح للعمل الآن
+          </span>
+
+          <!-- الصورة الشخصية -->
           <img src="profile.jpg" alt="الزُّبير إبراهيم" loading="lazy" onerror="this.src='https://placehold.co/400x400/1E293B/3B82F6?text=Z'">
+
+          <!-- (خريج بمرتبة الشرف - الثاني على الدفعة) تحت الصورة -->
+          <span class="authority-badge" style="margin: 5px 0 0 0; display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; padding: 8px 18px; border-radius: 50px; width: fit-content;">
+            <i class="fas fa-award"></i> خريج بمرتبة الشرف — الثاني على الدفعة
+          </span>
+
         </div>
+
       </div>
     </div>
   </section>
@@ -237,7 +243,6 @@
       }
     }
     
-    // تشغيل العداد
     initGoatCounter();
   </script>
 </body>
