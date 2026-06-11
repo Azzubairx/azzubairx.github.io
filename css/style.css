@@ -3,6 +3,85 @@
    النمط: تأثير الزجاج (Glassmorphism) | الألوان: أزرق تقني وكحلي
    ============================================================ */
 
+/* ── 1. استيراد خطوط اللغة الإنجليزية (Ogg) ── */
+@font-face { 
+  font-family: 'Ogg'; 
+  src: url('../fonts/Ogg-Text-Book.otf') format('opentype'); 
+  font-weight: normal; 
+  font-style: normal; 
+  font-display: swap; 
+}
+@font-face { 
+  font-family: 'Ogg'; 
+  src: url('../fonts/Ogg-Text-Light-Italic.otf') format('opentype'); 
+  font-weight: 300; 
+  font-style: italic; 
+  font-display: swap; 
+}
+
+/* ── 2. تخصيص اللغة الإنجليزية (LTR) ── */
+html[lang="en"] body {
+  font-family: 'Ogg', system-ui, -apple-system, sans-serif !important;
+  direction: ltr;
+  text-align: left;
+  letter-spacing: 0.3px;
+}
+
+html[lang="en"] .nav-links { flex-direction: row; }
+html[lang="en"] .nav-controls { flex-direction: row; }
+html[lang="en"] .logo { direction: ltr; }
+html[lang="en"] .contact-form { text-align: left; }
+
+/* ── 3. تحديث تأثير الزجاج ليصبح Apple Liquid Glass ── */
+/* استبدل متغيرات الزجاج في :root و [data-theme="light"] */
+:root {
+  /* ... ألوانك السابقة كما هي ... */
+  --bg-liquid-glass: rgba(11, 17, 33, 0.45);
+  --border-liquid: rgba(255, 255, 255, 0.1);
+  --inner-glow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+[data-theme="light"] {
+  --bg-liquid-glass: rgba(255, 255, 255, 0.45);
+  --border-liquid: rgba(255, 255, 255, 0.4);
+  --inner-glow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* الكلاس الجديد للبطاقات الزجاجية السائلة */
+.liquid-glass {
+  background: var(--bg-liquid-glass);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--border-liquid);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), var(--inner-glow);
+  border-radius: 28px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ── 4. خلفية سائلة متحركة (Fluid Gradient Blob) مثل Perplexity/Apple ── */
+.fluid-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--bg-main);
+  transition: background 0.5s ease;
+}
+.fluid-blob {
+  position: absolute;
+  width: 60vw; height: 60vw;
+  background: var(--primary-glass);
+  border-radius: 50%;
+  filter: blur(90px);
+  animation: floatBlob 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+.blob-1 { top: -10%; left: -10%; animation-delay: 0s; background: rgba(59, 130, 246, 0.2); }
+.blob-2 { bottom: -20%; right: -10%; width: 50vw; height: 50vw; animation-delay: -5s; background: rgba(16, 185, 129, 0.15); } /* لمسة خضراء خفيفة */
+
+@keyframes floatBlob {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(10%, 15%) scale(1.1); }
+}
+
 /* ── 1. استيراد الخطوط ── */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
